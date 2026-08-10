@@ -1,0 +1,29 @@
+# DQV 품질 프로파일 — TTAK.KO-10.1594 (AI 모델 학습 데이터세트, 품질 L3)
+# 현재 품질=1(Metric은 '모델 성능지표'이고 데이터세트 자체 품질 부재). 데이터세트 품질을 ISO/IEC 5259-2로 신설.
+@prefix dqv:     <http://www.w3.org/ns/dqv#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix iso5259: <https://std.tta.or.kr/ns/iso5259-2#> .
+@prefix ex:      <https://example.org/ai/> .
+
+ex:train-dataset a dcat:Dataset ;
+  dct:title "감성분석 학습 데이터세트 v1" ;
+  dct:conformsTo "TTAK.KO-10.1594" ;
+  dqv:hasQualityMeasurement ex:q-accuracy, ex:q-completeness, ex:q-representativeness .
+
+ex:q-accuracy a dqv:QualityMeasurement ;
+  dqv:isMeasurementOf iso5259:syntacticAccuracyRate ;
+  dqv:computedOn ex:train-dataset ; dqv:value "0.992"^^xsd:double ;
+  dct:description "레이블 정확도(참값 대비)" .
+
+ex:q-completeness a dqv:QualityMeasurement ;
+  dqv:isMeasurementOf iso5259:completenessRate ;
+  dqv:computedOn ex:train-dataset ; dqv:value "0.998"^^xsd:double ;
+  dct:description "필수 특성·레이블 결측 비율의 역수" .
+
+ex:q-representativeness a dqv:QualityMeasurement ;
+  dqv:isMeasurementOf iso5259:diversityScore ;
+  dqv:inDimension iso5259:representativeness ;
+  dqv:computedOn ex:train-dataset ; dqv:value "0.80"^^xsd:double ;
+  dct:description "대상 도메인 분포 대비 대표성" .

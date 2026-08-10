@@ -1,0 +1,40 @@
+# SHACL 검증 스키마 — TTAK.KO-10.1510 (디지털 국토정보 공통 데이터 모델, 프로파일 ②)
+# 표 5-4/5-6 속성의 의무/선택·최대발생·타입·좌표 형식을 SHACL 제약으로 형식화.
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix dln: <https://std.tta.or.kr/ns/dln#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# 건물(2D 연계·가시화 필수 속성)
+dln:BuildingShape a sh:NodeShape ;
+  sh:targetClass dln:Building ;
+  sh:property [ sh:path dct:identifier ;        sh:name "cityObjectMemberId" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dln:ufid ;              sh:name "연속수치지형도 PK" ;  sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dln:gisBuildingId ;     sh:name "GIS건물통합 PK" ;     sh:maxCount 1 ] ;
+  sh:property [ sh:path dln:storeysAboveGround ; sh:name "지상 층수" ;          sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path dln:storeysBelowGround ; sh:name "지하 층수" ;          sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path dct:created ;           sh:name "생성일자" ;           sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path dct:modified ;          sh:name "갱신일자" ;           sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path geo:hasGeometry ;       sh:name "기하" ;               sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+# 위치 포함 공공데이터 연계(Dynamizer) — GRS80 좌표 형식
+dln:OpendataLinkShape a sh:NodeShape ;
+  sh:targetClass dln:OpendataLink ;
+  sh:property [ sh:path dln:opendataId ;  sh:name "공공데이터 PK" ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path dln:surfaceId ;   sh:name "Surface ID" ;    sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path dln:xCoordinate ; sh:name "x좌표(GRS80)" ;  sh:minCount 1 ; sh:maxCount 1 ;
+                sh:pattern "^[0-9]+\\.[0-9]{6,10}$" ;
+                sh:message "x좌표는 소수점 6~10자리(EPSG:5186)" ] ;
+  sh:property [ sh:path dln:yCoordinate ; sh:name "y좌표(GRS80)" ;  sh:minCount 1 ; sh:maxCount 1 ;
+                sh:pattern "^[0-9]+\\.[0-9]{6,10}$" ] ;
+  sh:property [ sh:path dln:zCoordinate ; sh:name "z좌표(GRS80)" ;  sh:maxCount 1 ;
+                sh:pattern "^[0-9]+\\.[0-9]{6,10}$" ] ;
+  sh:property [ sh:path dln:storeyName ;  sh:name "층 정보" ;       sh:minCount 1 ; sh:maxCount 1 ] .
+
+# 기하 유형 코드리스트
+dln:GeometryTypeShape a sh:NodeShape ;
+  sh:targetClass dln:Building ;
+  sh:property [ sh:path dln:geometryType ;
+                sh:in ( "점" "선" "면" ) ;
+                sh:message "기하 유형은 점·선·면 중 하나" ] .

@@ -1,0 +1,79 @@
+# SHACL 검증 스키마 — TTAK.KO-10.1594
+# 재생성: 요소 정의표(원천)의 M(필수)/R/O·카디널리티로 minCount/maxCount 구동.
+# 구조·열거(sh:in)·데이터타입·값범위 메시지는 보존.
+
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix koai: <https://std.tta.or.kr/ns/koai#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+koai:AIModelShape a sh:NodeShape ;
+  sh:targetClass koai:AIModel ;
+  sh:property [ sh:path dct:identifier ; sh:name "식별자" ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:issued ; sh:name "공개일" ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] ;
+  sh:property [ sh:path dct:license ; sh:name "라이선스" ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path koai:framework ; sh:name "프레임워크" ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:hasDocument ; sh:name "모델카드" ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path koai:hasTrainingProcess ; sh:name "학습 프로세스" ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path koai:modelArchitecture ; sh:name "아키텍처" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:modelName ; sh:name "모델명" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:organization ; sh:name "개발기관" ; sh:maxCount 1 ] ;
+  sh:property [ sh:path schema:softwareVersion ; sh:name "버전" ; sh:maxCount 1 ] .
+
+koai:DatasetShape a sh:NodeShape ;
+  sh:targetClass dcat:Dataset ;
+  sh:property [ sh:path dct:identifier ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:dataType ; sh:name "데이터 형태" ] .
+
+koai:HyperParameterShape a sh:NodeShape ;
+  sh:targetClass koai:HyperParameter ;
+  sh:property [ sh:path koai:tunable ; sh:name "조정 가능 여부" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] ;
+  sh:property [ sh:path koai:usedForPhase ; sh:name "사용 목적" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+koai:MetricShape a sh:NodeShape ;
+  sh:targetClass koai:Metric ;
+  sh:property [ sh:path koai:metricName ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path koai:preferredDirection ; sh:in ( "maximize" "minimize" ) ] ;
+  sh:property [ sh:path qudt:unit ; sh:name "지표 단위(QUDT IRI)" ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:in ( <http://qudt.org/vocab/unit/PERCENT> <http://qudt.org/vocab/unit/NUM> <http://qudt.org/vocab/unit/UNITLESS> ) ; sh:message "지표 단위는 QUDT 단위 IRI여야 함(백분율=unit:PERCENT, 점수·개수=unit:NUM, 0~1 비율=unit:UNITLESS)" ] .
+
+koai:ModelDerivationShape a sh:NodeShape ;
+  sh:targetClass koai:ModelDerivation ;
+  sh:property [ sh:path koai:derivativeMethod ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "Finetune" "Distill" "Merge" ) ; sh:message "파생 방식은 Finetune·Distill·Merge 중 하나여야 함" ] ;
+  sh:property [ sh:path koai:derivativeModel ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] .
+
+koai:ParameterShape a sh:NodeShape ;
+  sh:targetClass koai:Parameter ;
+  sh:property [ sh:path koai:parameterName ; sh:name "파라미터 이름" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:parameterType ; sh:name "값의 타입" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:parameterValue ; sh:name "파라미터 값" ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path qudt:ucumCode ; sh:name "파라미터 단위(UCUM 코드)" ; sh:maxCount 1 ; sh:datatype qudt:UCUMcs ] ;
+  sh:property [ sh:path qudt:unit ; sh:name "파라미터 단위(QUDT IRI)" ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:in ( <http://qudt.org/vocab/unit/PERCENT> <http://qudt.org/vocab/unit/SEC> <http://qudt.org/vocab/unit/NUM> <http://qudt.org/vocab/unit/UNITLESS> ) ; sh:message "파라미터 단위는 QUDT 단위 IRI여야 함('%'=unit:PERCENT, 'sec'=unit:SEC, 'tokens'=unit:NUM+UCUM 주석 {tokens})" ] .

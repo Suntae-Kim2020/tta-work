@@ -1,0 +1,86 @@
+# SHACL 검증 스키마 — TTAK.KO-10.1530 (유수식 스마트 수산양식 센서 데이터 구조, 프로파일 ②)
+# 표 6-1 센서별 측정범위·표 7-x 타입·코드값을 SHACL 제약으로 형식화(값범위 검증이 핵심 가치).
+# 단위는 sh:name 자유텍스트에 두지 않고 qudt:unit(QUDT 단위 IRI)로 결합해 기계가 검사하게 한다.
+# 단위 IRI·UCUM 코드의 근거는 부속서_units/TTAK.KO-10.1530_units.ttl 참조.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix koai: <https://std.tta.or.kr/ns/koai#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# 수조
+koai:SectionShape a sh:NodeShape ;
+  sh:targetClass koai:WaterTank ;
+  sh:property [ sh:path dct:identifier ;    sh:name "수조 식별자" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:fishType ;     sh:name "어종" ;       sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:fishCount ;    sh:name "사육수량" ;   sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path koai:rearingArea ;  sh:name "사육면적" ;   sh:minCount 1 ; sh:datatype xsd:decimal ] ;
+  sh:property [ sh:path koai:rearingDensity ; sh:name "사육밀도" ; sh:minCount 1 ; sh:datatype xsd:decimal ] .
+
+# 디바이스(센서)
+koai:DeviceShape a sh:NodeShape ;
+  sh:targetClass sosa:Sensor ;
+  sh:property [ sh:path dct:identifier ;    sh:name "디바이스 식별자" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:reportInterval ; sh:name "센싱주기(분)" ; sh:minCount 1 ; sh:datatype xsd:short ] ;
+  sh:property [ sh:path koai:operationStatus ; sh:name "운용상태" ;
+                sh:in ( "OFF" "READY" ) ] ;
+  # ValueUnit — 표시용 코드(원 표준 표 7-2)가 아니라 QUDT 단위 IRI를 요구한다.
+  sh:property [ sh:path qudt:unit ; sh:name "측정 단위(QUDT IRI)" ;
+                sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+                sh:in ( unit:PH unit:DEG_C unit:L-PER-MIN unit:MilliGM-PER-L unit:GM-PER-KiloGM
+                        unit:MilliV unit:MicroS-PER-CentiM unit:NTU unit:M ) ] .
+
+# 관측(공통) — 값·시각·상태
+koai:ObservationShape a sh:NodeShape ;
+  sh:targetClass sosa:Observation ;
+  sh:property [ sh:path sosa:resultTime ;     sh:name "센싱시각" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "센싱값" ;  sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path koai:validityLevel ;  sh:name "값수준" ;
+                sh:in ( "low" "normal" "high" ) ] ;
+  sh:property [ sh:path sosa:hasResultQuality ; sh:name "센서상태" ;
+                sh:in ( "준비" "정상" "동작전압이상" "동작전류이상" "동작온도이상"
+                        "소모품교체" "센서교정요망" "센서점검필요" "오작동" ) ] ;
+  # 값은 단위 없이 오지 못한다 — 아래 두 경로 중 하나를 만족해야 한다.
+  #   (1) RDF/그래프 경로 : qudt:unit     = QUDT 단위 IRI (규범)
+  #   (2) 비-RDF 경로     : qudt:ucumCode = UCUM 코드 문자열
+  #       @context를 해석하지 않는 소비자(게이트웨이·기존 계측 시스템)용.
+  #       UCUM은 문법이라 파싱만으로 차원 계산·단위 변환이 된다.
+  sh:or (
+    [ sh:property [ sh:path qudt:unit ;     sh:minCount 1 ; sh:nodeKind sh:IRI ] ]
+    [ sh:property [ sh:path qudt:ucumCode ; sh:minCount 1 ; sh:datatype qudt:UCUMcs ] ]
+  ) .
+
+# 센서 종류별 측정범위(표 6-1) + 측정 단위 — 값 유효범위와 단위를 함께 검증
+koai:PHObsShape           a sh:NodeShape ; sh:targetClass koai:PHObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive 0 ;     sh:maxInclusive 14 ;   sh:name "pH 0~14" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:PH ;                sh:name "단위 pH" ] .
+koai:WaterTempObsShape    a sh:NodeShape ; sh:targetClass koai:WaterTempObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive 0 ;     sh:maxInclusive 50 ;   sh:name "수온 0~50℃" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:DEG_C ;             sh:name "단위 ℃" ] .
+koai:FlowObsShape         a sh:NodeShape ; sh:targetClass koai:FlowObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:integer ; sh:minInclusive 2 ;     sh:maxInclusive 3600 ; sh:name "유량 2~3600 L/min" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:L-PER-MIN ;         sh:name "단위 L/min" ] .
+koai:CO2ObsShape          a sh:NodeShape ; sh:targetClass koai:CO2Observation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive 0 ;     sh:maxInclusive 20 ;   sh:name "용존CO2 0~20 mg/L" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:MilliGM-PER-L ;     sh:name "단위 mg/L" ] .
+koai:DOObsShape           a sh:NodeShape ; sh:targetClass koai:DOObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive 0 ;     sh:maxInclusive 50 ;   sh:name "용존산소 0~50 mg/L" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:MilliGM-PER-L ;     sh:name "단위 mg/L" ] .
+koai:SalinityObsShape     a sh:NodeShape ; sh:targetClass koai:SalinityObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive 5 ;     sh:maxInclusive 60 ;   sh:name "염도 5~60 g/kg" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:GM-PER-KiloGM ;     sh:name "단위 g/kg" ] .
+koai:ORPObsShape          a sh:NodeShape ; sh:targetClass koai:ORPObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive -1000 ; sh:maxInclusive 1400 ; sh:name "ORP -1000~1400 mV" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:MilliV ;            sh:name "단위 mV" ] .
+koai:ConductivityObsShape a sh:NodeShape ; sh:targetClass koai:ConductivityObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive 0 ;     sh:maxInclusive 200 ;  sh:name "전도도 0~200 μS/cm" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:MicroS-PER-CentiM ; sh:name "단위 μS/cm" ] .
+koai:TurbidityObsShape    a sh:NodeShape ; sh:targetClass koai:TurbidityObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive 0 ;     sh:maxInclusive 4000 ; sh:name "탁도 0~4000 NTU" ] ;
+  # NTU는 UCUM에 정의가 없어 QUDT IRI만 사용한다(비-RDF 경로 불가).
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:NTU ;               sh:name "단위 NTU" ] .
+koai:WaterLevelObsShape   a sh:NodeShape ; sh:targetClass koai:WaterLevelObservation ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:datatype xsd:float ;   sh:minInclusive 1 ;     sh:maxInclusive 20 ;   sh:name "수위 1~20 m" ] ;
+  sh:property [ sh:path qudt:unit ; sh:hasValue unit:M ;                 sh:name "단위 m" ] .

@@ -1,0 +1,68 @@
+# SHACL 검증 스키마 — TTAK.KO-10.1594 (AI 모델 학습 데이터세트 메타데이터, 프로파일 ③)
+# 요소 정의표의 필수여부(M/R/O)·카디널리티·타입·허용값을 SHACL 제약으로 형식화.
+# 단위(표 6-5 Parameter.unit, 표 6-7 Metric.metricUnit)는 rdfs:Literal 자유 텍스트가 아니라
+# qudt:unit(QUDT 단위 IRI)로 결합해 기계가 검사한다.
+# 단위 IRI·UCUM 코드의 근거와 출처 구분은 부속서_units/TTAK.KO-10.1594_units.ttl 참조.
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix koai:   <https://std.tta.or.kr/ns/koai#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#> .
+@prefix schema: <https://schema.org/> .
+@prefix qudt:   <http://qudt.org/schema/qudt/> .
+@prefix unit:   <http://qudt.org/vocab/unit/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+koai:AIModelShape a sh:NodeShape ;
+  sh:targetClass koai:AIModel ;
+  sh:property [ sh:path dct:identifier ;        sh:name "식별자" ;   sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path koai:modelName ;        sh:name "모델명" ;   sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:modelArchitecture ; sh:name "아키텍처" ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:framework ;        sh:name "프레임워크" ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:softwareVersion ; sh:name "버전" ;    sh:minCount 1 ] ;
+  sh:property [ sh:path dct:issued ;            sh:name "공개일" ;   sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] ;
+  sh:property [ sh:path dct:license ;           sh:name "라이선스" ; sh:minCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path koai:organization ;     sh:name "개발기관" ; sh:minCount 1 ] ;
+  sh:property [ sh:path koai:hasTrainingProcess ; sh:name "학습 프로세스" ; sh:minCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path koai:hasDocument ;      sh:name "모델카드" ; sh:nodeKind sh:IRI ] .
+
+koai:DatasetShape a sh:NodeShape ;
+  sh:targetClass dcat:Dataset ;
+  sh:property [ sh:path dct:identifier ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path dct:title ;      sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:dataType ;  sh:name "데이터 형태" ] .
+
+koai:ModelDerivationShape a sh:NodeShape ;
+  sh:targetClass koai:ModelDerivation ;
+  sh:property [ sh:path koai:derivativeModel ;  sh:minCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path koai:derivativeMethod ; sh:minCount 1 ;
+                sh:in ( "Finetune" "Distill" "Merge" ) ;
+                sh:message "파생 방식은 Finetune·Distill·Merge 중 하나여야 함" ] .
+
+koai:MetricShape a sh:NodeShape ;
+  sh:targetClass koai:Metric ;
+  sh:property [ sh:path koai:metricName ;        sh:minCount 1 ] ;
+  sh:property [ sh:path koai:preferredDirection ; sh:in ( "maximize" "minimize" ) ] ;
+  # metricUnit(표 6-7 8번, O) — 자유 텍스트('비율·%·점수') 대신 QUDT 단위 IRI.
+  sh:property [ sh:path qudt:unit ; sh:name "지표 단위(QUDT IRI)" ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+                sh:in ( unit:PERCENT unit:NUM unit:UNITLESS ) ;
+                sh:message "지표 단위는 QUDT 단위 IRI여야 함(백분율=unit:PERCENT, 점수·개수=unit:NUM, 0~1 비율=unit:UNITLESS)" ] .
+
+# 파라미터(표 6-5) — 단위를 자유 텍스트에서 QUDT IRI로 승격
+koai:ParameterShape a sh:NodeShape ;
+  sh:targetClass koai:Parameter ;
+  sh:property [ sh:path koai:parameterName ;  sh:name "파라미터 이름" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:parameterValue ; sh:name "파라미터 값" ;   sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path koai:parameterType ;  sh:name "값의 타입" ;     sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  # unit(표 6-5 5번, O) — 값이 있을 때만 검사하며, 있다면 반드시 QUDT 단위 IRI여야 한다.
+  sh:property [ sh:path qudt:unit ; sh:name "파라미터 단위(QUDT IRI)" ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+                sh:in ( unit:PERCENT unit:SEC unit:NUM unit:UNITLESS ) ;
+                sh:message "파라미터 단위는 QUDT 단위 IRI여야 함('%'=unit:PERCENT, 'sec'=unit:SEC, 'tokens'=unit:NUM+UCUM 주석 {tokens})" ] ;
+  # 비-RDF 경로 — @context를 해석하지 않는 소비자용 UCUM 코드.
+  sh:property [ sh:path qudt:ucumCode ; sh:name "파라미터 단위(UCUM 코드)" ; sh:maxCount 1 ; sh:datatype qudt:UCUMcs ] .
+
+# 초매개변수(표 6-6) — koai:Parameter의 하위 개념이므로 위 제약을 상속받는다
+koai:HyperParameterShape a sh:NodeShape ;
+  sh:targetClass koai:HyperParameter ;
+  sh:node koai:ParameterShape ;
+  sh:property [ sh:path koai:usedForPhase ; sh:name "사용 목적" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:tunable ;      sh:name "조정 가능 여부" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] .

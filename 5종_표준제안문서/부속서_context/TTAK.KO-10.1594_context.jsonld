@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "koai": "https://std.tta.or.kr/ns/koai#",
+    "dct": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "schema": "https://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "AIModel": "koai:AIModel",
+    "Dataset": "dcat:Dataset",
+    "Task": "koai:Task",
+    "Metric": "koai:Metric",
+    "Parameter": "koai:Parameter",
+    "HyperParameter": "koai:HyperParameter",
+    "ModelDerivation": "koai:ModelDerivation",
+    "Document": "koai:Document",
+
+    "identifier": "dct:identifier",
+    "modelName": "koai:modelName",
+    "description": "dct:description",
+    "modelArchitecture": "koai:modelArchitecture",
+    "framework": "koai:framework",
+    "softwareVersion": "schema:softwareVersion",
+    "releaseDate": { "@id": "dct:issued", "@type": "xsd:dateTime" },
+    "license": { "@id": "dct:license", "@type": "@id" },
+    "organization": "koai:organization",
+    "modelSize": "koai:modelSize",
+    "hasTask": { "@id": "koai:hasTask", "@type": "@id" },
+    "hasDocument": { "@id": "koai:hasDocument", "@type": "@id" },
+
+    "TrainingSet": { "@id": "koai:TrainingSet", "@type": "@id" },
+    "ValidationSet": { "@id": "koai:ValidationSet", "@type": "@id" },
+    "TestSet": { "@id": "koai:TestSet", "@type": "@id" },
+    "trainingData": { "@id": "koai:trainingData", "@type": "@id" },
+    "hasEvaluationMetric": { "@id": "koai:hasEvaluationMetric", "@type": "@id" },
+    "hasTrainingProcess": { "@id": "koai:hasTrainingProcess", "@type": "@id" },
+    "hasDerivativeRelation": { "@id": "koai:hasDerivativeRelation", "@type": "@id" },
+    "derivativeModel": { "@id": "koai:derivativeModel", "@type": "@id" },
+    "derivativeMethod": "koai:derivativeMethod",
+    "wasDerivedFrom": { "@id": "prov:wasDerivedFrom", "@type": "@id" },
+
+    "taskCategory": { "@id": "koai:taskCategory", "@type": "@vocab" },
+    "metricName": "koai:metricName",
+    "hasFormula": "koai:hasFormula",
+
+    "parameterName": "koai:parameterName",
+    "parameterValue": "koai:parameterValue",
+    "parameterType": "koai:parameterType",
+    "usedForPhase": "koai:usedForPhase",
+    "tunable": { "@id": "koai:tunable", "@type": "xsd:boolean" },
+    "defaultValue": "koai:defaultValue",
+    "recommendedRange": "koai:recommendedRange",
+
+    "unit": { "@id": "qudt:unit", "@type": "@vocab" },
+    "unitCode": { "@id": "qudt:ucumCode", "@type": "qudt:UCUMcs" },
+    "metricUnit": { "@id": "qudt:unit", "@type": "@vocab" },
+    "metricUnitCode": { "@id": "qudt:ucumCode", "@type": "qudt:UCUMcs" },
+
+    "distribution": { "@id": "dcat:distribution", "@type": "@id" },
+    "keyword": "dcat:keyword",
+    "theme": { "@id": "dcat:theme", "@type": "@id" },
+    "created": { "@id": "dct:created", "@type": "xsd:dateTime" },
+    "modified": { "@id": "dct:modified", "@type": "xsd:dateTime" },
+    "accessRights": "dcat:accessRights"
+  },
+  "_meta": {
+    "standard": "TTAK.KO-10.1594",
+    "title": "AI 모델의 학습 데이터세트 관리와 상호운용성 지원을 위한 메타데이터",
+    "profile": "③ AI 데이터세트",
+    "note": "koai 접두어는 본 표준의 자체 온톨로지 네임스페이스(발간 시 확정). 기존 클래스·속성명을 @context 키로 두고 IRI만 매핑하는 최소 전환. split(TrainingSet/ValidationSet/TestSet)·feature/label은 L3에서 Croissant 계층으로 별도 선언 권장.",
+    "unitNote": "원 표준이 자유 텍스트로 둔 단위 두 곳(<표 6-5> Parameter.unit 예시 '%,sec,tokens' / <표 6-7> Metric.metricUnit 예시 '비율,%,점수')을 qudt:unit(QUDT 단위 IRI, 규범)으로 승격하고, 이 @context를 해석하지 않는 소비자를 위해 unitCode·metricUnitCode(qudt:ucumCode)를 함께 뒀다. 주의: 'sec'의 UCUM 정규 코드는 's'다. 'tokens'·'점수'는 단위가 아니라 차원 없는 개수이므로 unit:NUM에 UCUM 주석('{tokens}','{score}')을 결합한다 — UCUM 명세상 주석은 unity와 동등하며 적합 파서는 폐기하므로, 세는 대상은 parameterName·metricName이 지시한다. 단위별 IRI·UCUM 코드 대응과 출처 구분은 부속서_units/TTAK.KO-10.1594_units.ttl 참조."
+  }
+}

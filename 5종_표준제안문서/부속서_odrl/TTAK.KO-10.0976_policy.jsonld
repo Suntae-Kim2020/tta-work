@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    { "duo": "http://purl.obolibrary.org/obo/", "dct": "http://purl.org/dc/terms/" }
+  ],
+  "@type": "Set",
+  "uid": "https://std.tta.or.kr/policy/0976/dataset-policy",
+  "dct:conformsTo": "TTAK.KO-10.0976",
+  "dct:description": "연구데이터 이용정책 예시. Rights·AccessType(open/embargoed)·DataLicenseName을 dct:license URI + ODRL + DUO 이용조건으로 형식화.",
+  "permission": [
+    {
+      "target": "http://dx.doi.org/10.7488/ds/1436",
+      "assigner": "https://example.org/kisti",
+      "action": [ "use", "reproduce", "distribute" ],
+      "constraint": [
+        { "leftOperand": "purpose", "operator": "eq",
+          "rightOperand": { "@id": "duo:DUO_0000042" },
+          "rdfs:comment": "일반 연구 목적 이용(General Research Use)" }
+      ],
+      "duty": [
+        { "action": "attribute" },
+        { "action": [ "obtainConsent" ], "target": "https://creativecommons.org/licenses/by/4.0/" }
+      ]
+    }
+  ],
+  "prohibition": [
+    { "target": "http://dx.doi.org/10.7488/ds/1436",
+      "action": [ "commercialize" ],
+      "constraint": [
+        { "leftOperand": "purpose", "operator": "eq",
+          "rightOperand": { "@id": "duo:DUO_0000046" },
+          "rdfs:comment": "비상업적 이용만(NCU)" }
+      ] }
+  ],
+  "_meta": {
+    "license": "CC-BY-4.0 (또는 CC-BY-NC)",
+    "accessType": "open | embargoed(이용지연) → embargo는 dateTime 제약으로",
+    "note": "Embargoed면 permission에 { leftOperand:dateTime, operator:gteq, rightOperand:<해제일> } 추가. DUO_0000042=GRU, DUO_0000046=NCU."
+  }
+}

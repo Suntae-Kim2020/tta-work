@@ -1,0 +1,45 @@
+# ISO/IEC 5259-2 데이터 품질 모델 → DQV Dimension/Metric 카탈로그 (공용)
+# ISO/IEC 5259-2:2024 (AI — Data quality for analytics and ML — Part 2: Data quality measures)의
+# 품질 특성을 W3C DQV의 dqv:Dimension·dqv:Metric으로 정렬. 각 표준의 품질 측정은 이 카탈로그를 참조.
+@prefix dqv:     <http://www.w3.org/ns/dqv#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix iso5259: <https://std.tta.or.kr/ns/iso5259-2#> .
+
+iso5259:QualityModel a dqv:Category ;
+  skos:prefLabel "ISO/IEC 5259-2 ML 데이터 품질 모델"@ko ;
+  dct:source <https://www.iso.org/standard/81860.html> ;
+  dct:conformsTo "ISO/IEC 5259-2:2024" .
+
+# ---- 품질 차원(Dimension) ----
+iso5259:accuracy a dqv:Dimension ; skos:prefLabel "정확성(Accuracy)"@ko ;
+  skos:definition "데이터가 참값을 정확히 나타내는 정도(구문·의미)."@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:completeness a dqv:Dimension ; skos:prefLabel "완전성(Completeness)"@ko ;
+  skos:definition "요구 속성·레코드의 결측 없이 채워진 정도."@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:consistency a dqv:Dimension ; skos:prefLabel "일관성(Consistency)"@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:credibility a dqv:Dimension ; skos:prefLabel "신뢰성(Credibility)"@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:currentness a dqv:Dimension ; skos:prefLabel "최신성(Currentness)"@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:diversity a dqv:Dimension ; skos:prefLabel "다양성(Diversity)"@ko ;
+  skos:definition "데이터가 대상 분포의 다양한 사례를 포함하는 정도(ML 특성)."@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:representativeness a dqv:Dimension ; skos:prefLabel "대표성(Representativeness)"@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:balance a dqv:Dimension ; skos:prefLabel "균형성(Balance)"@ko ;
+  skos:definition "클래스·범주 간 분포의 균일 정도(편향 방지)."@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:relevance a dqv:Dimension ; skos:prefLabel "적합성(Relevance)"@ko ; dqv:inCategory iso5259:QualityModel .
+iso5259:timeliness a dqv:Dimension ; skos:prefLabel "적시성(Timeliness)"@ko ; dqv:inCategory iso5259:QualityModel .
+
+# ---- 품질 척도(Metric) ----
+iso5259:syntacticAccuracyRate a dqv:Metric ; skos:prefLabel "구문 정확성 비율"@ko ;
+  dqv:inDimension iso5259:accuracy ; dqv:expectedDataType xsd:double ;
+  skos:note "1 − (오류건수 / 총건수). 목표 예: ≥ 0.99." .
+iso5259:completenessRate a dqv:Metric ; skos:prefLabel "완전성 비율"@ko ;
+  dqv:inDimension iso5259:completeness ; dqv:expectedDataType xsd:double .
+iso5259:classBalanceIndex a dqv:Metric ; skos:prefLabel "클래스 균형 지수"@ko ;
+  dqv:inDimension iso5259:balance ; dqv:expectedDataType xsd:double ;
+  skos:note "클래스별 인스턴스 비율의 균일도(1에 가까울수록 균형)." .
+iso5259:classCoverage a dqv:Metric ; skos:prefLabel "클래스 수량(충분성)"@ko ;
+  dqv:inDimension iso5259:completeness ; dqv:expectedDataType xsd:integer .
+iso5259:diversityScore a dqv:Metric ; skos:prefLabel "다양성 점수"@ko ;
+  dqv:inDimension iso5259:diversity ; dqv:expectedDataType xsd:double .
+iso5259:currentnessDays a dqv:Metric ; skos:prefLabel "최신성(경과일)"@ko ;
+  dqv:inDimension iso5259:currentness ; dqv:expectedDataType xsd:integer .

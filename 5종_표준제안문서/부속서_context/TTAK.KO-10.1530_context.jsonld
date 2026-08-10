@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "dct": "http://purl.org/dc/terms/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "koai": "https://std.tta.or.kr/ns/koai#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Section": "koai:WaterTank",
+    "Device": "sosa:Sensor",
+    "Observation": "sosa:Observation",
+
+    "SectionID": { "@id": "dct:identifier", "@type": "xsd:ID" },
+    "SectionName": "dct:title",
+    "FishType": "koai:fishType",
+    "FishNum": { "@id": "koai:fishCount", "@type": "xsd:integer" },
+    "Area": { "@id": "koai:rearingArea", "@type": "xsd:decimal" },
+    "Density": { "@id": "koai:rearingDensity", "@type": "xsd:decimal" },
+
+    "DeviceID": { "@id": "dct:identifier", "@type": "xsd:ID" },
+    "DeviceName": "dct:title",
+    "ModelName": "koai:modelName",
+    "ManufName": "koai:manufacturer",
+    "Type": { "@id": "sosa:observedProperty", "@type": "@vocab" },
+    "ReptIntrv": { "@id": "koai:reportInterval", "@type": "xsd:short" },
+    "ValueUnit": { "@id": "qudt:unit", "@type": "@vocab" },
+    "ValueUnitCode": { "@id": "qudt:ucumCode", "@type": "qudt:UCUMcs" },
+    "ValueType": "koai:valueType",
+
+    "InstallTime": { "@id": "dct:created", "@type": "xsd:dateTime" },
+    "LocX": "geo:lat",
+    "LocY": "geo:long",
+    "InstallStatus": { "@id": "koai:installStatus", "@type": "@vocab" },
+    "DevOperStatus": { "@id": "koai:operationStatus", "@type": "@vocab" },
+
+    "SensingTime": { "@id": "sosa:resultTime", "@type": "xsd:dateTime" },
+    "Value": { "@id": "sosa:hasSimpleResult", "@type": "xsd:float" },
+    "ValueState": { "@id": "koai:validityLevel", "@type": "@vocab" },
+    "Status": { "@id": "sosa:hasResultQuality", "@type": "@vocab" }
+  },
+  "_meta": {
+    "standard": "TTAK.KO-10.1530",
+    "title": "유수식 스마트 수산양식 시스템의 센서 데이터 구조",
+    "profile": "② 자기기술형 레코드",
+    "note": "센서 코드값(Type 0x01~0x0B, ValueUnit)을 SOSA observedProperty·QUDT unit IRI로 승격. 측정범위·enum은 SHACL(sh:minInclusive 등)로 형식화. 매핑 대상 단위: pH·oC(unit:DEG_C)·mg/L(unit:MilliGM-PER-L)·NTU 등.",
+    "unitNote": "단위는 두 경로로 표기한다. ValueUnit=qudt:unit(QUDT 단위 IRI, 규범) / ValueUnitCode=qudt:ucumCode(UCUM 코드 문자열). 후자는 이 @context를 해석하지 않는 소비자(센서 게이트웨이·기존 계측 시스템)를 위한 것이다 — 그들에게 'unit:MilliGM-PER-L'은 뜻 없는 문자열이나 'mg.L-1'은 국제 표준 코드이며, UCUM은 문법이라 파싱만으로 차원 계산·단위 변환이 된다. UCUM은 지수 표기이므로 'mg/L'이 아니라 'mg.L-1'이다. 단위별 IRI·UCUM 코드 대응은 부속서_units/TTAK.KO-10.1530_units.ttl 참조. 탁도(NTU)는 UCUM 미정의로 IRI 경로만 가능."
+  }
+}

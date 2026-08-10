@@ -1,0 +1,37 @@
+# PROV-O 계보 예시 — TTAK.KO-10.1510 (연계 지도 출처, 출처/계보 L2)
+# 건물 객체가 어떤 정부 지도(GIS건물통합·연속수치지형도·주소정보기본도)로부터 연계·생성됐는지 PROV-O로 형식화.
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dln:  <https://std.tta.or.kr/ns/dln#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:   <https://example.org/dln/> .
+
+ex:building-0001 a prov:Entity, dln:Building ;
+  dct:identifier "B-0001" ;
+  dct:created "2024-06-28"^^xsd:date ;
+  dct:modified "2024-12-06"^^xsd:date ;
+  prov:wasGeneratedBy ex:linkage-activity ;
+  prov:wasDerivedFrom ex:gis-building, ex:continuous-map ;
+  prov:wasAttributedTo ex:project-team .
+
+ex:linkage-activity a prov:Activity ;
+  dct:description "2D↔3D 건물 데이터 연계(ufid·gisBuildingId 매칭)" ;
+  prov:used ex:gis-building, ex:continuous-map ;
+  prov:generated ex:building-0001 ;
+  prov:wasAssociatedWith ex:project-team ;
+  prov:endedAtTime "2024-12-06T00:00:00"^^xsd:dateTime .
+
+ex:gis-building a prov:Entity ;
+  dct:title "GIS건물통합정보" ;
+  dct:publisher ex:molit ;
+  dln:gisBuildingId "2008196092914556429100000000" .
+
+ex:continuous-map a prov:Entity ;
+  dct:title "연속수치지형도(건물통합정보_마스터)" ;
+  dct:publisher ex:ngii ;
+  dln:ufid "..." .
+
+ex:molit a prov:Agent, prov:Organization ; foaf:name "국토교통부" .
+ex:ngii a prov:Agent, prov:Organization ; foaf:name "국토지리정보원" .
+ex:project-team a prov:Agent, prov:Organization ; foaf:name "디지털 국토정보 기술개발 사업단" .

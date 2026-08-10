@@ -1,0 +1,41 @@
+# DQV 품질 프로파일 — TTAK.KO-11.0310 (자율주행 학습데이터, 품질 L3)
+# 본 표준의 '정확성(구문)·다양성(통계 충분성·균일성)'을 ISO/IEC 5259-2 차원에 정렬해 dqv:QualityMeasurement로 형식화.
+# → 검증 자동생성 트랙(SHACL) 및 품질목표(99%)와 직결.
+@prefix dqv:     <http://www.w3.org/ns/dqv#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix iso5259: <https://std.tta.or.kr/ns/iso5259-2#> .
+@prefix ex:      <https://example.org/adq/> .
+
+ex:autonomous-dataset a dcat:Dataset ;
+  dct:title "자율자동차 안전 위험 시설물 데이터" ;
+  dct:conformsTo "TTAK.KO-11.0310" ;
+  dqv:hasQualityMeasurement ex:m-accuracy, ex:m-sufficiency, ex:m-balance, ex:m-diversity .
+
+# 구문 정확성 (오류율 기반, 목표 ≥ 0.99)
+ex:m-accuracy a dqv:QualityMeasurement ;
+  dqv:isMeasurementOf iso5259:syntacticAccuracyRate ;
+  dqv:computedOn ex:autonomous-dataset ;
+  dqv:value "0.950"^^xsd:double ;
+  dct:description "제공 10,000건 중 오류 500건 → 0.95 (품질목표 0.99 미달, 재수행 필요)" .
+
+# 통계적 충분성 (분류체계별 수량)
+ex:m-sufficiency a dqv:QualityMeasurement ;
+  dqv:isMeasurementOf iso5259:classCoverage ;
+  dqv:computedOn ex:autonomous-dataset ;
+  dqv:value "7"^^xsd:integer ;
+  dct:description "총 분류체계 7종, 각 클래스 인스턴스 수량 확보" .
+
+# 통계적 균일성 (클래스 균형)
+ex:m-balance a dqv:QualityMeasurement ;
+  dqv:isMeasurementOf iso5259:classBalanceIndex ;
+  dqv:computedOn ex:autonomous-dataset ;
+  dqv:value "0.86"^^xsd:double ;
+  dct:description "위반유형 7종 분포 10~17.5% → 균형 지수 0.86" .
+
+# 다양성
+ex:m-diversity a dqv:QualityMeasurement ;
+  dqv:isMeasurementOf iso5259:diversityScore ;
+  dqv:computedOn ex:autonomous-dataset ;
+  dqv:value "0.82"^^xsd:double .

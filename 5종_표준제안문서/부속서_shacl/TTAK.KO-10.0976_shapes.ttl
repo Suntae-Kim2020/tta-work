@@ -1,0 +1,35 @@
+# SHACL 검증 스키마 — TTAK.KO-10.0976 (연구데이터 관리·공유 메타데이터, 프로파일 ①)
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix dcat:     <http://www.w3.org/ns/dcat#> .
+@prefix dctype:   <http://purl.org/dc/dcmitype/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:       <https://std.tta.or.kr/ns/rdm#> .
+
+# 데이터셋(웹 공개·출판 시 필수 요소)
+ex:DatasetShape a sh:NodeShape ;
+  sh:targetClass dcat:Dataset ;
+  sh:property [ sh:path dct:identifier ; sh:name "식별자" ;     sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:title ;      sh:name "제목" ;       sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dct:creator ;    sh:name "생성자" ;     sh:minCount 1 ] ;
+  sh:property [ sh:path dct:publisher ;  sh:name "발행처" ;     sh:minCount 1 ] ;
+  sh:property [ sh:path dct:issued ;     sh:name "출판연도" ;   sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:gYear ] ;
+  sh:property [ sh:path dct:date ;       sh:name "날짜" ;       sh:datatype xsd:date ] ;
+  sh:property [ sh:path dcat:accessRights ; sh:name "접근유형" ;
+                sh:in ( "open" "closed" "embargoed" "restricted" ) ;
+                sh:message "접근유형은 open·closed·embargoed·restricted 중 하나" ] ;
+  sh:property [ sh:path dct:license ;    sh:name "라이선스" ;   sh:nodeKind sh:IRI ] .
+
+# 컬렉션(데이터셋의 논리 그룹)
+ex:CollectionShape a sh:NodeShape ;
+  sh:targetClass dctype:Collection ;
+  sh:property [ sh:path dct:identifier ; sh:minCount 1 ] ;
+  sh:property [ sh:path dct:title ;      sh:minCount 1 ] ;
+  sh:property [ sh:path dct:hasPart ;    sh:name "포함 데이터셋" ; sh:nodeKind sh:IRI ] .
+
+# 파일(개별 단위 연구데이터)
+ex:FileShape a sh:NodeShape ;
+  sh:targetClass dcat:Distribution ;
+  sh:property [ sh:path dct:identifier ; sh:minCount 1 ] ;
+  sh:property [ sh:path dct:title ;      sh:minCount 1 ] ;
+  sh:property [ sh:path dcat:mediaType ; sh:name "포맷" ] .

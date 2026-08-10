@@ -1,0 +1,57 @@
+# SHACL 검증 스키마 — TTAK.KO-10.0976
+# 재생성: 요소 정의표(원천)의 M(필수)/R/O·카디널리티로 minCount/maxCount 구동.
+# 구조·열거(sh:in)·데이터타입·값범위 메시지는 보존.
+
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix ex: <https://std.tta.or.kr/ns/rdm#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CollectionShape a sh:NodeShape ;
+  sh:targetClass dctype:Collection ;
+  sh:property [ sh:path dct:hasPart ; sh:name "포함 데이터셋" ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:identifier ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+ex:DatasetShape a sh:NodeShape ;
+  sh:targetClass dcat:Dataset ;
+  sh:property [ sh:path dcat:accessRights ; sh:name "접근유형" ; sh:maxCount 1 ; sh:in ( "open" "closed" "embargoed" "restricted" ) ; sh:message "접근유형은 open·closed·embargoed·restricted 중 하나" ] ;
+  sh:property [ sh:path dct:creator ; sh:name "생성자" ; sh:minCount 1 ] ;
+  sh:property [ sh:path dct:date ; sh:name "날짜" ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path dct:identifier ; sh:name "식별자" ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:issued ; sh:name "출판연도" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:gYear ] ;
+  sh:property [ sh:path dct:license ; sh:name "라이선스" ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:publisher ; sh:name "발행처" ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path dct:title ; sh:name "제목" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+ex:FileShape a sh:NodeShape ;
+  sh:targetClass dcat:Distribution ;
+  sh:property [ sh:path dcat:mediaType ; sh:name "포맷" ] ;
+  sh:property [ sh:path dct:identifier ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:maxCount 1 ] .

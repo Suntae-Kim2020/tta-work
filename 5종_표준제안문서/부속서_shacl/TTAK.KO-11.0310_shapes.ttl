@@ -1,0 +1,41 @@
+# SHACL 검증 스키마 — TTAK.KO-11.0310 (자율주행 학습데이터 품질검증, 프로파일 ③ 품질)
+# 구문적 정확성(JSON 구조·타입·유효범위)을 SHACL로 형식화 → 검증 자동생성 트랙 직결.
+# 통계적 충분성·균일성(다양성)은 DQV 측정값으로 별도 표현(@context 부속서 참조).
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix adq: <https://std.tta.or.kr/ns/adq#> .
+@prefix oa:  <http://www.w3.org/ns/oa#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# 어노테이션(라벨 데이터) — JSON 사전규격의 구문 정확성 검증 (부록 Ⅰ 예시 기준)
+adq:AnnotationShape a sh:NodeShape ;
+  sh:targetClass oa:Annotation ;
+  sh:closed false ;
+  sh:property [ sh:path adq:id ;             sh:name "어노테이션ID" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path adq:label ;          sh:name "객체 대분류" ;  sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path adq:attributes ;     sh:name "객체 소분류/속성" ; sh:minCount 1 ] ;
+  sh:property [ sh:path adq:annotationType ; sh:name "어노테이션 타입" ;
+                sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ( "Bbox" "Seg" ) ;
+                sh:message "type은 Bbox·Seg 중 하나여야 함(유효값 오류)" ] ;
+  sh:property [ sh:path adq:sizeHeight ;     sh:name "이미지 높이" ;
+                sh:minCount 1 ; sh:datatype xsd:integer ;
+                sh:minInclusive 200 ; sh:maxInclusive 400 ;
+                sh:message "size(height)는 200~400 범위(유효 범위 오류)" ] ;
+  sh:property [ sh:path adq:sizeWidth ;      sh:name "이미지 너비" ;
+                sh:minCount 1 ; sh:datatype xsd:integer ;
+                sh:minInclusive 300 ; sh:maxInclusive 600 ;
+                sh:message "size(width)는 300~600 범위(유효 범위 오류)" ] .
+
+# 데이터셋 품질 프로파일 — 정확성·다양성 목표(품질목표 99% 등)
+adq:QualityProfileShape a sh:NodeShape ;
+  sh:targetClass dqv:QualityMeasurement ;
+  sh:property [ sh:path dqv:value ; sh:name "측정값" ; sh:minCount 1 ] ;
+  sh:property [ sh:path dqv:isMeasurementOf ; sh:name "품질지표" ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+# 구문 정확성 목표: 오류율 ≤ 1% (품질목표 99% 이상)
+adq:SyntaxAccuracyShape a sh:NodeShape ;
+  sh:targetNode adq:syntaxAccuracy ;
+  sh:property [ sh:path dqv:value ;
+                sh:minInclusive 0.99 ; sh:maxInclusive 1.0 ;
+                sh:message "구문 정확성은 0.99(99%) 이상이어야 함" ] .

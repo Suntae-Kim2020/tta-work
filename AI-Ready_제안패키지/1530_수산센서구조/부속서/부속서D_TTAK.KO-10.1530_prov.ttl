@@ -1,0 +1,35 @@
+# PROV-O 계보 예시 — TTAK.KO-10.1530 (센서 관측 출처, 출처/계보 L2 신설)
+# 현재 출처/계보 0(미충족). 관측값이 어느 센서에서·언제 생성됐는지, 센서 제조·설치 이력을 PROV-O로 신설.
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix koai: <https://std.tta.or.kr/ns/koai#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:   <https://example.org/aqua/> .
+
+ex:obs-20240131-1320 a prov:Entity, sosa:Observation ;
+  sosa:observedProperty ex:ph ;
+  sosa:hasSimpleResult "7.8"^^xsd:float ;
+  sosa:resultTime "2024-01-31T13:20:00"^^xsd:dateTime ;
+  prov:wasGeneratedBy ex:sensing-activity ;
+  prov:wasAttributedTo ex:ph-sensor-01 .
+
+ex:sensing-activity a prov:Activity ;
+  dct:description "pH 센서 주기 센싱" ;
+  prov:startedAtTime "2024-01-31T13:20:00"^^xsd:dateTime ;
+  prov:used ex:ph-sensor-01 ;
+  prov:wasAssociatedWith ex:ph-sensor-01 .
+
+ex:ph-sensor-01 a prov:Agent, sosa:Sensor ;
+  dct:identifier "DEV-PH-01" ;
+  koai:manufacturer "OO계측" ;
+  dct:created "2024-01-01T00:00:00"^^xsd:dateTime ;    # InstallTime → 설치 이력
+  prov:wasAttributedTo ex:manufacturer .
+
+ex:manufacturer a prov:Agent, prov:Organization ;
+  foaf:name "OO계측(주)" .
+
+ex:tank-01 a prov:Entity, koai:WaterTank ;
+  dct:identifier "TANK-01" .
+ex:ph-sensor-01 prov:atLocation ex:tank-01 .

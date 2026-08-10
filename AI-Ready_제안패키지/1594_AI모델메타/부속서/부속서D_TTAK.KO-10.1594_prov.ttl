@@ -1,0 +1,34 @@
+# PROV-O 계보 예시 — TTAK.KO-10.1594 (AI 모델 파생 계보, 출처/계보 L2)
+# koai:ModelDerivation(원본→파생)을 PROV-O로 형식화: 학습 활동이 원본 모델·데이터세트를 사용해 파생 모델을 생성.
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix koai: <https://std.tta.or.kr/ns/koai#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:   <https://example.org/ai/> .
+
+ex:base-model a prov:Entity, koai:AIModel ;
+  dct:title "KoBERT-base" ;
+  dct:license <https://spdx.org/licenses/Apache-2.0> .
+
+ex:train-dataset a prov:Entity, dcat:Dataset, koai:TrainingSet ;
+  dct:title "감성분석 학습 데이터세트 v1" ;
+  dct:issued "2025-10-01"^^xsd:date .
+
+ex:finetuned-model a prov:Entity, koai:AIModel ;
+  dct:title "KoBERT-sentiment" ;
+  koai:derivativeMethod "Finetune" ;
+  prov:wasDerivedFrom ex:base-model ;
+  prov:wasGeneratedBy ex:training-activity ;
+  prov:wasAttributedTo ex:lab ;
+  dct:created "2025-11-15T09:00:00"^^xsd:dateTime .
+
+ex:training-activity a prov:Activity, koai:TrainingProcess ;
+  dct:description "파인튜닝 학습" ;
+  prov:startedAtTime "2025-11-10T00:00:00"^^xsd:dateTime ;
+  prov:endedAtTime   "2025-11-15T09:00:00"^^xsd:dateTime ;
+  prov:used ex:base-model, ex:train-dataset ;
+  prov:wasAssociatedWith ex:lab .
+
+ex:lab a prov:Agent, prov:Organization ;
+  dct:title "국립군산대학교 AI연구실" .

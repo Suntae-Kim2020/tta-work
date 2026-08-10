@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "dqv": "http://www.w3.org/ns/dqv#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "adq": "https://std.tta.or.kr/ns/adq#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Dataset": "dcat:Dataset",
+    "Annotation": "oa:Annotation",
+
+    "datasetId": { "@id": "dct:identifier", "@type": "@id" },
+    "created": { "@id": "dct:created", "@type": "xsd:date" },
+    "distribution": { "@id": "dcat:distribution", "@type": "@id" },
+
+    "annotations": { "@id": "adq:hasAnnotation", "@container": "@set" },
+    "attributes": "adq:attributes",
+    "label": { "@id": "adq:label", "@type": "@vocab" },
+    "type": { "@id": "adq:annotationType", "@type": "@vocab" },
+    "size": "adq:size",
+
+    "hasQualityMeasurement": { "@id": "dqv:hasQualityMeasurement", "@type": "@id" },
+    "hasDimension": { "@id": "dqv:inDimension", "@type": "@id" },
+    "isMeasurementOf": { "@id": "dqv:isMeasurementOf", "@type": "@id" },
+    "value": "dqv:value",
+
+    "syntaxAccuracy": { "@id": "adq:syntaxAccuracy", "@type": "dqv:QualityMeasurement" },
+    "statSufficiency": { "@id": "adq:statisticalSufficiency", "@type": "dqv:QualityMeasurement" },
+    "statUniformity": { "@id": "adq:statisticalUniformity", "@type": "dqv:QualityMeasurement" },
+
+    "accuracy": "adq:AccuracyDimension",
+    "diversity": "adq:DiversityDimension",
+
+    "conformsTo": { "@id": "dct:conformsTo", "@type": "@id" },
+    "shape": { "@id": "sh:conforms", "@type": "xsd:boolean" }
+  },
+  "_meta": {
+    "standard": "TTAK.KO-11.0310",
+    "title": "JSON 형태의 자율주행 학습용 데이터 품질 검증 지침 — 정확성 및 다양성",
+    "profile": "③ AI 데이터세트(품질 블록)",
+    "note": "정확성(구문)·다양성(통계) 지표를 DQV QualityMeasurement로, 검증 규칙(구조·타입·유효범위)을 SHACL sh:conforms로 형식화 → 검증 자동생성 트랙 직결. adq 접두어는 자율주행 데이터품질 확장 네임스페이스. 품질 모델은 ISO/IEC 5259-2 정렬 권장."
+  }
+}

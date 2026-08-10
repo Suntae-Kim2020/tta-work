@@ -1,0 +1,53 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "sf": "http://www.opengis.net/ont/sf#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dln": "https://std.tta.or.kr/ns/dln#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Building": "dln:Building",
+    "BuildingRoom": "dln:BuildingRoom",
+    "BuildingInstallation": "dln:BuildingInstallation",
+    "CityFurniture": "dln:CityFurniture",
+
+    "cityObjectMemberId": { "@id": "dct:identifier", "@type": "xsd:string" },
+    "gisBuildingId": "dln:gisBuildingId",
+    "ufid": "dln:ufid",
+    "jusoBuildingId": "dln:jusoBuildingId",
+    "dtmName": "dct:source",
+    "dtmCode": "dln:layerCode",
+    "geometryType": { "@id": "dln:geometryType", "@type": "@vocab" },
+    "mapScale": "dln:mapScale",
+    "creationDate": { "@id": "dct:created", "@type": "xsd:date" },
+    "updateDate": { "@id": "dct:modified", "@type": "xsd:date" },
+
+    "geometry": { "@id": "geo:hasGeometry", "@type": "@id" },
+    "asWKT": { "@id": "geo:asWKT", "@type": "geo:wktLiteral" },
+    "storeysAboveGround": { "@id": "dln:storeysAboveGround", "@type": "xsd:integer" },
+    "storeysBelowGround": { "@id": "dln:storeysBelowGround", "@type": "xsd:integer" },
+    "xCoordinate": "dln:xCoordinate",
+    "yCoordinate": "dln:yCoordinate",
+    "zCoordinate": "dln:zCoordinate",
+    "storeyName": "dln:storeyName",
+
+    "BuildingClass": { "@id": "dln:buildingClass", "@type": "@vocab" },
+    "BuildingUsage": { "@id": "dln:buildingUsage", "@type": "@vocab" },
+
+    "opendataId": "dln:opendataId",
+    "surfaceId": "dln:surfaceId",
+    "visValue": "dln:visValue",
+    "observation": { "@id": "sosa:hasSimpleResult" },
+    "observedAt": { "@id": "sosa:resultTime", "@type": "xsd:dateTime" }
+  },
+  "_meta": {
+    "standard": "TTAK.KO-10.1510",
+    "title": "디지털 국토정보 플랫폼의 데이터 연계를 위한 공통 데이터 모델",
+    "profile": "② 자기기술형 레코드(공간객체)",
+    "note": "OGC CityGML 3.0 프로파일. 좌표(GRS80/EPSG:5186)는 GeoSPARQL geo:asWKT로, 코드리스트(BuildingClass 등)는 SKOS로, Dynamizer 시계열 공공데이터는 SOSA Observation으로. dln 접두어는 본 표준 확장 네임스페이스."
+  }
+}

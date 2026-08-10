@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    { "duo": "http://purl.obolibrary.org/obo/", "dct": "http://purl.org/dc/terms/" }
+  ],
+  "@type": "Offer",
+  "uid": "https://std.tta.or.kr/policy/1594/model-offer",
+  "dct:conformsTo": "TTAK.KO-10.1594",
+  "dct:description": "AI 모델 이용정책 예시(접근/제약 L3). dct:license(SPDX)에 더해 접근수준(public/gated/private)과 이용조건을 ODRL로 형식화.",
+  "profile": "https://std.tta.or.kr/profile/ai-dataset",
+  "permission": [
+    {
+      "target": "https://example.org/ai/model/kobert-sentiment",
+      "assigner": "https://example.org/lab",
+      "action": [ "use", "reproduce", "distribute", "modify" ],
+      "duty": [
+        { "action": "attribute",
+          "constraint": [ { "leftOperand": "source", "operator": "eq",
+                            "rightOperand": "https://spdx.org/licenses/Apache-2.0" } ] }
+      ]
+    }
+  ],
+  "prohibition": [
+    {
+      "target": "https://example.org/ai/model/kobert-sentiment",
+      "action": [ "aggregate" ],
+      "constraint": [
+        { "leftOperand": "purpose", "operator": "eq",
+          "rightOperand": { "@id": "duo:DUO_0000046" },
+          "rdfs:comment": "비상업적 이용만(NCU) — gated 배포 시 적용" }
+      ]
+    }
+  ],
+  "_meta": {
+    "license": "Apache-2.0 (permissive)",
+    "accessLevel": "koai:AccessService = public | gated | private",
+    "note": "허용형 라이선스라 permission 중심. gated/private는 recipient·purpose 제약으로 표현. DUO_0000046=non-commercial use only."
+  }
+}

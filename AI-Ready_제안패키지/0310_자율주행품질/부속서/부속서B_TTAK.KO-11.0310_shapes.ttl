@@ -1,0 +1,55 @@
+# SHACL 검증 스키마 — TTAK.KO-11.0310
+# 재생성: 요소 정의표(원천)의 M(필수)/R/O·카디널리티로 minCount/maxCount 구동.
+# 값 제약(이미지 크기 허용범위·구문 정확성 목표)은 원 표준 6절 표 및 품질목표 99%에서 옮긴다.
+
+@prefix adq: <https://std.tta.or.kr/ns/adq#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+adq:AnnotationShape a sh:NodeShape ;
+  sh:targetClass oa:Annotation ;
+  sh:property [ sh:path adq:annotationType ; sh:name "어노테이션 타입" ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "Bbox" "Seg" ) ; sh:message "type은 Bbox·Seg 중 하나여야 함(유효값 오류)" ] ;
+  sh:property [ sh:path adq:attributes ; sh:name "객체 소분류/속성" ] ;
+  sh:property [ sh:path adq:id ; sh:name "어노테이션ID" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path adq:label ; sh:name "객체 대분류" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path adq:sizeHeight ; sh:name "이미지 높이" ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 200 ; sh:maxInclusive 400 ; sh:message "size(height)는 200~400 범위(유효 범위 오류)" ] ;
+  sh:property [ sh:path adq:sizeWidth ; sh:name "이미지 너비" ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 300 ; sh:maxInclusive 600 ; sh:message "size(width)는 300~600 범위(유효 범위 오류)" ] .
+
+adq:QualityProfileShape a sh:NodeShape ;
+  sh:targetClass dqv:QualityMeasurement ;
+  sh:property [ sh:path dqv:isMeasurementOf ; sh:name "품질지표" ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dqv:value ; sh:name "측정값" ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+adq:SyntaxAccuracyShape a sh:NodeShape ;
+  # sh:targetNode 가 없으면 이 형상은 어떤 노드에도 걸리지 않아 검증에서 통째로 빠진다.
+  sh:targetNode adq:syntaxAccuracy ;
+  sh:property [ sh:path dqv:value ; sh:minCount 1 ; sh:maxCount 1 ; sh:minInclusive 0.99 ; sh:maxInclusive 1.0 ; sh:message "구문 정확성은 0.99(99%) 이상이어야 함 (원 표준 품질목표)" ] .

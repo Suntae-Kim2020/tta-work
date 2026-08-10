@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "dct": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dctype": "http://purl.org/dc/dcmitype/",
+    "datacite": "http://purl.org/spar/datacite/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Collection": "dctype:Collection",
+    "Dataset": "dcat:Dataset",
+    "File": "dcat:Distribution",
+    "Repository": "dcat:Catalog",
+
+    "hasPart": { "@id": "dct:hasPart", "@type": "@id" },
+    "isPartOf": { "@id": "dct:isPartOf", "@type": "@id" },
+
+    "Identifier": { "@id": "dct:identifier", "@type": "@id" },
+    "IdentifierType": { "@id": "datacite:usesIdentifierScheme", "@type": "@vocab" },
+    "Title": "dct:title",
+    "TitleType": { "@id": "datacite:hasTitleType", "@type": "@vocab" },
+    "Creator": { "@id": "dct:creator", "@type": "@id" },
+    "Publisher": { "@id": "dct:publisher", "@type": "@id" },
+    "PublicationYear": { "@id": "dct:issued", "@type": "xsd:gYear" },
+    "Date": { "@id": "dct:date", "@type": "xsd:date" },
+    "DateType": { "@id": "datacite:hasDateType", "@type": "@vocab" },
+    "Description": "dct:description",
+    "Subject": { "@id": "dct:subject", "@type": "@id" },
+    "SubjectScheme": { "@id": "skos:inScheme", "@type": "@id" },
+    "Contributor": { "@id": "dct:contributor", "@type": "@id" },
+    "Contact": "dcat:contactPoint",
+    "Rights": { "@id": "dct:rights", "@type": "@id" },
+    "Keyword": "dcat:keyword",
+    "AccessType": { "@id": "dcat:accessRights", "@type": "@vocab" },
+    "AccessRestriction": "dct:accessRights",
+    "License": { "@id": "dct:license", "@type": "@id" },
+    "wasGeneratedBy": { "@id": "prov:wasGeneratedBy", "@type": "@id" }
+  },
+  "_meta": {
+    "standard": "TTAK.KO-10.0976",
+    "title": "연구데이터 관리 및 공유를 위한 메타데이터",
+    "profile": "① 지식정보",
+    "note": "컬렉션-데이터셋-파일-리포지터리 4계층은 dct:hasPart/isPartOf로 그래프화. 통제어(IdentifierType·DateType 등)는 SKOS 개념 스킴으로 승격. 품질(DQV)은 신설 대상."
+  }
+}

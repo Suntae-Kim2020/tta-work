@@ -1,0 +1,147 @@
+# SHACL 검증 스키마 — TTAK.KO-10.1530
+# 재생성: 요소 정의표(원천)의 M(필수)/R/O·카디널리티로 minCount/maxCount 구동.
+# 값 제약(범위·단위)은 원 표준 <표 6-1>에서 옮긴다 — 설계 명세 §4·§5의 → SHACL 매핑 참조.
+#
+# [단위와 값범위는 한 쌍이다]
+#   표 6-1은 센서에 따라 단위를 복수로 허용하며, 허용 범위가 단위마다 다르다
+#   (예: 용존CO2 mg/L·ppm 0~20 / % 0~200). 따라서 단위 하나를 골라 고정하지 않고,
+#   (단위, 범위) 짝을 sh:or 로 나열해 원 표준이 허용하는 표현을 모두 통과시킨다.
+#   단위 IRI·UCUM 코드의 근거는 부속서 C(단위 매핑)를 참조한다.
+
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix koai: <https://std.tta.or.kr/ns/koai#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+koai:CO2ObsShape a sh:NodeShape ;
+  sh:targetClass koai:CO2Observation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 (mg/L · ppm · %)" ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( unit:MilliGM-PER-L unit:PPM unit:PERCENT ) ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "용존CO2" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ] ;
+  sh:or (
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:MilliGM-PER-L ] ; sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 20 ] ]
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:PPM ] ;           sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 20 ] ]
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:PERCENT ] ;       sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 200 ] ]
+  ) ;
+  sh:message "용존CO2 — mg/L·ppm은 0~20, %는 0~200 (표 6-1)" .
+
+koai:ConductivityObsShape a sh:NodeShape ;
+  sh:targetClass koai:ConductivityObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 μS/cm" ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue unit:MicroS-PER-CentiM ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "전도도 0~200 μS/cm" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ; sh:minInclusive 0 ; sh:maxInclusive 200 ; sh:message "전도도는 0~200 μS/cm (표 6-1)" ] .
+
+koai:DOObsShape a sh:NodeShape ;
+  sh:targetClass koai:DOObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 (mg/L · %)" ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( unit:MilliGM-PER-L unit:PERCENT ) ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "용존산소" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ] ;
+  sh:or (
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:MilliGM-PER-L ] ; sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 50 ] ]
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:PERCENT ] ;       sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 200 ] ]
+  ) ;
+  sh:message "용존산소 — mg/L은 0~50, %는 0~200 (표 6-1)" .
+
+koai:DeviceShape a sh:NodeShape ;
+  sh:targetClass sosa:Sensor ;
+  sh:property [ sh:path dct:identifier ; sh:name "디바이스 식별자" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:operationStatus ; sh:name "운용상태" ; sh:maxCount 1 ; sh:in ( "OFF" "READY" ) ] ;
+  sh:property [ sh:path koai:reportInterval ; sh:name "센싱주기(분)" ; sh:maxCount 1 ; sh:datatype xsd:short ] ;
+  # 표 6-1이 허용하는 단위 전체. mg/L·ppm·%·ppt는 센서에 따라 병용되므로 모두 허용한다.
+  sh:property [ sh:path qudt:unit ; sh:name "측정 단위(QUDT IRI)" ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:in ( unit:PH unit:DEG_C unit:L-PER-MIN unit:MilliGM-PER-L unit:GM-PER-KiloGM unit:MilliV unit:MicroS-PER-CentiM unit:NTU unit:M unit:PPM unit:PERCENT unit:PPTH ) ] ;
+  sh:property [ sh:path qudt:ucumCode ; sh:name "측정 단위(UCUM 코드)" ; sh:maxCount 1 ; sh:datatype qudt:UCUMcs ] .
+
+koai:FlowObsShape a sh:NodeShape ;
+  sh:targetClass koai:FlowObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 L/min" ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue unit:L-PER-MIN ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "유량 2~3600 L/min" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 2 ; sh:maxInclusive 3600 ; sh:message "유량은 2~3600 L/min (표 6-1)" ] .
+
+koai:ORPObsShape a sh:NodeShape ;
+  sh:targetClass koai:ORPObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 mV" ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue unit:MilliV ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "ORP -1000~1400 mV" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ; sh:minInclusive -1000 ; sh:maxInclusive 1400 ; sh:message "ORP는 -1000~1400 mV (표 6-1)" ] .
+
+koai:ObservationShape a sh:NodeShape ;
+  sh:targetClass sosa:Observation ;
+  sh:property [ sh:path koai:validityLevel ; sh:name "값수준" ; sh:maxCount 1 ; sh:in ( "low" "normal" "high" ) ] ;
+  sh:property [ sh:path sosa:hasResultQuality ; sh:name "센서상태" ; sh:maxCount 1 ; sh:in ( "준비" "정상" "동작전압이상" "동작전류이상" "동작온도이상" "소모품교체" "센서교정요망" "센서점검필요" "오작동" ) ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "센싱값" ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path sosa:resultTime ; sh:name "센싱시각" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] ;
+  # 값은 단위 없이 오지 못한다. QUDT 단위 IRI(규범)에 더해 UCUM 코드를 함께 싣는다 —
+  # @context를 해석하지 않는 소비자(게이트웨이·기존 계측 시스템)는 IRI를 읽지 못하지만
+  # UCUM은 문법이라 파싱만으로 차원 계산·단위 변환이 된다(요소 정의표 ValueUnitCode M(1)).
+  # 다만 NTU는 UCUM에 정의가 없어 QUDT IRI만 둔다 — 부속서 C가 밝힌 유일한 예외다.
+  sh:or (
+    [ sh:property [ sh:path qudt:ucumCode ; sh:minCount 1 ; sh:datatype qudt:UCUMcs ] ]
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:NTU ] ]
+  ) ;
+  sh:message "단위 코드(UCUM)를 함께 실어야 한다. UCUM에 정의가 없는 NTU(탁도)만 예외다." .
+
+koai:PHObsShape a sh:NodeShape ;
+  sh:targetClass koai:PHObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 pH" ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue unit:PH ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "pH 0~14" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ; sh:minInclusive 0 ; sh:maxInclusive 14 ; sh:message "pH는 0~14 (표 6-1)" ] .
+
+koai:SalinityObsShape a sh:NodeShape ;
+  sh:targetClass koai:SalinityObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 (g/kg · ppt · ppm)" ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( unit:GM-PER-KiloGM unit:PPTH unit:PPM ) ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "염도" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ] ;
+  sh:or (
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:GM-PER-KiloGM ] ; sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 5 ; sh:maxInclusive 60 ] ]
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:PPTH ] ;          sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 50 ] ]
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:PPM ] ;           sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 50000 ] ]
+  ) ;
+  sh:message "염도 — g/kg은 5~60, ppt는 0~50, ppm은 0~50000 (표 6-1)" .
+
+koai:SectionShape a sh:NodeShape ;
+  sh:targetClass koai:WaterTank ;
+  sh:property [ sh:path dct:identifier ; sh:name "수조 식별자" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:fishCount ; sh:name "사육수량" ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ; sh:message "사육수량은 0 이상" ] ;
+  sh:property [ sh:path koai:fishType ; sh:name "어종" ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path koai:rearingArea ; sh:name "사육면적" ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:message "사육면적은 0 이상" ] ;
+  sh:property [ sh:path koai:rearingDensity ; sh:name "사육밀도" ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:message "사육밀도는 0 이상" ] .
+
+koai:TurbidityObsShape a sh:NodeShape ;
+  sh:targetClass koai:TurbidityObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 (NTU · mg/L)" ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( unit:NTU unit:MilliGM-PER-L ) ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "탁도" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ] ;
+  sh:or (
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:NTU ] ;           sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 4000 ] ]
+    [ sh:property [ sh:path qudt:unit ; sh:hasValue unit:MilliGM-PER-L ] ; sh:property [ sh:path sosa:hasSimpleResult ; sh:minInclusive 0 ; sh:maxInclusive 4500 ] ]
+  ) ;
+  sh:message "탁도 — NTU는 0~4000, mg/L은 0~4500 (표 6-1)" .
+
+koai:WaterLevelObsShape a sh:NodeShape ;
+  sh:targetClass koai:WaterLevelObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 m" ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue unit:M ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "수위 1~20 m" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ; sh:minInclusive 1 ; sh:maxInclusive 20 ; sh:message "수위는 1~20 m (표 6-1)" ] .
+
+koai:WaterTempObsShape a sh:NodeShape ;
+  sh:targetClass koai:WaterTempObservation ;
+  sh:property [ sh:path qudt:unit ; sh:name "단위 ℃" ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue unit:DEG_C ] ;
+  sh:property [ sh:path sosa:hasSimpleResult ; sh:name "수온 0~50℃" ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:float ; sh:minInclusive 0 ; sh:maxInclusive 50 ; sh:message "수온은 0~50℃ (표 6-1)" ] .
