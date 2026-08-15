@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서식 — AI-Ready 방법1</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="topbar"><div class="topbar-in">
+  <a class="brand" href="index.html">AI-Ready <span>방법1</span></a>
+  <nav class="navlinks">
+    <a href="index.html">개요</a>
+    <a href="rules.html">운영요령</a><a href="drafting.html">작성지침</a>
+    <a href="annex.html">별표 10</a>
+    <a href="forms.html" class="on">서식</a>
+    <a href="review.html">검토·정정</a>
+  </nav>
+  <button class="theme-btn" onclick="tt()">◐ 테마</button>
+</div></div><div class="wrap">
+<div class="hero">
+  <p class="eyebrow">별지 서식(안) · 부속서 양식(안)</p>
+  <h1>서식</h1>
+  <p class="lede">제안 단계의 <strong>선언서</strong>, 상정 단계의 <strong>자가점검표</strong>, 그리고 참조형 부속서의 <strong>규범적 참조 명세</strong> 양식.</p>
+</div>
+
+<div class="cards">
+  <a class="card" href="#f11"><div class="card-k">별지 제11-1호</div><div class="card-t">기계가독 산출물 선언서</div><p class="card-d">제안 단계 · 운영요령 제13조제5항 · 제안자 작성</p></a>
+  <a class="card" href="#f21"><div class="card-k">별지 제21-1호</div><div class="card-t">AI-Ready 자가점검표</div><p class="card-d">상정 단계 · 제21조제5항 · 에디터 작성, 기술위원회등 의장 확인</p></a>
+  <a class="card" href="#fa"><div class="card-k">부속서 양식</div><div class="card-t">규범적 참조 명세</div><p class="card-d">참조형인 경우 · 작성지침 6.6 나)</p></a>
+</div>
+
+<h2 id="f11">별지 제11-1호 서식(안) — 기계가독 산출물 선언서</h2>
+<div class="note"><span class="note-t">적용</span>
+운영요령 제13조제5항. 표준화과제 제안서(<strong>별지 제11호서식</strong> — 제정·개정 제안서)에 첨부한다. <strong>표준 폐지 제안(별지 제12호서식)에는 첨부하지 아니한다.</strong>
+</div>
+
+<h3>1. 제안 개요</h3>
+<div class="tablebox"><table><tbody>
+<tr><th>표준화과제명</th><td></td></tr>
+<tr><th>제안자</th><td></td></tr>
+<tr><th>AI-Ready 적용 대상</th><td>☐ 해당　☐ 비해당</td></tr>
+<tr><th>목표 수준</th><td>☐ L1　☐ L2　☐ L3 (별표 10 기준)</td></tr>
+</tbody></table></div>
+
+<h3>2. 어휘 선언 — 규범적으로 사용하는 외부 어휘</h3>
+<p>여기 적은 어휘는 표준초안의 <strong>인용 표준에 등재</strong>한다(작성지침 6.5.3).</p>
+<div class="tablebox"><table>
+<thead><tr><th>No.</th><th>어휘명</th><th>네임스페이스 IRI</th><th>사용 범위</th><th>이용조건</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>예) W3C DCAT 3</td><td><code>http://www.w3.org/ns/dcat#</code></td><td>클래스 3, 속성 12</td><td>CC BY 4.0</td></tr>
+<tr><td class="num">2</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<h4>자체 정의 요소</h4>
+<div class="tablebox"><table>
+<thead><tr><th>No.</th><th>요소 이름</th><th>자체 정의 사유</th></tr></thead>
+<tbody><tr><td class="num">1</td><td></td><td>대응하는 기존 어휘 용어 없음</td></tr></tbody></table></div>
+<div class="note">기존 어휘에 대응 용어가 있으면 그것을 사용하고, 없을 때만 자체 정의한다.</div>
+
+<h3>3. 제공하는 기계가독 산출물</h3>
+<div class="tablebox"><table>
+<thead><tr><th>형식</th><th>제공</th><th>부속서 형태</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>JSON-LD @context</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td>요소↔IRI 매핑</td></tr>
+<tr><td>JSON Schema</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+<tr><td>XML Schema(XSD)</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+<tr><td>RDF 어휘(Turtle 등)</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+<tr><td>기타 (　　　)</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+</tbody></table></div>
+<p><strong>내장형</strong> 부속서에 전문 수록 (작성지침 6.6 가) · <strong>참조형</strong> 부속서에 규범적 참조 명세, 실물은 외부 저장소 (6.6 나)</p>
+
+<h3>4. 외부 공개 (선택)</h3>
+<div class="tablebox"><table><tbody>
+<tr><th>공개 여부</th><td>☐ 공개　☐ 미공개</td></tr>
+<tr><th>저장소 종류</th><td>☐ GitHub　☐ 기타 (　　　)</td></tr>
+<tr><th>저장소 URL</th><td></td></tr>
+<tr><th>공개 예정 버전</th><td></td></tr>
+<tr><th>영속 식별자 (있는 경우)</th><td>DOI 등</td></tr>
+</tbody></table></div>
+<div class="note warn">협회는 표준 채택 시점의 사본을 보관하며, 보관본과 외부 공개본이 다를 경우 <strong>보관본에 따른다</strong>(운영요령 제19조의3제4항).</div>
+
+<h3>5. 이용조건 (라이선스)</h3>
+<div class="tablebox"><table><tbody>
+<tr><th>적용 라이선스</th><td>☐ CC BY 4.0　☐ CC0 1.0　☐ 기타 (　　　)</td></tr>
+<tr><th>파일 내 표시 방법</th><td>☐ 주석　☐ <code>$comment</code> 키　☐ <code>dcterms:license</code> 트리플</td></tr>
+</tbody></table></div>
+<div class="note warn">이용조건은 <strong>파일 자체에서 확인할 수 있어야</strong> 한다(제19조의3제5항). 별도 약관 페이지에만 두는 방식은 인정하지 않는다.</div>
+
+<h3>6. 참조구현 (선택)</h3>
+<div class="tablebox"><table><tbody>
+<tr><th>공개 여부</th><td>☐ 공개　☐ 미공개</td></tr>
+<tr><th>위치</th><td></td></tr>
+<tr><th>언어·런타임</th><td></td></tr>
+<tr><th>라이선스</th><td></td></tr>
+</tbody></table></div>
+<div class="note">참조구현은 <strong>표준의 일부가 아니며</strong>, 협회는 그 내용에 대하여 보증하지 아니한다(제19조의3제6항).</div>
+
+<h3>7. 제안자 확인</h3>
+<p>위 선언 내용은 표준초안의 요소 정의표 및 부속서와 일치하도록 작성하며, 상정 시 자가점검표(별지 제21-1호 서식)로 일치 여부를 확인받는 데 동의합니다.</p>
+<div class="note">선언한 산출물의 실제 작성·제출은 초안 단계에서 <strong>에디터</strong>가 수행한다(운영요령 제19조의3제1항). 제안자가 에디터로 지정되면 같은 사람이다.</div>
+
+<h2 id="f21">별지 제21-1호 서식(안) — AI-Ready 자가점검표</h2>
+<div class="note"><span class="note-t">적용</span>
+운영요령 제21조제5항. 표준초안을 다 작성한 뒤 <strong>에디터</strong>가 스스로 점검해 채우고, <strong>기술위원회등 의장</strong>이 확인하여 표준안과 함께 제출한다.
+</div>
+<p><strong>구성.</strong> 1부 7개 구성요소 달성 등급 · 2부 문서 정합성 · <strong>3부 선언과 산출물의 일치</strong> · <strong>4부 산출물 요건 이행</strong> · 5부 판정 · 6부 작성·확인. <strong>3부와 4부가 방법1의 핵심</strong>이다 — 어휘 전문가의 사전 검증이 없으므로 이 두 부가 품질 관문 역할을 한다.</p>
+
+<h3>0. 선언 요약</h3>
+<div class="tablebox"><table><tbody>
+<tr><th>표준화과제명</th><td></td></tr>
+<tr><th>기술 대상 프로파일</th><td>☐ ① 지식정보　☐ ② 자기기술형 레코드　☐ ② 중 참조표준·물성　☐ ③ AI 데이터세트　☐ ④ 품질 지표</td></tr>
+<tr><th>선언한 목표 수준</th><td>☐ 필수만　☐ 권장까지</td></tr>
+<tr><th>선언한 외부 어휘</th><td>(선언서 2에서 옮김)</td></tr>
+<tr><th>선언한 산출물 형식</th><td>☐ @context　☐ JSON Schema　☐ XSD　☐ RDF 어휘　☐ 기타</td></tr>
+<tr><th>선언한 부속서 형태</th><td>☐ 내장형　☐ 참조형</td></tr>
+<tr><th>선언한 외부 공개</th><td>☐ 공개 (　　　)　☐ 미공개</td></tr>
+<tr><th>선언한 이용조건</th><td></td></tr>
+<tr><th>참조구현</th><td>☐ 공개 (　　　)　☐ 미공개</td></tr>
+</tbody></table></div>
+
+<h3>1. AI-Ready 구성요소 달성 점검</h3>
+<div class="tablebox"><table>
+<thead><tr><th>구성요소</th><th>무엇을 보는가</th><th>목표</th><th>현재 등급</th><th>증빙</th><th>묶음</th></tr></thead>
+<tbody>
+<tr><td>① 시맨틱</td><td>요소의 뜻을 전역 어휘(IRI)에 연결했나</td><td></td><td></td><td></td><td>L1</td></tr>
+<tr><td>② 신태틱</td><td>그 매핑을 규범 직렬화로 냈나</td><td></td><td></td><td></td><td>L1</td></tr>
+<tr><td>③ 데이터 모델</td><td>값 형식·제약을 기계검증 스키마로 형식화했나</td><td></td><td></td><td></td><td>L2</td></tr>
+<tr><td>④ 출처/계보</td><td>데이터의 생성·가공 내력을 형식화했나</td><td></td><td></td><td></td><td>L2</td></tr>
+<tr><td>⑤ 운영 시맨틱</td><td>(ML만) 학습·검증 분할·역할을 선언했나</td><td></td><td></td><td></td><td>L3</td></tr>
+<tr><td>⑥ 품질 프로파일</td><td>품질을 형식 어휘로 붙였나</td><td></td><td></td><td></td><td>L3</td></tr>
+<tr><td>⑦ 접근/사용 제약</td><td>라이선스·이용조건을 <strong>데이터 수준</strong>에서 명시했나</td><td></td><td></td><td></td><td>L3</td></tr>
+<tr><td colspan="3"><strong>합계 / 성숙도</strong></td><td colspan="3">____ / ____</td></tr>
+</tbody></table></div>
+<div class="note">등급 합계 ÷ (적용 구성요소 수 × 2). ⑤는 ML 데이터세트를 기술하는 표준에만 적용하며, 비-ML과 ④ 프로파일은 분모 <strong>12</strong>, 그 외는 <strong>14</strong>.
+<br><br>⑦은 그 표준을 따라 쌓인 <strong>데이터</strong>의 이용조건이다. 산출물(스키마) 자체의 이용조건은 4부에서 따로 점검한다.</div>
+
+<h3>2. 정합성 자가검증</h3>
+<div class="tablebox"><table>
+<thead><tr><th>점검 항목</th><th>이상 없음</th><th>발견 시 조치</th></tr></thead>
+<tbody>
+<tr><td>데이터 타입 정의가 사실과 일치하는가 (예: <code>xs:short</code>를 16비트로 바르게 기술했나)</td><td>☐</td><td></td></tr>
+<tr><td>측정값의 단위가 표준 단위 어휘(QUDT/UCUM)에 결합되었는가</td><td>☐</td><td></td></tr>
+<tr><td>규범적으로 의존하는 외부 표준·어휘를 인용표준에 등재했는가 (참고문헌에만 두면 오류)</td><td>☐</td><td></td></tr>
+<tr><td>코드·열거값의 유효값·헤더가 정확한가</td><td>☐</td><td></td></tr>
+<tr><td>오탈자·영문 요소명 중복·표 표제 오기가 없는가</td><td>☐</td><td></td></tr>
+<tr><td>약어 정의·절 번호·요소 명칭이 본문과 일치하는가</td><td>☐</td><td></td></tr>
+<tr><td>그 밖의 정합성 결함이 없는가</td><td>☐</td><td></td></tr>
+</tbody></table></div>
+
+<h3>3. 선언 일치 확인 <span class="tag core">방법1 고유</span></h3>
+<p>각 항목의 <strong>[별표 #]</strong>는 별표 제10호 제4부의 요건 번호다.</p>
+<div class="tablebox"><table>
+<thead><tr><th>#</th><th>확인 항목</th><th>근거</th><th>별표 #</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>선언한 외부 어휘가 요소 정의표 ⑭에 모두 반영되었는가</td><td class="num">제13조⑤</td><td class="num"><strong>7</strong></td><td>☐ 일치　☐ 불일치</td></tr>
+<tr><td class="num">2</td><td>요소 정의표 ⑭에 있으나 선언에 없는 어휘가 추가되었는가</td><td class="num">제13조⑤</td><td class="num">현황</td><td>☐ 없음　☐ 있음</td></tr>
+<tr><td class="num">3</td><td>선언한 산출물 형식을 모두 제출했는가</td><td class="num">제13조⑤</td><td class="num"><strong>8</strong></td><td>☐ 일치　☐ 불일치</td></tr>
+<tr><td class="num">4</td><td>선언한 부속서 형태(내장형·참조형)대로 작성했는가</td><td class="num">제19조의3②</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
+<tr><td class="num">5</td><td>선언한 이용조건과 산출물에 표시된 이용조건이 같은가</td><td class="num">제19조의3⑤</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
+<tr><td class="num">6</td><td>규범적으로 사용하는 외부 어휘를 <strong>인용 표준에 등재</strong>했는가</td><td class="num">제19조①9호</td><td class="num"><strong>9</strong></td><td>☐ 충족　☐ 미충족</td></tr>
+</tbody></table></div>
+<div class="note"><strong>2번은 불일치가 아니라 현황 기재 항목이다.</strong> 초안 작성 중 어휘가 추가되는 것은 자연스러운 일이며, 추가된 어휘가 인용 표준에 등재되었는지(6번)가 실제 점검 대상이다.</div>
+
+<h3>4. 산출물 요건 이행 확인 <span class="tag core">방법1 고유</span></h3>
+<div class="tablebox"><table>
+<thead><tr><th>#</th><th>요건</th><th>근거</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>기계가독 산출물을 표준초안과 함께 제출했는가</td><td class="num">제19조의3①</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">2</td><td>부속서 형태 <em>(판정 항목 아님 — 3번의 적용 여부를 정한다)</em></td><td class="num">제19조의3②</td><td>☐ 내장형　☐ 참조형</td></tr>
+<tr><td class="num">3</td><td><strong>참조형인 경우</strong> 공개 위치·버전·무결성 값·이용조건을 모두 기재했는가</td><td class="num">제19조의3②</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
+<tr><td class="num">4</td><td>협회 보관본이 등록되었는가</td><td class="num">제19조의3④</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">5</td><td>산출물에 이용조건을 명시했는가</td><td class="num">제19조의3⑤</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">6</td><td>이용조건을 <strong>파일 자체에서</strong> 확인할 수 있는가</td><td class="num">제19조의3⑤</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">7</td><td>참조구현 위치를 부록에 기재했는가</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
+<tr><td class="num">8</td><td>보증 배제 문구를 적었는가</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
+</tbody></table></div>
+
+<h4>참조형인 경우 기재 내용</h4>
+<div class="tablebox"><table><tbody>
+<tr><th>공개 위치(URL)</th><td></td></tr>
+<tr><th>판·버전</th><td></td></tr>
+<tr><th>무결성 확인 값</th><td><code>sha256:</code></td></tr>
+<tr><th>협회 보관본 위치</th><td></td></tr>
+<tr><th>진입점 파일</th><td>다른 모듈을 include·import하는 경우</td></tr>
+</tbody></table></div>
+<div class="note warn"><span class="note-t">진입점 표시를 빠뜨리지 않는다</span>
+국제 사례 조사에서 OGC <code>gml.xsd</code>와 ISO <code>mdb.xsd</code>가 진입점 파일일 뿐이어서, <strong>그 파일만 내려받으면 동작하지 않는</strong> 문제가 실제로 확인됐다.</div>
+
+<h3>5. 판정</h3>
+<div class="tablebox"><table>
+<thead><tr><th>구분</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td><strong>AI-Ready 수준</strong></td><td>프로파일별 필수 구성요소가 모두 2등급 → ☐ 충족　☐ 미충족</td></tr>
+<tr><td><strong>산출물 요건</strong></td><td>4부의 1·4·5·6번, 3번(참조형인 경우), 7·8번(참조구현 공개 시), <strong>3부의 1·3·6번</strong> 모두 충족 → ☐ 충족　☐ 미충족</td></tr>
+<tr><td>성숙도</td><td>____ %</td></tr>
+</tbody></table></div>
+<div class="note why">두 판정은 <strong>독립이다.</strong> 수준이 L1에 그쳐도 산출물 요건은 충족할 수 있고, 내용 등급이 높아도 라이선스 표시를 빠뜨리면 산출물 요건은 미충족이다.</div>
+
+<h3>6. 작성 및 확인</h3>
+<div class="tablebox"><table>
+<thead><tr><th>구분</th><th>성명 · 소속</th><th>일자</th><th>서명</th></tr></thead>
+<tbody>
+<tr><td>작성 — <strong>에디터</strong> (표준초안 · 요소 정의표 · 어휘 매핑 · 산출물)</td><td></td><td>. .</td><td></td></tr>
+<tr><td>확인 — <strong>기술위원회등 의장</strong></td><td></td><td>. .</td><td></td></tr>
+</tbody></table></div>
+<div class="note">방법2 서식과 달리 <strong>공동 에디터 행이 없다.</strong> 이 점검표는 상정 시점의 현황을 밝히는 서류이며, 표준안의 채택 여부는 기술위원회가 판단한다.</div>
+
+<h2 id="fa">부속서 양식(안) — 규범적 참조 명세</h2>
+<div class="note">작성지침 6.6 나)(참조형)에 따라 표준초안의 부속서로 작성한다. 산출물 분량이 많아 문서에 수록하기 곤란한 경우에만 사용하며, <strong>수록 가능하면 내장형이 원칙</strong>이다.</div>
+
+<div class="flow">부속서 A  기계가독 산출물
+<b>(본 부속서는 표준 내용의 일부임)</b></div>
+
+<h3>A.1 규범성</h3>
+<p>이 부속서가 지정하는 기계가독 산출물은 본 표준의 규범 내용이다. 산출물에 적합하지 아니한 구현은 본 표준에 적합하다고 할 수 없다.</p>
+
+<h3>A.2 산출물 명세</h3>
+<div class="tablebox"><table><tbody>
+<tr><th>산출물 이름</th><td></td></tr>
+<tr><th>형식</th><td>JSON Schema / XML Schema / Turtle / JSON-LD @context 등</td></tr>
+<tr><th>판·버전</th><td></td></tr>
+<tr><th>무결성 확인 값</th><td><code>sha256:</code></td></tr>
+<tr><th>이용조건</th><td></td></tr>
+</tbody></table></div>
+
+<h3>A.3 소재</h3>
+<div class="tablebox"><table>
+<thead><tr><th>구분</th><th>위치</th></tr></thead>
+<tbody>
+<tr><td><strong>협회 보관본 (정본)</strong></td><td></td></tr>
+<tr><td>외부 공개본</td><td></td></tr>
+</tbody></table></div>
+<div class="note warn">보관본과 외부 공개본의 내용이 다른 경우에는 <strong>보관본에 따른다</strong>(운영요령 제19조의3제4항).</div>
+
+<h3>A.4 구성 파일</h3>
+<p>산출물이 여러 파일로 이루어진 경우 모두 적는다. 다른 파일을 <code>include</code>·<code>import</code>하는 <strong>진입점 파일을 명시</strong>한다.</p>
+<div class="tablebox"><table>
+<thead><tr><th>No.</th><th>파일명</th><th>역할</th><th>무결성 확인 값</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td></td><td><strong>진입점</strong></td><td></td></tr>
+<tr><td class="num">2</td><td></td><td>모듈</td><td></td></tr>
+</tbody></table></div>
+
+<h3>A.5 일괄 내려받기 · A.6 인용 어휘</h3>
+<div class="tablebox"><table><tbody>
+<tr><th>압축본 위치</th><td>구성 파일이 여럿인 경우 개별 주소와 함께 제공</td></tr>
+<tr><th>인용 어휘</th><td>이 산출물이 규범적으로 사용하는 외부 어휘. 본문의 인용 표준과 일치하여야 한다</td></tr>
+</tbody></table></div>
+
+<h3>작성 시 유의사항</h3>
+<div class="note"><strong>하나.</strong> 버전과 무결성 확인 값을 반드시 적는다. 외부 저장소는 변경될 수 있으므로 이 두 값이 “표준이 지정한 그 산출물”을 특정한다.
+<br><br><strong>둘.</strong> 파일명에 버전을 넣는 규칙을 권장한다(예: <code>mods-3-8.xsd</code>). 국제 사례에서 HL7 FHIR의 <code>definitions.shex.zip</code>이 <code>fhir.schema.shex.zip</code>으로 바뀌어 기존 문서의 링크가 무효가 된 사례가 확인됐다.
+<br><br><strong>셋.</strong> 이용조건은 이 명세뿐 아니라 <strong>산출물 파일 자체에도</strong> 표시한다(작성지침 6.6).</div>
+
+<div class="foot">AI-Ready 표준화 방법1 · 서식 · <a href="annex.html">← 별표 10</a> · <a href="review.html">검토·정정 →</a></div>
+</div><script>
+function tt(){var r=document.documentElement,c=r.getAttribute("data-theme");
+var n=c==="dark"?"light":c==="light"?"dark":(matchMedia("(prefers-color-scheme: dark)").matches?"light":"dark");
+r.setAttribute("data-theme",n);try{localStorage.setItem("th",n)}catch(e){}}
+try{var s=localStorage.getItem("th");if(s)document.documentElement.setAttribute("data-theme",s)}catch(e){}
+</script></body></html>

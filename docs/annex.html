@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>별표 10 수준 요건 — AI-Ready 방법1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="brand" href="index.html">AI-Ready <span>방법1</span></a>
+  <nav class="navlinks">
+    <a href="index.html">개요</a>
+    <a href="rules.html">운영요령</a>
+    <a href="drafting.html">작성지침</a>
+    <a href="annex.html" class="on">별표 10</a>
+    <a href="forms.html">서식</a>
+    <a href="review.html">검토·정정</a>
+  </nav>
+  <button class="theme-btn" onclick="tt()">◐ 테마</button>
+</div></div>
+<div class="wrap">
+<div class="hero">
+  <p class="eyebrow">별지 · 별표 제10호(안)</p>
+  <h1>AI-Ready 수준 요건</h1>
+  <p class="lede">7개 구성요소의 등급 기준과 프로파일별 요구 수준. 방법1은 여기에 <strong>제4부 산출물 요건</strong>을 더한다.</p>
+  <div class="meta"><span>운영요령 제2조제1항제8호·제19조의3·제21조제5항·제26조제6항 관련</span></div>
+</div>
+
+<div class="note why"><span class="note-t">승계 관계</span>
+제1~3부(7개 구성요소·프로파일별 요구·성숙도 산식)는 <code>AI-Ready 수준 요건 명세서 v0.3</code>의 체계를 그대로 따른다. <strong>AI-Ready의 정의는 추진 방법에 따라 달라지지 않기 때문이다.</strong> 방법1 고유의 내용은 <strong>제4부(산출물 요건)</strong>와 각 부의 “작성 주체” 서술이다.
+</div>
+
+<h2>제1부 · 7개 구성요소와 등급 기준</h2>
+<p>기계가 표준에서 무엇을 읽어낼 수 있는가를 일곱 조각으로 나누고, 각각 <strong>0(미충족)·1(부분)·2(충족)</strong>로 평가한다.</p>
+<div class="tablebox"><table>
+<thead><tr><th>#</th><th>구성요소</th><th>무엇을 보는가</th><th>0</th><th>1</th><th>2</th><th>묶음</th></tr></thead>
+<tbody>
+<tr><td class="num">①</td><td><strong>시맨틱</strong></td><td>요소의 뜻을 전역 어휘(IRI)에 연결했나</td><td>산문·자체 코드로만 설명</td><td>일부 개념만 연결</td><td>뜻과 관계(상하·포함)까지 전역 IRI에 바인딩</td><td>L1</td></tr>
+<tr><td class="num">②</td><td><strong>신태틱</strong></td><td>그 매핑을 기계가 읽는 형식으로 냈나</td><td>직렬화 규범 없음</td><td>형식 언급은 있으나 비규범</td><td>JSON-LD/RDF 등 규범 직렬화 제공</td><td>L1</td></tr>
+<tr><td class="num">③</td><td><strong>데이터 모델</strong></td><td>값 형식·제약을 기계가 검증할 수 있나</td><td>미정의이거나 산문</td><td>표로 정리(검증 스키마 미제공)</td><td>기계검증 스키마로 형식화</td><td>L2</td></tr>
+<tr><td class="num">④</td><td><strong>출처/계보</strong></td><td>데이터가 어디서 어떻게 왔는지 추적되나</td><td>흩어져 있거나 부재</td><td>일부 출처 필드 존재</td><td>PROV-O로 계보 형식화</td><td>L2</td></tr>
+<tr><td class="num">⑤</td><td><strong>운영 시맨틱</strong></td><td>(ML만) 학습·검증 분할과 역할을 선언했나</td><td>ML 대상인데 미선언</td><td>일부를 산문으로 기술</td><td>Croissant로 형식 선언</td><td>L3</td></tr>
+<tr><td class="num">⑥</td><td><strong>품질 프로파일</strong></td><td>품질을 형식 어휘로 붙였나</td><td>품질 신호가 enum 코드뿐</td><td>일부 품질 표기</td><td>ISO/IEC 5259-2·25012를 DQV·SHACL로 표현</td><td>L3</td></tr>
+<tr><td class="num">⑦</td><td><strong>접근/사용 제약</strong></td><td>누가 어떻게 써도 되는지 기계가 판단하나</td><td>라이선스·접근권 메타데이터 부재</td><td>문서 수준 저작권만</td><td><strong>데이터 수준</strong>에서 명시</td><td>L3</td></tr>
+</tbody></table></div>
+
+<div class="note warn"><span class="note-t">⑦과 제4부를 혼동하지 않는다</span>
+<strong>⑦</strong>은 그 표준을 따라 쌓인 <strong>데이터</strong>의 이용조건이다. <strong>제4부</strong>는 표준이 제공하는 <strong>기계가독 산출물(스키마) 자체</strong>의 이용조건이다. 이름이 둘 다 “라이선스”라 섞이기 쉬우나 별개이며 각각 충족해야 한다.
+</div>
+
+<h3>묶음(L)의 의미</h3>
+<div class="tablebox"><table>
+<thead><tr><th>묶음</th><th>충족 구성요소</th><th>기계가 할 수 있게 되는 일</th></tr></thead>
+<tbody>
+<tr><td><strong>L1</strong> (필수)</td><td>① + ②</td><td>요소의 의미와 상하·포함 관계를 읽는다</td></tr>
+<tr><td><strong>L2</strong> (권장)</td><td>+ ③ + ④</td><td>값의 형식을 검증하고 내력을 추적한다</td></tr>
+<tr><td><strong>L3</strong> (고도)</td><td>+ ⑤ + ⑥ + ⑦</td><td>ML 활용 방식·품질·이용규칙을 판단한다</td></tr>
+</tbody></table></div>
+<p><strong>L1은 기준선이나, 그 위는 계단이 아니다.</strong> ⑤·⑥은 ③에 의존하지만 ④에는 의존하지 않고, ⑦은 아무것에도 의존하지 않는다. 따라서 요구 수준은 단계가 아니라 <strong>구성요소로</strong> 정한다.</p>
+
+<h2>제2부 · 기술 대상 프로파일별 요구 수준</h2>
+<p>요구 수준은 그 표준이 <strong>기술하는 대상</strong>으로 정한다. 표준 문서의 종류와 어긋날 수 있으므로 언제나 기술 대상을 기준으로 판정한다.</p>
+<div class="tablebox"><table>
+<thead><tr><th>프로파일</th><th>기술 대상</th><th>필수</th><th>권장</th><th>근거</th></tr></thead>
+<tbody>
+<tr><td><strong>① 지식정보</strong></td><td>논문·보고서·데이터세트 등</td><td>①② (= L1)</td><td>+ ③④⑦</td><td>카탈로그이므로 의미·표현이 출발점. “누가 어떤 조건으로 쓸 수 있나”가 핵심 기능이라 ⑦을 권장에 둔다</td></tr>
+<tr><td><strong>② 자기기술형 레코드</strong></td><td>센서 관측·공간객체의 값</td><td>①②③</td><td>+ ④ (= L2)</td><td>값과 단위가 내용 자체다</td></tr>
+<tr><td>② 중 참조표준·물성</td><td>물성값·참조표준</td><td>①②③</td><td>+ ⑥</td><td>불확도가 데이터의 값어치를 좌우한다</td></tr>
+<tr><td><strong>③ AI 데이터세트</strong></td><td>ML에 즉시 활용 가능한 데이터세트</td><td>①②③④ (= L2)</td><td>+ ⑤⑥⑦ (= L3)</td><td>학습데이터는 출처 추적이 핵심</td></tr>
+<tr><td><strong>④ 품질 지표</strong></td><td>데이터가 아니라 그 품질</td><td>①② (= L1)</td><td>+ ⑥</td><td>특정 데이터세트를 기술하지 않아 출처·운영이 붙을 곳이 없다</td></tr>
+<tr><td>(대조) 신원·서비스·인터페이스</td><td>—</td><td>비적용</td><td>—</td><td>데이터를 기술하는 표준이 아니다</td></tr>
+</tbody></table></div>
+
+<h2>제3부 · 성숙도 산식</h2>
+<div class="flow">성숙도 = 등급 합계 ÷ (적용 구성요소 수 × 2)</div>
+<p>⑤ 운영 시맨틱은 <strong>특정 ML 학습·검증 데이터세트를 기술하는 표준에만</strong> 적용한다. 비-ML 표준과 ④ 품질 지표 프로파일은 ⑤를 N/A로 두고 분모를 <strong>12</strong>로, ML 대상은 <strong>14</strong>로 계산한다.</p>
+
+<h2>제4부 · 산출물 요건 <span class="tag core">방법1 고유</span></h2>
+<p>방법1은 제안자의 선언에 따라 에디터가 기계가독 산출물을 직접 작성·제출하므로, 제1~3부의 <strong>내용 등급과 별도로</strong> 산출물의 형식 요건을 확인한다. 등급이 아니라 <strong>충족·미충족</strong>으로 판정한다. 운영요령 제19조의3의 이행 확인이다.</p>
+
+<h3>4-1. 제출·수록 요건</h3>
+<div class="tablebox"><table>
+<thead><tr><th>#</th><th>요건</th><th>근거</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>기계가독 산출물을 표준초안과 함께 제출했는가</td><td class="num">제19조의3①</td><td>충족 / 미충족</td></tr>
+<tr><td class="num">2</td><td>부속서로 수록했는가(내장형), 또는 규범적 참조 명세를 두었는가(참조형)</td><td class="num">제19조의3②</td><td>내장형 / 참조형</td></tr>
+<tr><td class="num">3</td><td><strong>참조형인 경우</strong> 공개 위치·버전·무결성 값·이용조건을 모두 기재했는가</td><td class="num">제19조의3② 각 호</td><td>충족 / 미충족 / N·A</td></tr>
+<tr><td class="num">4</td><td>협회 보관본이 등록되었는가</td><td class="num">제19조의3④</td><td>충족 / 미충족</td></tr>
+</tbody></table></div>
+<div class="note"><strong>내장형이 원칙, 참조형이 예외다.</strong> 산출물 분량이 많아 문서에 수록하기 곤란한 경우에만 참조형을 쓴다.</div>
+
+<h3>4-2. 이용조건 표시 요건</h3>
+<div class="tablebox"><table>
+<thead><tr><th>#</th><th>요건</th><th>근거</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td class="num">5</td><td>산출물에 이용조건(라이선스)을 명시했는가</td><td class="num">제19조의3⑤</td><td>충족 / 미충족</td></tr>
+<tr><td class="num">6</td><td>이용조건을 <strong>파일 자체에서</strong> 확인할 수 있는가</td><td class="num">제19조의3⑤</td><td>충족 / 미충족</td></tr>
+</tbody></table></div>
+<div class="tablebox"><table>
+<thead><tr><th>형식</th><th>표시 방법</th></tr></thead>
+<tbody>
+<tr><td>XSD · Turtle · Protobuf</td><td>주석으로 파일 머리말에 기재</td></tr>
+<tr><td>JSON Schema</td><td>최상위 <code>$comment</code> 키에 기재 (JSON은 주석 불가)</td></tr>
+<tr><td>RDF 어휘</td><td><code>dcterms:license</code> 트리플로 기재</td></tr>
+</tbody></table></div>
+<div class="note warn">별도 약관 페이지에만 두는 방식은 <strong>미충족</strong>으로 본다. 국제 사례 조사에서 ISO 19115-3이 XSD 117개를 무료 공개하면서도 파일에 아무 표시를 하지 않아, 이용자가 재배포 가능 여부를 확인할 수 없는 상태가 확인됐다.</div>
+
+<h3>4-3. 선언 일치 요건</h3>
+<div class="tablebox"><table>
+<thead><tr><th>#</th><th>요건</th><th>근거</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td class="num">7</td><td>제안 단계 선언(별지 제11-1호)의 어휘 목록과 요소 정의표 ⑭가 일치하는가</td><td class="num">제13조⑤</td><td>충족 / 미충족</td></tr>
+<tr><td class="num">8</td><td>선언한 산출물 형식을 모두 제출했는가</td><td class="num">제13조⑤</td><td>충족 / 미충족</td></tr>
+<tr><td class="num">9</td><td>규범적으로 사용하는 외부 어휘를 인용 표준에 등재했는가</td><td class="num">제19조①9호</td><td>충족 / 미충족</td></tr>
+</tbody></table></div>
+<div class="note why"><strong>방법1은 어휘 전문가의 사전 검증이 없으므로 이 일치 확인이 품질 관문 역할을 한다.</strong> 세부 점검은 <a href="forms.html#f21">별지 제21-1호 서식 제3부</a>에서 한다.</div>
+
+<h3>4-4. 참조구현 (해당 시)</h3>
+<div class="tablebox"><table>
+<thead><tr><th>#</th><th>요건</th><th>근거</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td class="num">10</td><td>참조구현 위치를 부록에 기재하고 보증 배제 문구를 적었는가</td><td class="num">제19조의3⑥</td><td>충족 / 미충족 / N·A</td></tr>
+</tbody></table></div>
+
+<h2>제5부 · 판정</h2>
+<h3>5-1. AI-Ready 수준 판정</h3>
+<p>제2부의 프로파일별 <strong>필수</strong> 구성요소가 모두 2등급이면 그 수준을 충족한 것으로 본다.</p>
+
+<h3>5-2. 산출물 요건 판정</h3>
+<div class="tablebox"><table>
+<thead><tr><th>구분</th><th>항목</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>항상 필수</td><td class="num">1 · 4 · 5 · 6 · 7 · 8 · 9</td><td>하나라도 미충족이면 산출물 요건 미충족</td></tr>
+<tr><td>조건부 필수</td><td class="num">3</td><td>2번이 <strong>참조형</strong>인 경우에만 적용</td></tr>
+<tr><td>조건부 필수</td><td class="num">10</td><td>참조구현을 공개하는 경우에만 적용</td></tr>
+<tr><td>판정 대상 아님</td><td class="num"><strong>2</strong></td><td>부속서 형태의 <strong>분류</strong> 항목이다. 내장형·참조형 중 하나를 적는 것이지 충족·미충족을 가리지 않는다. 다만 3번의 적용 여부를 정한다</td></tr>
+</tbody></table></div>
+<p>세부 점검은 별지 제21-1호 서식에서 하며, 그 서식 <strong>제3부의 1·3·6번</strong>이 이 표의 <strong>7·8·9번</strong>에 대응한다.</p>
+
+<h3>5-3. 두 판정의 관계</h3>
+<div class="note why"><strong>산출물 요건은 AI-Ready 수준과 독립이다.</strong> 수준이 L1에 그치더라도 산출물 요건은 충족할 수 있고, 반대로 내용 등급이 높아도 라이선스 표시를 빠뜨리면 산출물 요건은 미충족이다.
+<br><br>두 판정을 별도로 기재하는 이유는 <strong>내용의 성숙도</strong>와 <strong>배포의 완결성</strong>이 다른 문제이기 때문이다. 전자는 표준을 어떻게 설계했는가의 문제이고, 후자는 이용자가 그 산출물을 실제로 쓸 수 있는가의 문제다.</div>
+
+<h2>부기 — 방법2와 달라지는 지점</h2>
+<div class="tablebox"><table>
+<thead><tr><th></th><th>방법1</th><th>방법2</th></tr></thead>
+<tbody>
+<tr><td>①② 작성 주체</td><td><strong>에디터</strong> (제안 단계 선언은 제안자)</td><td>공동 에디터(어휘 전문가)</td></tr>
+<tr><td>산출물 범위</td><td>스키마 전체 + 참조구현(선택)</td><td>요소↔IRI 매핑(@context)</td></tr>
+<tr><td>산출물 위치</td><td>부속서 내장형 <strong>또는</strong> 외부 참조형</td><td>@context 부속서(문서 내)</td></tr>
+<tr><td><strong>제4부 산출물 요건</strong></td><td><strong>있음</strong></td><td>없음(문서 내에 있어 별도 확인 불요)</td></tr>
+</tbody></table></div>
+<p>제1~3부의 등급 기준·프로파일·산식은 두 방법이 같다.</p>
+
+<div class="foot">
+  AI-Ready 표준화 방법1 · 별표 제10호(안) ·
+  <a href="drafting.html">← 작성지침</a> · <a href="forms.html">서식 →</a>
+</div>
+</div><script>
+function tt(){var r=document.documentElement,c=r.getAttribute("data-theme");
+var n=c==="dark"?"light":c==="light"?"dark":(matchMedia("(prefers-color-scheme: dark)").matches?"light":"dark");
+r.setAttribute("data-theme",n);try{localStorage.setItem("th",n)}catch(e){}}
+try{var s=localStorage.getItem("th");if(s)document.documentElement.setAttribute("data-theme",s)}catch(e){}
+</script></body></html>
