@@ -62,6 +62,7 @@
 <tr><td>기타 (　　　)</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
 </tbody></table></div>
 <p><strong>내장형</strong> 부속서에 전문 수록 (작성지침 6.6 가) · <strong>참조형</strong> 부속서에 규범적 참조 명세, 실물은 외부 저장소 (6.6 나)</p>
+<div class="note why"><span class="note-t">형태는 산출물마다 따로 고른다</span>@context처럼 분량이 작으면 내장형, 검증용 스키마처럼 분량이 많으면 참조형이 된다. <strong>한 표준에서 둘이 섞이는 것이 일반적이다.</strong></div>
 
 <h3>4. 외부 공개 (선택)</h3>
 <div class="tablebox"><table><tbody>
@@ -105,12 +106,23 @@
 <tr><th>기술 대상 프로파일</th><td>☐ ① 지식정보　☐ ② 자기기술형 레코드　☐ ② 중 참조표준·물성　☐ ③ AI 데이터세트　☐ ④ 품질 지표</td></tr>
 <tr><th>선언한 목표 수준</th><td>☐ 필수만　☐ 권장까지</td></tr>
 <tr><th>선언한 외부 어휘</th><td>(선언서 2에서 옮김)</td></tr>
-<tr><th>선언한 산출물 형식</th><td>☐ @context　☐ JSON Schema　☐ XSD　☐ RDF 어휘　☐ 기타</td></tr>
-<tr><th>선언한 부속서 형태</th><td>☐ 내장형　☐ 참조형</td></tr>
-<tr><th>선언한 외부 공개</th><td>☐ 공개 (　　　)　☐ 미공개</td></tr>
 <tr><th>선언한 이용조건</th><td></td></tr>
 <tr><th>참조구현</th><td>☐ 공개 (　　　)　☐ 미공개</td></tr>
 </tbody></table></div>
+
+<h4>산출물별 선언 내역</h4>
+<p>선언서(별지 제11-1호) 3·4에서 옮겨 적는다.</p>
+<div class="tablebox"><table>
+<thead><tr><th>산출물 형식</th><th>선언한 부속서 형태</th><th>외부 공개</th></tr></thead>
+<tbody>
+<tr><td>JSON-LD @context</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>JSON Schema</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>XML Schema(XSD)</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>RDF 어휘(Turtle 등)</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>기타 (　　　)</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+</tbody></table></div>
+<div class="note why"><span class="note-t">부속서 형태는 산출물마다 다를 수 있다</span>
+@context는 분량이 작아 내장형으로, 검증용 JSON Schema·XSD는 분량이 많아 참조형으로 두는 조합이 일반적이다. <strong>표준 전체에 하나로 정하지 아니한다.</strong></div>
 
 <h3>1. AI-Ready 구성요소 달성 점검</h3>
 <div class="tablebox"><table>
@@ -149,7 +161,7 @@
 <tr><td class="num">1</td><td>선언한 외부 어휘가 요소 정의표 ⑭에 모두 반영되었는가</td><td class="num">제13조⑤</td><td class="num"><strong>7</strong></td><td>☐ 일치　☐ 불일치</td></tr>
 <tr><td class="num">2</td><td>요소 정의표 ⑭에 있으나 선언에 없는 어휘가 추가되었는가</td><td class="num">제13조⑤</td><td class="num">현황</td><td>☐ 없음　☐ 있음</td></tr>
 <tr><td class="num">3</td><td>선언한 산출물 형식을 모두 제출했는가</td><td class="num">제13조⑤</td><td class="num"><strong>8</strong></td><td>☐ 일치　☐ 불일치</td></tr>
-<tr><td class="num">4</td><td>선언한 부속서 형태(내장형·참조형)대로 작성했는가</td><td class="num">제19조의3②</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
+<tr><td class="num">4</td><td><strong>각 산출물마다</strong> 선언한 부속서 형태(내장형·참조형)대로 작성했는가</td><td class="num">제19조의3②</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
 <tr><td class="num">5</td><td>선언한 이용조건과 산출물에 표시된 이용조건이 같은가</td><td class="num">제19조의3⑤</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
 <tr><td class="num">6</td><td>규범적으로 사용하는 외부 어휘를 <strong>인용 표준에 등재</strong>했는가</td><td class="num">제19조①9호</td><td class="num"><strong>9</strong></td><td>☐ 충족　☐ 미충족</td></tr>
 </tbody></table></div>
@@ -160,22 +172,31 @@
 <thead><tr><th>#</th><th>요건</th><th>근거</th><th>판정</th></tr></thead>
 <tbody>
 <tr><td class="num">1</td><td>기계가독 산출물을 표준초안과 함께 제출했는가</td><td class="num">제19조의3①</td><td>☐ 충족　☐ 미충족</td></tr>
-<tr><td class="num">2</td><td>부속서 형태 <em>(판정 항목 아님 — 3번의 적용 여부를 정한다)</em></td><td class="num">제19조의3②</td><td>☐ 내장형　☐ 참조형</td></tr>
-<tr><td class="num">3</td><td><strong>참조형인 경우</strong> 공개 위치·버전·무결성 값·이용조건을 모두 기재했는가</td><td class="num">제19조의3②</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
-<tr><td class="num">4</td><td>협회 보관본이 등록되었는가</td><td class="num">제19조의3④</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">3</td><td><strong>참조형인 산출물이 있는 경우</strong> 그 전부에 대하여 공개 위치·버전·무결성 값·이용조건을 부속서에 기재했는가</td><td class="num">제19조의3②</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
+<tr><td class="num">4</td><td>협회 보관본이 등록되었는가 (참조형 산출물 전부)</td><td class="num">제19조의3④</td><td>☐ 충족　☐ 미충족</td></tr>
 <tr><td class="num">5</td><td>산출물에 이용조건을 명시했는가</td><td class="num">제19조의3⑤</td><td>☐ 충족　☐ 미충족</td></tr>
 <tr><td class="num">6</td><td>이용조건을 <strong>파일 자체에서</strong> 확인할 수 있는가</td><td class="num">제19조의3⑤</td><td>☐ 충족　☐ 미충족</td></tr>
 <tr><td class="num">7</td><td>참조구현 위치를 부록에 기재했는가</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
 <tr><td class="num">8</td><td>보증 배제 문구를 적었는가</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
 </tbody></table></div>
 
-<h4>참조형인 경우 기재 내용</h4>
-<div class="tablebox"><table><tbody>
-<tr><th>공개 위치(URL)</th><td></td></tr>
-<tr><th>판·버전</th><td></td></tr>
-<tr><th>무결성 확인 값</th><td><code>sha256:</code></td></tr>
-<tr><th>협회 보관본 위치</th><td></td></tr>
-<tr><th>진입점 파일</th><td>다른 모듈을 include·import하는 경우</td></tr>
+<h4>2. 산출물별 부속서 형태</h4>
+<p>판정 항목이 아니라 <strong>분류</strong>다. 참조형이 하나라도 있으면 3번이 적용된다.</p>
+<div class="tablebox"><table>
+<thead><tr><th>산출물</th><th>형태</th><th>수록 위치(내장형) / 명세 위치(참조형)</th></tr></thead>
+<tbody>
+<tr><td></td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+<tr><td></td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+<tr><td></td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+</tbody></table></div>
+
+<h4>참조형 산출물별 기재 내용</h4>
+<p>참조형이 여럿이면 행을 늘려 각각 적는다.</p>
+<div class="tablebox"><table>
+<thead><tr><th>산출물</th><th>공개 위치(URL)</th><th>판·버전</th><th>무결성 확인 값</th><th>협회 보관본 위치</th><th>진입점 파일</th></tr></thead>
+<tbody>
+<tr><td></td><td></td><td></td><td><code>sha256:</code></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td><code>sha256:</code></td><td></td><td></td></tr>
 </tbody></table></div>
 <div class="note warn"><span class="note-t">진입점 표시를 빠뜨리지 않는다</span>
 국제 사례 조사에서 OGC <code>gml.xsd</code>와 ISO <code>mdb.xsd</code>가 진입점 파일일 뿐이어서, <strong>그 파일만 내려받으면 동작하지 않는</strong> 문제가 실제로 확인됐다.</div>
@@ -185,7 +206,7 @@
 <thead><tr><th>구분</th><th>판정</th></tr></thead>
 <tbody>
 <tr><td><strong>AI-Ready 수준</strong></td><td>프로파일별 필수 구성요소가 모두 2등급 → ☐ 충족　☐ 미충족</td></tr>
-<tr><td><strong>산출물 요건</strong></td><td>4부의 1·4·5·6번, 3번(참조형인 경우), 7·8번(참조구현 공개 시), <strong>3부의 1·3·6번</strong> 모두 충족 → ☐ 충족　☐ 미충족</td></tr>
+<tr><td><strong>산출물 요건</strong></td><td>4부의 1·4·5·6번, 3번(참조형 산출물이 있는 경우), 7·8번(참조구현 공개 시), <strong>3부의 1·3·6번</strong> 모두 충족 → ☐ 충족　☐ 미충족</td></tr>
 <tr><td>성숙도</td><td>____ %</td></tr>
 </tbody></table></div>
 <div class="note why">두 판정은 <strong>독립이다.</strong> 수준이 L1에 그쳐도 산출물 요건은 충족할 수 있고, 내용 등급이 높아도 라이선스 표시를 빠뜨리면 산출물 요건은 미충족이다.</div>
