@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개요 — AI-Ready 방법2</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="topbar"><div class="topbar-in">
+  <a class="brand" href="index.html">AI-Ready <span>규범 개정안</span></a>
+  <div class="mswitch">
+    <a href="m1-index.html" class="ms">방법1 제안자 선언형</a>
+    <a href="m2-index.html" class="ms on">방법2 공동 에디터 보강형</a>
+  </div>
+  <button class="theme-btn" onclick="tt()">◐ 테마</button>
+</div></div>
+<div class="subbar"><div class="subbar-in">
+  <a href="m2-index.html" class="on">개요</a>
+  <a href="m2-rules.html">운영요령</a>
+  <a href="m2-drafting.html">작성지침</a>
+</div></div><div class="wrap">
+
+<div class="hero">
+  <p class="eyebrow">방법2</p>
+  <h1>공동 에디터 보강형</h1>
+  <p class="lede">표준초안 에디터는 사람이 읽는 요소 정의표만 채운다. 그것을 기계가 읽는 형식으로 옮기는 일은 <strong>어휘 전문가인 공동 에디터</strong>가 맡는다.</p>
+  <div class="meta">
+    <span>운영규정 <code>SAG-0029(24)/R24</code> · 운영요령 <code>SBG-0030(13)/R13</code> · 작성지침 <code>TTAR-09.0040/R1</code> 기준</span>
+  </div>
+</div>
+
+<div class="note warn"><span class="note-t">다른 추진 방법과의 관계</span>
+<strong>방법1(제안자 선언형)과는 독립된 별개의 안이며, 둘 중 하나를 택하는 관계다.</strong> 두 안은 같은 조문 자리와 같은 서식 번호를 다른 내용으로 쓰므로 함께 시행하거나 조문을 섞어 채택할 수 없다.
+</div>
+
+<h2>절차 흐름</h2>
+<div class="flow">[제안 단계]  <b>제안자</b>
+  └─ AI-Ready 선언 ──── 기술 대상 프로파일과 목표 수준을 신청한다
+                        (별지 제11-1호 · 운영요령 제13조제5항)
+
+[초안 단계]  <b>에디터</b>
+  └─ 요소 정의표 ①~⑬ ─ 사람이 읽는 표를 채운다 (작성지침 6.5.7)
+
+             <b>공동 에디터</b>  ※ 어휘 전문가, 특별위원으로 위촉
+  └─ ⑭ IRI 매핑 + @context 부속서 보강 (운영요령 제19조의2제5항)
+     특별위원이므로 의결권을 갖지 않는다 (운영규정 제33조제5항)
+
+[상정 단계]  <b>기술위원회등 의장</b>
+  └─ 자가점검표 제출 (별지 제21-1호 · 제21조제5항)
+
+[협회]  <b>사무국</b>
+  └─ 형식 정합성을 전자적 방법으로 점검할 수 있음 (제11조제4항)</div>
+
+<h2>핵심 설계</h2>
+
+<h3>1. 에디터는 어휘 기술을 몰라도 된다</h3>
+<p>표준초안을 작성하는 에디터는 <strong>SHACL도 JSON-LD도 몰라도 된다.</strong> 사람이 읽는 요소 정의표(①~⑬)만 채우면, 그것을 기계가 읽는 형식으로 옮기는 일은 작성 단계에 공동 에디터로 참여하는 어휘 전문가가 맡는다.</p>
+
+<h3>2. 공동 에디터는 형식화만 담당한다</h3>
+<p>공동 에디터는 운영규정 제29조제1항제2호의 <strong>특별위원</strong>으로 위촉되며, 제33조제5항에 따라 <strong>의결권을 갖지 않는다.</strong> 형식화만 하고 표준 내용은 좌우하지 않는다는 설계가 조문으로 보장된다.</p>
+
+<h3>3. 산출물은 문서 안에 있다</h3>
+<p>요소↔IRI 매핑을 <strong>JSON-LD @context 부속서</strong>로 첨부한다. 매핑표는 분량이 작아 문서에 수록할 수 있으므로, 외부 저장소를 참조하는 방식은 두지 않는다.</p>
+
+<h2>개정 범위</h2>
+<div class="tablebox"><table>
+<thead><tr><th>규범</th><th>개정</th><th>권한</th></tr></thead>
+<tbody>
+<tr><td>정보통신표준화 <strong>운영규정</strong></td><td><strong>불요</strong> — 기존 조문을 근거로 활용<br>제29조①2(특별위원)·제33조⑤(의결권 없음)·제38조②③·제57조</td><td>(표준총회)</td></tr>
+<tr><td>정보통신표준화 <strong>운영요령</strong></td><td>제2조·제13조·제15조·제19조·<strong>제19조의2제5항(공동 에디터)</strong>·제21조·제26조·제11조 + 별표 10 · 별지 제11-1호·제21-1호 + 부칙</td><td>운영위원회 (제57조)</td></tr>
+<tr><td>정보통신단체표준 <strong>작성지침</strong></td><td>6.5.3 · 6.5.7(신설) · 6.6(@context) · 부속서 B · 부록 Ⅱ-4</td><td>전략계획위원회 검토 → 기술위원회등 채택<br>(제20조의3①6호 · 제47조①)</td></tr>
+</tbody></table></div>
+<p><strong>상정 순서 ① → ②.</strong> 작성지침 6.6이 운영요령 제19조의2의 공동 에디터를 조문으로 참조하므로 운영요령이 먼저 의결되어야 한다.</p>
+
+<h2>감수하는 것</h2>
+<div class="note warn">
+<strong>어휘 전문가 확보가 전제된다.</strong> 공동 에디터 풀이 작으면 병목이 되고, 적용 대상 표준이 늘면 확장이 어렵다.
+<br><br>특히 운영규정 제29조제1항제2호의 특별위원 자격은 <strong>가) 관련 분야 교수 · 나) 관계 행정기관 공무원 · 다) 공공 및 비영리단체 등에 소속된 자</strong>로 한정되어, <strong>민간기업 소속 전문가는 위촉할 수 없다.</strong>
+<br><br><strong>대신 얻는 것</strong> — 어휘 매핑의 품질을 전문가가 보증한다. 산출물이 표준 문서 안에 있어 완결성·영속성이 자연히 확보되고, 협회가 표준 간 어휘 일관성을 조율할 수 있다.
+</div>
+
+<div class="foot">AI-Ready 표준화 방법2 (공동 에디터 보강형) · <a href="m2-rules.html">운영요령 개정안부터 보기 →</a></div>
+</div>
+<script>
+function tt(){var r=document.documentElement,c=r.getAttribute("data-theme");
+var n=c==="dark"?"light":c==="light"?"dark":(matchMedia("(prefers-color-scheme: dark)").matches?"light":"dark");
+r.setAttribute("data-theme",n);try{localStorage.setItem("th",n)}catch(e){}}
+try{var s=localStorage.getItem("th");if(s)document.documentElement.setAttribute("data-theme",s)}catch(e){}
+</script></body></html>

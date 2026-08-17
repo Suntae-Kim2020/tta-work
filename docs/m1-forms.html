@@ -2,15 +2,20 @@
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>서식 — AI-Ready 방법1</title><link rel="stylesheet" href="style.css"></head><body>
 <div class="topbar"><div class="topbar-in">
-  <a class="brand" href="index.html">AI-Ready <span>방법1</span></a>
-  <nav class="navlinks">
-    <a href="index.html">개요</a>
-    <a href="rules.html">운영요령</a><a href="drafting.html">작성지침</a>
-    <a href="annex.html">별표 10</a>
-    <a href="forms.html" class="on">서식</a>
-    <a href="review.html">검토·정정</a>
-  </nav>
+  <a class="brand" href="index.html">AI-Ready <span>규범 개정안</span></a>
+  <div class="mswitch">
+    <a href="m1-index.html" class="ms on">방법1 제안자 선언형</a>
+    <a href="m2-index.html" class="ms">방법2 공동 에디터 보강형</a>
+  </div>
   <button class="theme-btn" onclick="tt()">◐ 테마</button>
+</div></div>
+<div class="subbar"><div class="subbar-in">
+  <a href="m1-index.html">개요</a>
+  <a href="m1-rules.html">운영요령</a>
+  <a href="m1-drafting.html">작성지침</a>
+  <a href="m1-annex.html">별표 10</a>
+  <a href="m1-forms.html" class="on">서식</a>
+  <a href="m1-review.html">검토·정정</a>
 </div></div><div class="wrap">
 <div class="hero">
   <p class="eyebrow">별지 서식(안) · 부속서 양식(안)</p>
@@ -267,7 +272,7 @@
 <br><br><strong>둘.</strong> 파일명에 버전을 넣는 규칙을 권장한다(예: <code>mods-3-8.xsd</code>). 국제 사례에서 HL7 FHIR의 <code>definitions.shex.zip</code>이 <code>fhir.schema.shex.zip</code>으로 바뀌어 기존 문서의 링크가 무효가 된 사례가 확인됐다.
 <br><br><strong>셋.</strong> 이용조건은 이 명세뿐 아니라 <strong>산출물 파일 자체에도</strong> 표시한다(작성지침 6.6).</div>
 
-<div class="foot">AI-Ready 표준화 방법1 · 서식 · <a href="annex.html">← 별표 10</a> · <a href="review.html">검토·정정 →</a></div>
+<div class="foot">AI-Ready 표준화 방법1 · 서식 · <a href="m1-annex.html">← 별표 10</a> · <a href="m1-review.html">검토·정정 →</a></div>
 </div><script>
 function tt(){var r=document.documentElement,c=r.getAttribute("data-theme");
 var n=c==="dark"?"light":c==="light"?"dark":(matchMedia("(prefers-color-scheme: dark)").matches?"light":"dark");

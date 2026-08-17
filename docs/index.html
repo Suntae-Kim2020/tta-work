@@ -1,122 +1,89 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI-Ready 표준화 방법1 — 제안자 선언형</title><link rel="stylesheet" href="style.css"></head><body>
+<title>AI-Ready 표준화 규범 개정(안)</title><link rel="stylesheet" href="style.css"></head><body>
 <div class="topbar"><div class="topbar-in">
-  <a class="brand" href="index.html">AI-Ready <span>방법1</span></a>
-  <nav class="navlinks">
-    <a href="index.html" class="on">개요</a>
-    <a href="rules.html">운영요령</a><a href="drafting.html">작성지침</a>
-    <a href="annex.html">별표 10</a><a href="forms.html">서식</a><a href="review.html">검토·정정</a>
-  </nav>
+  <a class="brand" href="index.html">AI-Ready <span>규범 개정안</span></a>
+  <div class="mswitch">
+    <a href="m1-index.html" class="ms">방법1 제안자 선언형</a>
+    <a href="m2-index.html" class="ms">방법2 공동 에디터 보강형</a>
+  </div>
   <button class="theme-btn" onclick="tt()">◐ 테마</button>
 </div></div>
 <div class="wrap">
 
 <div class="hero">
   <p class="eyebrow">TTA 표준화 규범 개정(안)</p>
-  <h1>AI-Ready 표준화 방법1 — 제안자 선언형</h1>
-  <p class="lede">표준 제안자가 어휘를 선언하고, 그 선언에 따라 에디터가 기계가독 산출물(스키마)까지 작성한다. 협회는 별도의 어휘 전문가를 배정하지 않는다.</p>
+  <h1>AI-Ready 표준화 — 두 가지 추진 방법</h1>
+  <p class="lead lede">데이터를 기술하는 표준을 사람과 기계가 함께 읽을 수 있는 형태로 전환하기 위한 규범 개정안이다. <strong>서로 독립된 두 안</strong>을 제시하며, 둘 중 하나를 택한다.</p>
   <div class="meta">
-    <span>2026-08-15</span><span class="dot">·</span>
-    <span>운영규정 <code>SAG-0029(24)/R24</code> · 운영요령 <code>SBG-0030(13)/R13</code> · 작성지침 <code>TTAR-09.0040/R1</code> 기준</span>
+    <span>운영규정 <code>SAG-0029(24)/R24</code></span><span class="dot">·</span>
+    <span>운영요령 <code>SBG-0030(13)/R13</code></span><span class="dot">·</span>
+    <span>작성지침 <code>TTAR-09.0040/R1</code> 기준</span>
   </div>
 </div>
 
-<div class="note warn"><span class="note-t">다른 추진 방법과의 관계</span>
-<strong>방법2(공동 에디터 보강형)와는 독립된 별개의 안이며, 둘 중 하나를 택하는 관계다.</strong> 두 안은 같은 조문 자리와 같은 서식 번호를 다른 내용으로 쓰므로 함께 시행하거나 조문을 섞어 채택할 수 없다.
-<br><br>이 안의 규범 개정안과 서식은 <strong>다른 안을 전제하지 않고 그 자체로 완결</strong>되게 작성했다. 아래 비교표는 어느 안을 택할지 판단하기 위한 자료다.
+<div class="note warn"><span class="note-t">두 안의 관계 — 택일</span>
+<strong>함께 시행하는 것이 아니다.</strong> 두 안은 같은 조문 자리(제19조의2제5항 ↔ 제19조의3)와 같은 서식 번호(별지 제11-1호·제21-1호, 별표 10)를 <strong>서로 다른 내용으로</strong> 쓰므로 병존할 수 없고, 조문을 섞어 채택할 수도 없다.
+<br><br>각 안의 규범 개정안과 서식은 <strong>상대 안을 전제하지 않고 그 자체로 완결</strong>되게 작성했다. 어느 쪽을 택하든 그 문서만으로 개정 절차를 진행할 수 있다.
 </div>
 
-<h2>문서</h2>
+<h2>어느 쪽을 보시겠습니까</h2>
+<div class="pick">
+  <a class="pick-card" href="m1-index.html">
+    <div class="pick-k">방법 1</div>
+    <div class="pick-t">제안자 선언형</div>
+    <p class="pick-d">제안자가 어휘를 선언하고, 그 선언에 따라 <strong>에디터가 스키마까지 작성</strong>한다. 협회는 별도의 어휘 전문가를 배정하지 않는다.</p>
+    <ul class="pick-l">
+      <li>신설 조문 — <strong>제19조의3</strong> (산출물 제출·공개·보관·점검)</li>
+      <li>산출물 — 스키마 + 참조구현(선택), 부속서 내장형 또는 <strong>외부 참조형</strong></li>
+      <li>품질 보증 — 제안자 선언 + 형식 자동 점검</li>
+      <li>확장성 — 제약 없음</li>
+    </ul>
+    <span class="pick-go">방법1 보기 →</span>
+  </a>
+  <a class="pick-card" href="m2-index.html">
+    <div class="pick-k">방법 2</div>
+    <div class="pick-t">공동 에디터 보강형</div>
+    <p class="pick-d">에디터는 사람이 읽는 요소 정의표만 채운다. 기계가 읽는 형식으로 옮기는 일은 <strong>어휘 전문가인 공동 에디터</strong>가 맡는다.</p>
+    <ul class="pick-l">
+      <li>신설 조문 — <strong>제19조의2제5항</strong> (공동 에디터)</li>
+      <li>산출물 — 요소↔IRI 매핑, <strong>@context 부속서</strong>(문서 내)</li>
+      <li>품질 보증 — 전문가 검증</li>
+      <li>확장성 — 어휘 전문가 풀에 종속</li>
+    </ul>
+    <span class="pick-go">방법2 보기 →</span>
+  </a>
+</div>
+
+<h2>조문이 어떻게 갈리는가</h2>
+<p>같은 자리를 서로 다르게 쓰는 지점이다. 각 조문을 클릭하면 해당 안의 신구조문대비표로 이동한다.</p>
+<div class="tablebox"><table>
+<thead><tr><th>자리</th><th>방법1 — 제안자 선언형</th><th>방법2 — 공동 에디터 보강형</th></tr></thead>
+<tbody>
+<tr><td class="num">운영요령 제2조</td><td><a href="m1-rules.html#a2">용어 6~<strong>9</strong>호</a> — 기계가독 산출물·참조구현 정의 추가</td><td><a href="m2-rules.html#a2">용어 6~<strong>8</strong>호</a></td></tr>
+<tr><td class="num">제13조제5항</td><td><a href="m1-rules.html#a13">기계가독 산출물 선언서</a> — 어휘·형식·공개 위치·이용조건</td><td><a href="m2-rules.html#a13">AI-Ready 선언</a> — 프로파일·목표 수준</td></tr>
+<tr><td class="num">제19조제1항9호</td><td><a href="m1-rules.html#a19">매핑을 포함하여 작성</a></td><td><a href="m2-rules.html#a19">@context 부속서로 첨부</a></td></tr>
+<tr><td class="num"><strong>제19조의2제5항</strong></td><td>신설하지 않음</td><td><a href="m2-rules.html#a192"><strong>공동 에디터</strong></a></td></tr>
+<tr><td class="num"><strong>제19조의3</strong></td><td><a href="m1-rules.html#a193"><strong>산출물 제출·공개·보관·점검</strong></a> (8개항)</td><td>신설하지 않음</td></tr>
+<tr><td class="num">제21조제5항</td><td><a href="m1-rules.html#a21">자가점검표 + <strong>선언·산출물 일치</strong></a></td><td><a href="m2-rules.html#a21">자가점검표</a></td></tr>
+<tr><td class="num">제26조제6항</td><td><a href="m1-rules.html#a26">자가점검 + <strong>참조 링크 유효성</strong></a></td><td><a href="m2-rules.html#a26">자가점검</a></td></tr>
+<tr><td class="num">제11조제4항</td><td>제19조의3제7항으로 흡수</td><td><a href="m2-rules.html#a11">형식 정합성 점검</a></td></tr>
+<tr><td class="num">작성지침 6.6</td><td><a href="m1-drafting.html#s66">내장형 · <strong>참조형</strong> + 형식별 라이선스 표기</a></td><td><a href="m2-drafting.html#s66">@context 부속서 — 공동 에디터 보강</a></td></tr>
+<tr><td class="num">별지 제11-1호</td><td>기계가독 산출물 선언서</td><td>AI-Ready 선언(목표 수준 신청)</td></tr>
+<tr><td class="num">별표 제10호</td><td><a href="m1-annex.html">수준 요건 + <strong>제4부 산출물 요건</strong></a></td><td>수준 요건</td></tr>
+</tbody></table></div>
+
+<h2>공통 사항</h2>
 <div class="cards">
-  <a class="card" href="rules.html"><div class="card-k">안건 ① · 운영위원회 의결</div><div class="card-t">운영요령 개정안</div><p class="card-d">제2조 용어 · 제13조 선언 · 제15조 검토 · 제19조 작성 · <strong>제19조의3 신설</strong> · 제21조 상정 · 제26조 관리</p></a>
-  <a class="card" href="drafting.html"><div class="card-k">안건 ② · 전략계획위원회 심의</div><div class="card-t">작성지침 개정안</div><p class="card-d">6.5.3 인용 표준 · 6.5.7 요소 정의표 신설 · 6.6 부속서(내장형·참조형) · 6.7 부록 · 부속서 B</p></a>
-  <a class="card" href="annex.html"><div class="card-k">별표 제10호(안)</div><div class="card-t">AI-Ready 수준 요건</div><p class="card-d">7개 구성요소 등급 · L1·L2·L3 · 프로파일별 요구 · 성숙도 산식 · <strong>제4부 산출물 요건</strong></p></a>
-  <a class="card" href="forms.html"><div class="card-k">별지 서식(안)</div><div class="card-t">선언서 · 자가점검표 · 부속서 양식</div><p class="card-d">별지 제11-1호 기계가독 산출물 선언서 · 별지 제21-1호 자가점검표 · 규범적 참조 명세</p></a>
-  <a class="card" href="review.html"><div class="card-k">근거 검토</div><div class="card-t">운영규정 개정 불요 검토 · 정정 이력</div><p class="card-d">쟁점 5건 · 심의 예상 질문 · 원문 대조로 고친 오류 11건</p></a>
+  <div class="card"><div class="card-t">운영규정은 개정하지 않는다</div><p class="card-d">두 안 모두 제57조 위임으로 운영요령에서 처리한다. 운영규정 개정은 표준총회(연 2회) 권한이라 절차가 길기 때문이다.</p></div>
+  <div class="card"><div class="card-t">상정 순서 ① → ②</div><p class="card-d">운영요령이 먼저 의결되어야 작성지침이 성립한다. 운영요령은 운영위원회에서 즉시 의결 가능하나, 작성지침은 기술보고서여서 <strong>의견수렴 4주 이상</strong>(제39조제2항)을 거친다.</p></div>
+  <div class="card"><div class="card-t">별표 10 · 별지 제21-1호</div><p class="card-d">두 안 모두 신설하지만 내용이 다르다. 방법1은 제4부(산출물 요건)와 선언 일치 확인이 추가된다.</p></div>
 </div>
 
-<h2>절차 흐름</h2>
-<div class="flow">[제안 단계]  <b>제안자</b>
-  └─ ① 어휘 선언 ────── 사용할 전역 어휘·산출물 형식·공개 위치·이용조건을 선언한다
-                        (별지 제11-1호 · 운영요령 제13조제5항)
-
-[초안 단계]  <b>에디터</b>   ※ 제안자가 에디터로 지정되면 같은 사람이다
-  ├─ ② 스키마 작성 ──── 선언에 따라 기계가독 산출물을 작성해 제출한다 (제19조의3제1항)
-  ├─ ③ 외부 공개 (선택) ─ 제안자 또는 에디터가 GitHub 등에 공개할 수 있다 (제3항)
-  └─ ④ 참조구현 (선택) ─ 스키마를 이용하는 프로그램 코드를 공개할 수 있다 (제6항)
-
-[협회]  <b>사무국</b>
-  ├─ 채택 시점 사본을 보관하고 표준과 함께 공개한다 (제4항 — <b>보관본이 정본</b>)
-  └─ 형식 정합성을 전자적 방법으로 점검할 수 있다 (제7항)</div>
-
-<h2>세 가지 설계 판단</h2>
-
-<h3>1. 스키마는 규범이다</h3>
-<p>기계가독 산출물은 <strong>표준의 규범 내용</strong>이다. 이를 따르지 않으면 그 표준에 적합하다고 할 수 없다. 참고 자료가 아니다. 이 판단에서 아래 요건이 따라 나온다.</p>
-<div class="tablebox"><table>
-<thead><tr><th>요건</th><th>이유</th></tr></thead>
-<tbody>
-<tr><td>부속서에 수록하거나 규범적으로 참조</td><td>규범이므로 표준의 구성요소여야 한다</td></tr>
-<tr><td>지식재산권 확인 대상 포함</td><td>표준초안의 일부이므로 운영규정 제36조 적용</td></tr>
-<tr><td>협회 보관본 유지</td><td>외부 저장소가 사라져도 규범이 남아야 한다</td></tr>
-<tr><td>이용조건(라이선스) 명시 의무</td><td>규범을 이용자가 쓸 수 있어야 실효가 있다</td></tr>
-</tbody></table></div>
-
-<h3>2. 외부 공개를 허용하되, 보관본을 정본으로 둔다</h3>
-<p>GitHub 등에 공개하는 것을 허용한다. 개발자 접근성과 이슈 추적·버전 관리 이점이 크기 때문이다. 다만 외부 저장소는 삭제·변경될 수 있어 표준의 영속성과 충돌하므로, <strong>협회가 채택 시점 사본을 보관하고 외부 공개본과 다를 경우 보관본을 따른다.</strong></p>
-<div class="note why">이 이중 구조는 <strong>CycloneDX가 실제로 쓰는 방식</strong>과 같다. 스키마는 GitHub에서 배포하되 같은 버전을 Ecma가 ECMA-424 정식 판으로 승인해 공식성과 영속성을 확보한다.</div>
-
-<h3>3. 참조구현 코드는 표준이 아니다</h3>
-<p>스키마를 이용하는 프로그램 코드는 <strong>표준의 일부가 아니다.</strong> 위치를 부록에 안내할 수 있을 뿐이며 협회는 보증하지 않는다. 첫째, 코드는 언어·런타임·의존성에 묶여 있어 표준으로 고정하면 곧 낡는다. 둘째, 코드에 표준의 지위를 주면 지식재산권 처리 범위가 통제 불가능하게 넓어진다.</p>
-
-<h2>개정 범위</h2>
-<div class="tablebox"><table>
-<thead><tr><th>규범</th><th>개정</th><th>권한</th></tr></thead>
-<tbody>
-<tr><td>정보통신표준화 <strong>운영규정</strong></td><td><strong>불요</strong> — 기존 조문을 근거로 활용</td><td>(표준총회)</td></tr>
-<tr><td>정보통신표준화 <strong>운영요령</strong></td><td>제2조·제13조·제15조·제19조·<strong>제19조의3(신설, 8개항)</strong>·제21조·제26조 + 별표 10 · 별지 제11-1호·제21-1호</td><td>운영위원회 (제57조)</td></tr>
-<tr><td>정보통신단체표준 <strong>작성지침</strong></td><td>6.5.3 · 6.5.7(신설) · 6.6 · 6.7 · 부속서 B · 부록 Ⅰ</td><td>전략계획위원회 검토 → 기술위원회등 채택<br>(제20조의3①6호 · 제47조①)</td></tr>
-</tbody></table></div>
-<p><strong>상정 순서 ① → ②.</strong> 작성지침이 운영요령 제19조의3을 참조하므로 운영요령이 먼저 의결되어야 한다.</p>
-
-<h2>참고 — 다른 추진 방법과의 차이</h2>
-<p>아래는 <strong>선택 판단용 비교</strong>이며, 개정안 본문에는 이런 서술이 없다.</p>
-<div class="tablebox"><table>
-<thead><tr><th></th><th>방법1 — 제안자 선언형</th><th>방법2 — 공동 에디터 보강형</th></tr></thead>
-<tbody>
-<tr><td>어휘 매핑 주체</td><td><strong>에디터</strong> (제안 단계 선언은 제안자)</td><td>공동 에디터(어휘 전문가, 특별위원)</td></tr>
-<tr><td>산출물 위치</td><td>부속서 내장형 <strong>또는</strong> 외부 참조형</td><td>@context 부속서(문서 내)</td></tr>
-<tr><td>산출물 범위</td><td>스키마 + 참조구현(선택)</td><td>요소↔IRI 매핑</td></tr>
-<tr><td>신설 조문</td><td><strong>제19조의3</strong> (산출물 제출·공개·보관·점검)</td><td>제19조의2제5항 (공동 에디터)</td></tr>
-<tr><td>품질 보증</td><td>제안자 선언 + 에디터 작성 + 형식 자동 점검</td><td>전문가 검증</td></tr>
-<tr><td>확장성</td><td>제약 없음</td><td>어휘 전문가 풀에 종속</td></tr>
-<tr><td>국제 사례 대응</td><td>유형 1·4 (기계가독 우선 설계 / GitHub 단일 소스)</td><td>유형 6 (문서 옆 병행 게시)</td></tr>
-</tbody></table></div>
-
-<h2>방법1이 감수하는 것</h2>
-<div class="note warn"><strong>어휘 매핑 품질이 제안 측 역량에 좌우된다.</strong> 협회가 어휘 전문가를 붙이지 않으므로 잘못된 IRI 매핑이나 부적절한 어휘 선택을 걸러낼 사람이 없다. 보완 장치는 두 가지 — 자가점검표와 형식 정합성 자동 점검. <strong>둘 다 형식은 잡아내지만 의미는 잡아내지 못한다.</strong>
-<br><br><strong>대신 얻는 것은 확장성이다.</strong> 어휘 전문가 풀에 의존하지 않으므로 적용 대상 표준 수에 제약이 없고, 제안자가 이미 스키마를 갖고 있는 경우(산업계 제안, 오픈소스 기반 제안) 절차가 짧다.</div>
-
-<h2>근거 — 국제 사례 실물 조사</h2>
-<p>국제 표준화기구 <strong>16개 사례</strong>를 실물 수집·검증(6개 유형, 273MB)한 결과가 각 조문의 근거가 되었다.</p>
-<div class="tablebox"><table>
-<thead><tr><th>방법1 설계</th><th>근거 사례</th><th>확인 내용</th></tr></thead>
-<tbody>
-<tr><td>참조형 부속서(규범적 참조)</td><td><strong>ECMA-424</strong></td><td>566쪽 본문에 스키마 코드가 없고 GitHub를 규범적으로 참조. <strong>16개 사례 중 문서에 스키마를 담은 사례 0건</strong></td></tr>
-<tr><td>협회 보관본을 정본으로</td><td><strong>CycloneDX</strong></td><td>GitHub 배포 + 같은 버전을 Ecma가 정식 판으로 승인하는 이중 트랙</td></tr>
-<tr><td>라이선스를 파일 자체에 표시</td><td>LoC METS · DDI 3.3 · CycloneDX</td><td>XSD 주석 · JSON <code>$comment</code> · <code>dcterms:license</code> 트리플</td></tr>
-<tr><td>이용조건 미표기의 폐해</td><td><strong>ISO 19115-3</strong></td><td>XSD 117개를 무료 공개하면서 파일에 아무 표시가 없어 재배포 가능 여부를 확인할 수 없다</td></tr>
-<tr><td>진입점 파일 명시</td><td>OGC · ISO</td><td><code>gml.xsd</code>·<code>mdb.xsd</code>가 include 진입점이라 단독으로는 동작하지 않는다</td></tr>
-<tr><td>참조구현을 표준에서 배제</td><td>Schema.org</td><td>빌드 도구(Apache-2.0)와 어휘(CC BY-SA 3.0)를 명시적으로 분리</td></tr>
-</tbody></table></div>
-
-<div class="note"><span class="note-t">문서 원본</span>
-이 페이지는 저장소의 <code>AI-Ready_방법1_제안자선언형/</code> 마크다운 문서를 정리한 것이다. 현행 문안은 PDF 추출본이므로 <strong>의결 전 원문 최종 대조가 필요하다.</strong>
+<div class="foot">
+  TTA AI-Ready 표준화 규범 개정(안) · 두 안 중 택일 ·
+  <a href="m1-index.html">방법1</a> · <a href="m2-index.html">방법2</a>
 </div>
-
-<div class="foot">AI-Ready 표준화 방법1 (제안자 선언형) · TTA 표준화 규범 개정(안) · <a href="rules.html">운영요령 개정안부터 보기 →</a></div>
-
 </div>
 <script>
 function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
