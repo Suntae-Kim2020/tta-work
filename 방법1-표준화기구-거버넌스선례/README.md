@@ -50,6 +50,8 @@
 수집한 프로세스 문서에서 확인되는 구조다.
 
 > Stage 0 — "None. New proposals are assigned this stage by their authors outside of the usual advancement process."
+>
+> **번역** — 진입 요건: 없음. 새 제안은 **통상의 승급 절차 밖에서 제안자(author) 본인이** 이 단계로 올린다.
 
 **제안자(author)가 스스로 Stage 0에 올린다.** 위원회가 배정하는 것이 아니다. 이후 단계 진입 요건에 "챔피언 지정"이 포함되며, 챔피언이 명세 문안과 구현·테스트를 책임진다.
 
@@ -92,15 +94,23 @@ IETF는 **문서 안의 코드에 별도 라이선스를 적용**한다. 수집�
 
 **4.a 정의**
 > "IETF Contributions and IETF Documents often include components intended to be directly processed by a computer (**"Code Components"**)."
+>
+> **번역** — IETF 기여물과 IETF 문서에는 **컴퓨터가 직접 처리하도록 의도된 구성요소**가 포함되는 경우가 많으며, 이를 **"코드 컴포넌트"**라 한다.
 
 **4.b 식별 — 마커로 표시한다**
 > "any text found between the markers **`<CODE BEGINS>` and `<CODE ENDS>`**, or otherwise clearly labeled as a Code Component, shall be considered a Code Component."
+>
+> **번역** — **`<CODE BEGINS>`와 `<CODE ENDS>` 표시 사이에 있는 텍스트**, 또는 그 밖에 코드 컴포넌트임이 명확히 표시된 텍스트는 코드 컴포넌트로 본다.
 
 **4.c 라이선스 — 문서와 다른 조건**
 > "such Code Components are also licensed ... on the terms of the **"Revised BSD License"** ... If a licensee elects to apply the BSD License to a Code Component, then the additional licenses and restrictions set forth in Section 3 **shall not apply thereto**."
+>
+> **번역** — 그러한 코드 컴포넌트는 **"Revised BSD License"** 조건으로도 이용이 허락된다. 이용자가 코드 컴포넌트에 BSD 라이선스를 적용하기로 택하면, 제3조에 정한 추가 허락과 제한은 **그 코드에 적용되지 아니한다.**
 
 **4.d 귀속**
 > "Those who use Code Components ... are requested to attribute each such Code Component to IETF and identify the RFC ... from which it is taken."
+>
+> **번역** — 코드 컴포넌트를 이용하는 자는 각 코드 컴포넌트의 출처를 IETF로 표시하고, 그것을 가져온 RFC를 밝히도록 요청된다.
 
 **방법1과의 관계**
 
@@ -135,6 +145,8 @@ W3C도 **문서용**과 **소프트웨어용** 라이선스를 나눠 둔다.
 W3C는 발간한 URI를 영구히 유지하겠다고 **명문으로 약속**한다. 수집한 정책 문서에 창립자의 선언이 인용돼 있다.
 
 > "The intent is to set an example by **reducing the failure of links due to clumsy management or inadequate commitment to information persistence**, and to provide a stable reference base of information about W3C-related topics as a service to the community." — Tim Berners-Lee, 1999
+>
+> **번역** — 그 취지는 **서투른 관리나 정보 영속성에 대한 불충분한 의지 때문에 링크가 끊기는 일을 줄여** 모범을 보이고, W3C 관련 정보에 대한 안정적인 참조 기반을 공동체에 제공하는 데 있다. — 팀 버너스리, 1999
 
 **방법1과의 관계** — 방법1의 규범적 참조가 실효를 가지려면 참조 대상 URI가 유지되어야 한다. W3C는 이를 **기관 정책으로 문서화**했다. TTA가 네임스페이스 URI 체계를 도입할 때(3부 중장기 과제) 참고할 문안이다.
 
@@ -191,6 +203,8 @@ W3C는 특정 시점에 발간된 문서를 **"특허 검토 및 배제를 위�
 
 > "a version of a W3C Specification ... that is **published for patent review and exclusion**"
 > "As a condition of participating in a Working Group, each participant..."
+>
+> **번역** — **특허 검토 및 배제를 위해 발간된** W3C 명세의 판. / 워킹그룹에 참가하는 조건으로 각 참가자는…
 
 **핵심은 시점이다.** 특정 단계에 선언하지 않으면 이후에는 주장할 수 없다. 방법1의 제안 단계 선언도 같은 구조다 — 나중에 다투지 않도록 **미리 밝히게 한다.**
 
