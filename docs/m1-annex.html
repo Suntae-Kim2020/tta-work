@@ -88,12 +88,12 @@
 <thead><tr><th>#</th><th>요건</th><th>근거</th><th>판정</th></tr></thead>
 <tbody>
 <tr><td class="num">1</td><td>기계가독 산출물을 표준초안과 함께 제출했는가</td><td class="num">제19조의3①</td><td>충족 / 미충족</td></tr>
-<tr><td class="num">2</td><td><strong>산출물마다</strong> 부속서로 수록했는가(병행형), 또는 규범적 참조 명세를 두었는가(명세형)</td><td class="num">제19조의3②</td><td>산출물별로 병행형 / 명세형</td></tr>
-<tr><td class="num">3</td><td><strong>명세형인 산출물이 있는 경우</strong> 그 전부에 대하여 공개 위치·버전·무결성 값·이용조건을 기재했는가</td><td class="num">제19조의3② 각 호</td><td>충족 / 미충족 / N·A</td></tr>
+<tr><td class="num">2</td><td><strong>산출물마다</strong> 부속서로 수록했는가(병행형), 또는 규범적 참조 명세를 두었는가(참조형)</td><td class="num">제19조의3②</td><td>산출물별로 병행형 / 참조형</td></tr>
+<tr><td class="num">3</td><td><strong>참조형인 산출물이 있는 경우</strong> 그 전부에 대하여 공개 위치·버전·무결성 값·이용조건을 기재했는가</td><td class="num">제19조의3② 각 호</td><td>충족 / 미충족 / N·A</td></tr>
 <tr><td class="num">4</td><td>협회 보관본이 등록되었는가</td><td class="num">제19조의3⑥</td><td>충족 / 미충족</td></tr>
 </tbody></table></div>
-<div class="note"><strong>병행형이 원칙, 명세형이 예외다.</strong> 산출물 분량이 많아 문서에 수록하기 곤란한 경우에만 명세형을 쓴다.</div>
-<div class="note why"><span class="note-t">형태는 산출물마다 정한다</span>하나의 표준이 @context는 병행형으로, 검증용 JSON Schema·XSD는 명세형으로 두는 조합이 일반적이다. <strong>표준 전체에 하나로 정하지 아니한다.</strong></div>
+<div class="note"><strong>병행형이 원칙, 참조형이 예외다.</strong> 산출물 분량이 많아 문서에 수록하기 곤란한 경우에만 참조형을 쓴다.</div>
+<div class="note why"><span class="note-t">형태는 산출물마다 정한다</span>하나의 표준이 @context는 병행형으로, 검증용 JSON Schema·XSD는 참조형으로 두는 조합이 일반적이다. <strong>표준 전체에 하나로 정하지 아니한다.</strong></div>
 
 <h3>4-2. 이용조건 표시 요건</h3>
 <div class="tablebox"><table>
@@ -137,9 +137,9 @@
 <thead><tr><th>구분</th><th>항목</th><th>비고</th></tr></thead>
 <tbody>
 <tr><td>항상 필수</td><td class="num">1 · 4 · 5 · 6 · 7 · 8 · 9</td><td>하나라도 미충족이면 산출물 요건 미충족</td></tr>
-<tr><td>조건부 필수</td><td class="num">3</td><td><strong>명세형 산출물이 하나라도 있는 경우</strong> 적용</td></tr>
+<tr><td>조건부 필수</td><td class="num">3</td><td><strong>참조형 산출물이 하나라도 있는 경우</strong> 적용</td></tr>
 <tr><td>조건부 필수</td><td class="num">10</td><td>참조구현을 공개하는 경우에만 적용</td></tr>
-<tr><td>판정 대상 아님</td><td class="num"><strong>2</strong></td><td>산출물별 부속서 형태의 <strong>분류</strong> 항목이다. 충족·미충족을 가리지 않으며, 명세형이 포함되면 3번의 적용을 촉발한다</td></tr>
+<tr><td>판정 대상 아님</td><td class="num"><strong>2</strong></td><td>산출물별 부속서 형태의 <strong>분류</strong> 항목이다. 충족·미충족을 가리지 않으며, 참조형이 포함되면 3번의 적용을 촉발한다</td></tr>
 </tbody></table></div>
 <p>세부 점검은 별지 제21-1호 서식에서 하며, 그 서식 <strong>제3부의 1·3·6번</strong>이 이 표의 <strong>7·8·9번</strong>에 대응한다.</p>
 
@@ -153,7 +153,7 @@
 <tbody>
 <tr><td>①② 작성 주체</td><td><strong>에디터</strong> (제안 단계 선언은 제안자)</td><td>공동 에디터(어휘 전문가)</td></tr>
 <tr><td>산출물 범위</td><td>스키마 전체 + 참조구현(선택)</td><td>요소↔IRI 매핑(@context)</td></tr>
-<tr><td>산출물 위치</td><td>부속서 <strong>병행형</strong>(수록+파일) 또는 외부 명세형</td><td>@context 부속서(문서 내)</td></tr>
+<tr><td>산출물 위치</td><td>부속서 <strong>병행형</strong>(수록+파일) 또는 외부 참조형</td><td>@context 부속서(문서 내)</td></tr>
 <tr><td><strong>제4부 산출물 요건</strong></td><td><strong>있음</strong></td><td>없음(문서 내에 있어 별도 확인 불요)</td></tr>
 </tbody></table></div>
 <p>제1~3부의 등급 기준·프로파일·산식은 두 방법이 같다.</p>
