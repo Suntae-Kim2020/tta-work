@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>결정기준 — AI-Ready 방법1</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="topbar"><div class="topbar-in">
+  <a class="brand" href="index.html">AI-Ready <span>규범 개정안</span></a>
+  <div class="mswitch">
+    <a href="m1-index.html" class="ms on">방법1 제안자 선언형</a>
+    <a href="m2-index.html" class="ms">방법2 공동 에디터 보강형</a>
+  </div>
+  <button class="theme-btn" onclick="tt()">◐ 테마</button>
+</div></div>
+<div class="subbar"><div class="subbar-in">
+  <a href="m1-index.html">개요</a>
+  <a href="m1-rules.html">운영요령</a>
+  <a href="m1-drafting.html">작성지침</a>
+  <a href="m1-annex.html">별표 10</a>
+  <a href="m1-forms.html">서식</a>
+  <a href="m1-decide.html" class="on">결정기준</a>
+  <a href="m1-review.html">검토·정정</a>
+</div></div><div class="wrap">
+
+<div class="hero">
+  <p class="eyebrow">실무 판단 지침</p>
+  <h1>스키마와 참조구현, 어떻게 결정하나</h1>
+  <p class="lede">표준을 제안할 때 딸려 나오는 두 산출물에 대해, <strong>문서에 넣을지</strong>와 <strong>어떤 이용조건을 붙일지</strong>를 판단하는 기준.</p>
+  <div class="meta"><span>국제 표준 16종의 배포 실물과 표준화 기구 6곳의 규정 조사 결과에 근거</span></div>
+</div>
+
+<h2>지위는 이미 갈려 있다</h2>
+<p><strong>규범 여부는 판단할 것이 아니라 성격에서 따라 나온다.</strong> 정의 조문이 이미 정하고 있다.</p>
+<div class="tablebox"><table>
+<thead><tr><th></th><th>무엇인가</th><th>표준의 일부인가</th><th>근거</th></tr></thead>
+<tbody>
+<tr><td><strong>스키마</strong></td><td>데이터의 구조·의미를 <strong>정의</strong>하는 파일</td><td><strong>그렇다.</strong> 표준의 규범 내용</td><td class="num">운영요령 제2조①8호</td></tr>
+<tr><td><strong>참조구현</strong></td><td>그 정의를 <strong>사용·처리</strong>하는 프로그램</td><td><strong>아니다.</strong> 표준의 일부가 아님</td><td class="num">제2조①9호</td></tr>
+</tbody></table></div>
+<p>정해야 할 것은 그다음이다. 라이선스는 <strong>둘 다</strong> 정해야 하고, 서로 달라도 된다.</p>
+
+<h2>결정 순서</h2>
+<div class="flow">① 이것이 무엇인가 — 성격으로 가른다
+
+   데이터의 구조·의미를 <b>정의</b>하는가?
+     → 스키마.  표준의 규범 내용이다.  ②로
+
+   그 정의를 <b>사용·처리</b>하는 프로그램인가?
+     → 참조구현.  표준의 일부가 아니다.
+        부록에 위치만 안내하고, ③에서 라이선스만 정한다
+
+   ※ 경계가 애매하면 — 변환기·검증기처럼 정의와 처리에 걸친 산출물은
+      제안 단계 선언(별지 제11-1호)에서 어느 쪽으로 낼지 밝힌다
+
+
+② 스키마를 부속서에 넣을 수 있는가?  아래 셋을 모두 통과해야 한다
+
+   · 분량이 문서에 들어가는가?
+   · 표준 문서와 같은 주기로 개정되는가?
+   · 파일 하나로 완결되는가?
+
+   셋 다 예 ────────────→ <b>병행형</b> : 부속서에 전문 수록 + 파일 제공
+   하나라도 아니오 ──────→ <b>참조형</b> : 부속서에 명세만 수록, 실물은 밖에
+                                  ※ 실물이 밖에 있어도 규범이다
+
+
+③ 라이선스를 정한다  (①②의 결과와 무관하게 둘 다 반드시 필요)
+
+   스키마    → CC BY 4.0 권고 · SA 조건 피함 · 무표기 금지
+   참조구현  → 제안자 자율, 특허 조항이 있는 코드 라이선스 권고
+
+
+④ 형식에 맞는 방법으로 파일에 적는다  (부속서에 넣었더라도)
+
+   XSD · Turtle → 주석  /  JSON Schema → $comment  /  RDF → dcterms:license</div>
+
+<h2>왜 병행형인가</h2>
+<div class="tablebox"><table>
+<thead><tr><th></th><th>방식</th><th>규범성</th><th>기계 접근성</th><th>국제 사례</th></tr></thead>
+<tbody>
+<tr><td>(a)</td><td>부속서 수록<strong>만</strong></td><td>확보</td><td><strong>불가</strong> — 문서에서 추출해야 함</td><td><strong>0건</strong></td></tr>
+<tr><td>(b)</td><td><strong>부속서 수록 + 파일 병행</strong></td><td>확보</td><td>가능</td><td>LoC PREMIS·MODS·METS, DDI, OGC, ISO</td></tr>
+<tr><td>(c)</td><td>규범적 참조 + 외부 파일</td><td>확보</td><td>가능</td><td>ECMA-424</td></tr>
+</tbody></table></div>
+<div class="note why"><span class="note-t">(a)를 채택하지 않는 이유</span>
+표준 16종의 배포본을 내려받아 확인한 결과 <strong>문서 파일 안에 스키마를 담은 사례는 0건</strong>이었다. 기계가 읽으라고 만든 파일을 사람용 문서 안에만 두면 목적에 어긋난다. 그렇다고 부속서를 빼면 규범성이 사라진다. <strong>둘 다 하는 것이 답이다.</strong>
+<br><br>미국 의회도서관 PREMIS가 그 예다 — <code>/premis/v3/premis-3-0-final.pdf</code>(문서)와 <code>/premis/v3/premis.xsd</code>(스키마)가 같은 폴더에 나란히 있다.
+</div>
+
+<h3>참조형 예외 — 셋 중 하나면</h3>
+<div class="tablebox"><table>
+<thead><tr><th>사유</th><th>무슨 뜻인가</th><th>실제 사례</th></tr></thead>
+<tbody>
+<tr><td><strong>① 너무 크다</strong></td><td>문서에 넣을 분량이 아니다</td><td>HL7 FHIR 스키마 <strong>323개</strong>, ISO 19115-3 <strong>117개</strong></td></tr>
+<tr><td><strong>② 자주 바뀐다</strong></td><td>표준 문서와 개정 주기가 다르다</td><td>부속서에 넣으면 고칠 때마다 표준 개정 절차를 밟아야 한다</td></tr>
+<tr><td><strong>③ 여러 파일</strong></td><td>다른 파일을 불러오는 구조다</td><td>OGC <code>gml.xsd</code>는 다른 파일 <strong>28개</strong>를 불러온다</td></tr>
+</tbody></table></div>
+<div class="note"><strong>②가 실무에서 가장 자주 걸린다.</strong> 분량이 작아도 자주 바뀌면 부속서에 넣는 순간 개정 부담이 생긴다.</div>
+
+<h2>라이선스</h2>
+
+<h3>안 적으면 못 쓴다</h3>
+<div class="note warn"><span class="note-t">ISO 19115-3의 실패</span>
+지리정보 표준의 스키마 파일 <strong>117개를 무료로 공개</strong>한다. 그런데 파일 어디에도 이용조건이 없다. 사이트 약관에 걸려 있다는데 그 페이지는 접속이 막혀 있었다.
+<br><br>받아갈 수는 있다. 그런데 <strong>복사해서 써도 되는지, 고쳐도 되는지 알 수가 없다.</strong> 권리를 주장할 생각이 없어도 적어두지 않으면 이용자는 쓰지 못한다.
+<br><br>반대로 LoC METS는 스키마 파일 안에 "디지털도서관연합은 이 문서에 대한 모든 권리를 전 세계적으로 포기하였다"고 적어 두었다. 파일 하나만 받아도 조건이 확인된다.
+</div>
+
+<h3>어느 것을 쓸까</h3>
+<div class="tablebox"><table>
+<thead><tr><th>후보</th><th>판단</th><th>이유</th></tr></thead>
+<tbody>
+<tr><td><strong>CC BY 4.0</strong></td><td><strong>권고</strong></td><td>출처만 밝히면 자유롭게 쓸 수 있다. 표준 문서와 같은 계열이라 일관되고, 용어 목록 같은 데이터까지 다룬다</td></tr>
+<tr><td>CC BY-<strong>SA</strong></td><td><strong>피한다</strong></td><td>동일조건변경허락 — 이걸 가져다 만든 것도 같은 조건으로 공개해야 한다. 산업계 확장 어휘 개발이 어려워진다 (Schema.org가 이 조건)</td></tr>
+<tr><td>Apache 2.0</td><td>차선</td><td>특허 조항은 강점이나 변경 이력 고지 같은 소프트웨어식 의무가 표준 배포 관행과 맞지 않는다</td></tr>
+<tr><td>CC0</td><td>가능</td><td>최대 확산이 목표라면. 다만 한국법에서 권리 포기가 제한되어 안전장치에 기댄다</td></tr>
+<tr><td><strong>표기 없음</strong></td><td><strong>금지</strong></td><td>위 ISO 사례가 그 결과다</td></tr>
+</tbody></table></div>
+
+<h3>부속서에 넣었어도 파일에 적어야 한다</h3>
+<div class="note why"><span class="note-t">IETF의 선례</span>
+IETF는 표준 문서 <strong>안</strong>에 코드를 넣는데, 그 코드를 <code>&lt;CODE BEGINS&gt;</code> 표시로 구분하고 <strong>문서와 다른 라이선스</strong>를 적용한다. 그리고 이렇게 못 박았다.
+<br><br>"문서에 정한 추가 허락과 제한은 <strong>그 코드에 적용되지 아니한다</strong>"
+<br><br>문서에 담겼다고 문서의 조건이 자동으로 따라가지 않는다는 뜻이다. 그래서 운영요령 제19조의3제7항에 <strong>"부속서에 수록한 경우에도 같다"</strong>를 넣었다.
+</div>
+
+<div class="tablebox"><table>
+<thead><tr><th>형식</th><th>방법</th><th>이렇게 하는 곳</th></tr></thead>
+<tbody>
+<tr><td>XSD · Turtle</td><td>파일 맨 위에 <strong>주석</strong>으로</td><td>CycloneDX</td></tr>
+<tr><td><strong>JSON Schema</strong></td><td>주석을 쓸 수 없다. <code>$comment</code> 항목에</td><td>CycloneDX</td></tr>
+<tr><td>RDF 어휘</td><td><code>dcterms:license</code> 한 줄 — <strong>기계가 읽는다</strong></td><td>W3C DCAT</td></tr>
+</tbody></table></div>
+
+<h3>특허는 라이선스가 아니라 제도로 푼다</h3>
+<p>CC 계열은 <strong>저작권만 다루고 특허는 건드리지 않는다.</strong> CC BY 4.0 본문에 "특허권과 상표권은 이 라이선스로 허락되지 아니한다"고 적혀 있다. 그렇다고 특허 조항이 있는 소프트웨어 라이선스로 바꿀 필요는 없다.</p>
+<div class="flow">스키마 ──[제19조의3제10항]──→ 표준초안의 일부로 본다
+                                    │
+        운영규정 제36조 ────────────┤ 표준초안에 지식재산권이 포함되면 처리 의무
+        운영요령 제19조①1호 ────────┤ 초안 작성시 확인 + 확약서 제출 고지
+        운영요령 제23조③ ───────────┘ 확약 거부·실시 허락 거절 시 <b>표준 폐지</b></div>
+<div class="note why"><strong>라이선스보다 강한 장치다.</strong> Apache 2.0의 방어적 종료는 "소송을 걸면 당신의 특허 실시권이 소멸한다"에 그치지만, TTA는 확약을 거부하면 <strong>표준 자체를 폐지한다.</strong></div>
+<div class="note warn"><span class="note-t">이 제도는 참조구현에 미치지 않는다</span>
+제19조의3제10항의 대상은 <strong>기계가독 산출물뿐</strong>이다. 참조구현은 표준의 일부가 아니므로(제8항) 확인 대상에서 벗어난다. 실행 가능한 코드까지 넣으면 그 코드가 의존하는 라이브러리 연쇄까지 대상이 되어 통제할 수 없기 때문이다.
+<br><br><strong>그래서 참조구현은 라이선스 선택이 스키마보다 중요하다.</strong> 스키마는 TTA의 확약 제도가 특허를 받쳐 주지만, 참조구현은 그 제도 밖이라 라이선스가 유일한 장치다. 특허 조항이 없는 MIT·BSD로 내면 이용자가 특허 위험을 그대로 진다.
+</div>
+
+<h2>참조구현 — 항상 표준 밖</h2>
+<p><strong>고민할 것이 없다.</strong> 부록에 "여기에 있습니다"만 적는다. 이유가 둘이다.</p>
+<div class="cards">
+  <div class="card"><div class="card-t">코드는 금방 낡는다</div><p class="card-d">특정 언어와 버전으로 짠 예제를 표준에 박아 두면 몇 년 뒤에는 실행되지 않는다. 표준은 10년을 가는데 코드는 그렇지 않다.</p></div>
+  <div class="card"><div class="card-t">확인 범위가 넓어진다</div><p class="card-d">코드에 표준의 지위를 주면 그 코드가 쓰는 라이브러리, 그 라이브러리가 쓰는 또 다른 라이브러리까지 지식재산권 확인 대상이 될 수 있다.</p></div>
+</div>
+<div class="note"><strong>라이선스는 스키마와 달라도 된다.</strong> Schema.org가 실제로 나눠 쓴다 — 어휘는 CC BY-SA 3.0(콘텐츠 라이선스), 빌드 도구는 Apache 2.0(소프트웨어 라이선스). W3C도 문서용과 소프트웨어용을 따로 둔다.</div>
+
+<h2>한 장 요약</h2>
+<div class="tablebox"><table>
+<thead><tr><th></th><th>문서에 넣나</th><th>라이선스</th><th>어디에 적나</th></tr></thead>
+<tbody>
+<tr><td><strong>스키마</strong></td><td><strong>병행형</strong>이 원칙 (부속서 수록 + 파일 제공)<br>크거나·자주 바뀌거나·여러 파일이면 <strong>참조형</strong></td><td><strong>CC BY 4.0</strong> 권고<br>SA 조건 피함 · 무표기 금지</td><td><strong>파일 자체에 필수</strong><br>부속서에 넣었어도 별도로</td></tr>
+<tr><td><strong>참조구현</strong></td><td><strong>항상 밖.</strong> 부록에 위치만 안내</td><td>제안자 자율<br>특허 조항 있는 코드 라이선스 권고</td><td>코드 저장소</td></tr>
+</tbody></table></div>
+
+<div class="note"><span class="note-t">내려받기</span>
+이 내용은 한글 문서로도 제공한다 — <code>4_보고서용/스키마와_참조구현_결정기준.hwpx</code> (한글 2014 이상), <code>.docx</code>, <code>.pdf</code>.
+</div>
+
+<div class="foot">
+  AI-Ready 표준화 방법1 · 실무 판단 지침 ·
+  <a href="m1-forms.html">← 서식</a> · <a href="m1-review.html">검토·정정 →</a>
+</div>
+</div>
+<script>
+function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
+var n=c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
+r.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}}
+try{var s=localStorage.getItem('th');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+</script>
+</body></html>
