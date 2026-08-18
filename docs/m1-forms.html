@@ -60,14 +60,14 @@
 <div class="tablebox"><table>
 <thead><tr><th>형식</th><th>제공</th><th>부속서 형태</th><th>비고</th></tr></thead>
 <tbody>
-<tr><td>JSON-LD @context</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td>요소↔IRI 매핑</td></tr>
-<tr><td>JSON Schema</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
-<tr><td>XML Schema(XSD)</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
-<tr><td>RDF 어휘(Turtle 등)</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
-<tr><td>기타 (　　　)</td><td>☐</td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+<tr><td>JSON-LD @context</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td>요소↔IRI 매핑</td></tr>
+<tr><td>JSON Schema</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
+<tr><td>XML Schema(XSD)</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
+<tr><td>RDF 어휘(Turtle 등)</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
+<tr><td>기타 (　　　)</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
 </tbody></table></div>
-<p><strong>내장형</strong> 부속서에 전문 수록 (작성지침 6.6 가) · <strong>참조형</strong> 부속서에 규범적 참조 명세, 실물은 외부 저장소 (6.6 나)</p>
-<div class="note why"><span class="note-t">형태는 산출물마다 따로 고른다</span>@context처럼 분량이 작으면 내장형, 검증용 스키마처럼 분량이 많으면 참조형이 된다. <strong>한 표준에서 둘이 섞이는 것이 일반적이다.</strong></div>
+<p><strong>병행형</strong> 부속서에 전문 수록 (작성지침 6.6 가) · <strong>참조형</strong> 부속서에 규범적 참조 명세, 실물은 외부 저장소 (6.6 나)</p>
+<div class="note why"><span class="note-t">형태는 산출물마다 따로 고른다</span>@context처럼 분량이 작으면 병행형, 검증용 스키마처럼 분량이 많으면 참조형이 된다. <strong>한 표준에서 둘이 섞이는 것이 일반적이다.</strong></div>
 
 <h3>4. 외부 공개 (선택)</h3>
 <div class="tablebox"><table><tbody>
@@ -77,14 +77,14 @@
 <tr><th>공개 예정 버전</th><td></td></tr>
 <tr><th>영속 식별자 (있는 경우)</th><td>DOI 등</td></tr>
 </tbody></table></div>
-<div class="note warn">협회는 표준 채택 시점의 사본을 보관하며, 보관본과 외부 공개본이 다를 경우 <strong>보관본에 따른다</strong>(운영요령 제19조의3제4항).</div>
+<div class="note warn">협회는 표준 채택 시점의 사본을 보관하며, 보관본과 외부 공개본이 다를 경우 <strong>보관본에 따른다</strong>(운영요령 제19조의3제6항).</div>
 
 <h3>5. 이용조건 (라이선스)</h3>
 <div class="tablebox"><table><tbody>
 <tr><th>적용 라이선스</th><td>☐ CC BY 4.0　☐ CC0 1.0　☐ 기타 (　　　)</td></tr>
 <tr><th>파일 내 표시 방법</th><td>☐ 주석　☐ <code>$comment</code> 키　☐ <code>dcterms:license</code> 트리플</td></tr>
 </tbody></table></div>
-<div class="note warn">이용조건은 <strong>파일 자체에서 확인할 수 있어야</strong> 한다(제19조의3제5항). 별도 약관 페이지에만 두는 방식은 인정하지 않는다.</div>
+<div class="note warn">이용조건은 <strong>파일 자체에서 확인할 수 있어야</strong> 한다(제19조의3제7항). 별도 약관 페이지에만 두는 방식은 인정하지 않는다.</div>
 
 <h3>6. 참조구현 (선택)</h3>
 <div class="tablebox"><table><tbody>
@@ -93,7 +93,7 @@
 <tr><th>언어·런타임</th><td></td></tr>
 <tr><th>라이선스</th><td></td></tr>
 </tbody></table></div>
-<div class="note">참조구현은 <strong>표준의 일부가 아니며</strong>, 협회는 그 내용에 대하여 보증하지 아니한다(제19조의3제6항).</div>
+<div class="note">참조구현은 <strong>표준의 일부가 아니며</strong>, 협회는 그 내용에 대하여 보증하지 아니한다(제19조의3제8항).</div>
 
 <h3>7. 제안자 확인</h3>
 <p>위 선언 내용은 표준초안의 요소 정의표 및 부속서와 일치하도록 작성하며, 상정 시 자가점검표(별지 제21-1호 서식)로 일치 여부를 확인받는 데 동의합니다.</p>
@@ -120,14 +120,14 @@
 <div class="tablebox"><table>
 <thead><tr><th>산출물 형식</th><th>선언한 부속서 형태</th><th>외부 공개</th></tr></thead>
 <tbody>
-<tr><td>JSON-LD @context</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
-<tr><td>JSON Schema</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
-<tr><td>XML Schema(XSD)</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
-<tr><td>RDF 어휘(Turtle 등)</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
-<tr><td>기타 (　　　)</td><td>☐ 내장형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>JSON-LD @context</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>JSON Schema</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>XML Schema(XSD)</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>RDF 어휘(Turtle 등)</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>기타 (　　　)</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
 </tbody></table></div>
 <div class="note why"><span class="note-t">부속서 형태는 산출물마다 다를 수 있다</span>
-@context는 분량이 작아 내장형으로, 검증용 JSON Schema·XSD는 분량이 많아 참조형으로 두는 조합이 일반적이다. <strong>표준 전체에 하나로 정하지 아니한다.</strong></div>
+@context는 분량이 작아 병행형으로, 검증용 JSON Schema·XSD는 분량이 많아 참조형으로 두는 조합이 일반적이다. <strong>표준 전체에 하나로 정하지 아니한다.</strong></div>
 
 <h3>1. AI-Ready 구성요소 달성 점검</h3>
 <div class="tablebox"><table>
@@ -166,8 +166,8 @@
 <tr><td class="num">1</td><td>선언한 외부 어휘가 요소 정의표 ⑭에 모두 반영되었는가</td><td class="num">제13조⑤</td><td class="num"><strong>7</strong></td><td>☐ 일치　☐ 불일치</td></tr>
 <tr><td class="num">2</td><td>요소 정의표 ⑭에 있으나 선언에 없는 어휘가 추가되었는가</td><td class="num">제13조⑤</td><td class="num">현황</td><td>☐ 없음　☐ 있음</td></tr>
 <tr><td class="num">3</td><td>선언한 산출물 형식을 모두 제출했는가</td><td class="num">제13조⑤</td><td class="num"><strong>8</strong></td><td>☐ 일치　☐ 불일치</td></tr>
-<tr><td class="num">4</td><td><strong>각 산출물마다</strong> 선언한 부속서 형태(내장형·참조형)대로 작성했는가</td><td class="num">제19조의3②</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
-<tr><td class="num">5</td><td>선언한 이용조건과 산출물에 표시된 이용조건이 같은가</td><td class="num">제19조의3⑤</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
+<tr><td class="num">4</td><td><strong>각 산출물마다</strong> 선언한 부속서 형태(병행형·참조형)대로 작성했는가</td><td class="num">제19조의3②</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
+<tr><td class="num">5</td><td>선언한 이용조건과 산출물에 표시된 이용조건이 같은가</td><td class="num">제19조의3⑦</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
 <tr><td class="num">6</td><td>규범적으로 사용하는 외부 어휘를 <strong>인용 표준에 등재</strong>했는가</td><td class="num">제19조①9호</td><td class="num"><strong>9</strong></td><td>☐ 충족　☐ 미충족</td></tr>
 </tbody></table></div>
 <div class="note"><strong>2번은 불일치가 아니라 현황 기재 항목이다.</strong> 초안 작성 중 어휘가 추가되는 것은 자연스러운 일이며, 추가된 어휘가 인용 표준에 등재되었는지(6번)가 실제 점검 대상이다.</div>
@@ -178,21 +178,21 @@
 <tbody>
 <tr><td class="num">1</td><td>기계가독 산출물을 표준초안과 함께 제출했는가</td><td class="num">제19조의3①</td><td>☐ 충족　☐ 미충족</td></tr>
 <tr><td class="num">3</td><td><strong>참조형인 산출물이 있는 경우</strong> 그 전부에 대하여 공개 위치·버전·무결성 값·이용조건을 부속서에 기재했는가</td><td class="num">제19조의3②</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
-<tr><td class="num">4</td><td>협회 보관본이 등록되었는가 (참조형 산출물 전부)</td><td class="num">제19조의3④</td><td>☐ 충족　☐ 미충족</td></tr>
-<tr><td class="num">5</td><td>산출물에 이용조건을 명시했는가</td><td class="num">제19조의3⑤</td><td>☐ 충족　☐ 미충족</td></tr>
-<tr><td class="num">6</td><td>이용조건을 <strong>파일 자체에서</strong> 확인할 수 있는가</td><td class="num">제19조의3⑤</td><td>☐ 충족　☐ 미충족</td></tr>
-<tr><td class="num">7</td><td>참조구현 위치를 부록에 기재했는가</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
-<tr><td class="num">8</td><td>보증 배제 문구를 적었는가</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
+<tr><td class="num">4</td><td>협회 보관본이 등록되었는가 (참조형 산출물 전부)</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">5</td><td>산출물에 이용조건을 명시했는가</td><td class="num">제19조의3⑦</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">6</td><td>이용조건을 <strong>파일 자체에서</strong> 확인할 수 있는가</td><td class="num">제19조의3⑦</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">7</td><td>참조구현 위치를 부록에 기재했는가</td><td class="num">제19조의3⑧</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
+<tr><td class="num">8</td><td>보증 배제 문구를 적었는가</td><td class="num">제19조의3⑧</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
 </tbody></table></div>
 
 <h4>2. 산출물별 부속서 형태</h4>
 <p>판정 항목이 아니라 <strong>분류</strong>다. 참조형이 하나라도 있으면 3번이 적용된다.</p>
 <div class="tablebox"><table>
-<thead><tr><th>산출물</th><th>형태</th><th>수록 위치(내장형) / 명세 위치(참조형)</th></tr></thead>
+<thead><tr><th>산출물</th><th>형태</th><th>수록 위치(병행형) / 명세 위치(참조형)</th></tr></thead>
 <tbody>
-<tr><td></td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
-<tr><td></td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
-<tr><td></td><td>☐ 내장형　☐ 참조형</td><td></td></tr>
+<tr><td></td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
+<tr><td></td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
+<tr><td></td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
 </tbody></table></div>
 
 <h4>참조형 산출물별 기재 내용</h4>
@@ -226,7 +226,7 @@
 <div class="note">방법2 서식과 달리 <strong>공동 에디터 행이 없다.</strong> 이 점검표는 상정 시점의 현황을 밝히는 서류이며, 표준안의 채택 여부는 기술위원회가 판단한다.</div>
 
 <h2 id="fa">부속서 양식(안) — 규범적 참조 명세</h2>
-<div class="note">작성지침 6.6 나)(참조형)에 따라 표준초안의 부속서로 작성한다. 산출물 분량이 많아 문서에 수록하기 곤란한 경우에만 사용하며, <strong>수록 가능하면 내장형이 원칙</strong>이다.</div>
+<div class="note">작성지침 6.6 나)(참조형)에 따라 표준초안의 부속서로 작성한다. 산출물 분량이 많아 문서에 수록하기 곤란한 경우에만 사용하며, <strong>수록 가능하면 병행형이 원칙</strong>이다.</div>
 
 <div class="flow">부속서 A  기계가독 산출물
 <b>(본 부속서는 표준 내용의 일부임)</b></div>
@@ -250,7 +250,7 @@
 <tr><td><strong>협회 보관본 (정본)</strong></td><td></td></tr>
 <tr><td>외부 공개본</td><td></td></tr>
 </tbody></table></div>
-<div class="note warn">보관본과 외부 공개본의 내용이 다른 경우에는 <strong>보관본에 따른다</strong>(운영요령 제19조의3제4항).</div>
+<div class="note warn">보관본과 외부 공개본의 내용이 다른 경우에는 <strong>보관본에 따른다</strong>(운영요령 제19조의3제6항).</div>
 
 <h3>A.4 구성 파일</h3>
 <p>산출물이 여러 파일로 이루어진 경우 모두 적는다. 다른 파일을 <code>include</code>·<code>import</code>하는 <strong>진입점 파일을 명시</strong>한다.</p>
