@@ -20,13 +20,13 @@
 <div class="hero">
   <p class="eyebrow">별지 서식(안) · 부속서 양식(안)</p>
   <h1>서식</h1>
-  <p class="lede">제안 단계의 <strong>선언서</strong>, 상정 단계의 <strong>자가점검표</strong>, 그리고 참조형 부속서의 <strong>규범적 참조 명세</strong> 양식.</p>
+  <p class="lede">제안 단계의 <strong>선언서</strong>, 상정 단계의 <strong>자가점검표</strong>, 그리고 명세형 부속서의 <strong>규범적 참조 명세</strong> 양식.</p>
 </div>
 
 <div class="cards">
   <a class="card" href="#f11"><div class="card-k">별지 제11-1호</div><div class="card-t">기계가독 산출물 선언서</div><p class="card-d">제안 단계 · 운영요령 제13조제5항 · 제안자 작성</p></a>
   <a class="card" href="#f21"><div class="card-k">별지 제21-1호</div><div class="card-t">AI-Ready 자가점검표</div><p class="card-d">상정 단계 · 제21조제5항 · 에디터 작성, 기술위원회등 의장 확인</p></a>
-  <a class="card" href="#fa"><div class="card-k">부속서 양식</div><div class="card-t">규범적 참조 명세</div><p class="card-d">참조형인 경우 · 작성지침 6.6 나)</p></a>
+  <a class="card" href="#fa"><div class="card-k">부속서 양식</div><div class="card-t">규범적 참조 명세</div><p class="card-d">명세형인 경우 · 작성지침 6.6 나)</p></a>
 </div>
 
 <h2 id="f11">별지 제11-1호 서식(안) — 기계가독 산출물 선언서</h2>
@@ -60,14 +60,14 @@
 <div class="tablebox"><table>
 <thead><tr><th>형식</th><th>제공</th><th>부속서 형태</th><th>비고</th></tr></thead>
 <tbody>
-<tr><td>JSON-LD @context</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td>요소↔IRI 매핑</td></tr>
-<tr><td>JSON Schema</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
-<tr><td>XML Schema(XSD)</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
-<tr><td>RDF 어휘(Turtle 등)</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
-<tr><td>기타 (　　　)</td><td>☐</td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
+<tr><td>JSON-LD @context</td><td>☐</td><td>☐ 병행형　☐ 명세형</td><td>요소↔IRI 매핑</td></tr>
+<tr><td>JSON Schema</td><td>☐</td><td>☐ 병행형　☐ 명세형</td><td></td></tr>
+<tr><td>XML Schema(XSD)</td><td>☐</td><td>☐ 병행형　☐ 명세형</td><td></td></tr>
+<tr><td>RDF 어휘(Turtle 등)</td><td>☐</td><td>☐ 병행형　☐ 명세형</td><td></td></tr>
+<tr><td>기타 (　　　)</td><td>☐</td><td>☐ 병행형　☐ 명세형</td><td></td></tr>
 </tbody></table></div>
-<p><strong>병행형</strong> 부속서에 전문 수록 (작성지침 6.6 가) · <strong>참조형</strong> 부속서에 규범적 참조 명세, 실물은 외부 저장소 (6.6 나)</p>
-<div class="note why"><span class="note-t">형태는 산출물마다 따로 고른다</span>@context처럼 분량이 작으면 병행형, 검증용 스키마처럼 분량이 많으면 참조형이 된다. <strong>한 표준에서 둘이 섞이는 것이 일반적이다.</strong></div>
+<p><strong>병행형</strong> 부속서에 전문 수록 (작성지침 6.6 가) · <strong>명세형</strong> 부속서에 규범적 참조 명세, 실물은 외부 저장소 (6.6 나)</p>
+<div class="note why"><span class="note-t">형태는 산출물마다 따로 고른다</span>@context처럼 분량이 작으면 병행형, 검증용 스키마처럼 분량이 많으면 명세형이 된다. <strong>한 표준에서 둘이 섞이는 것이 일반적이다.</strong></div>
 
 <h3>4. 외부 공개 (선택)</h3>
 <div class="tablebox"><table><tbody>
@@ -120,14 +120,14 @@
 <div class="tablebox"><table>
 <thead><tr><th>산출물 형식</th><th>선언한 부속서 형태</th><th>외부 공개</th></tr></thead>
 <tbody>
-<tr><td>JSON-LD @context</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
-<tr><td>JSON Schema</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
-<tr><td>XML Schema(XSD)</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
-<tr><td>RDF 어휘(Turtle 등)</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
-<tr><td>기타 (　　　)</td><td>☐ 병행형　☐ 참조형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>JSON-LD @context</td><td>☐ 병행형　☐ 명세형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>JSON Schema</td><td>☐ 병행형　☐ 명세형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>XML Schema(XSD)</td><td>☐ 병행형　☐ 명세형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>RDF 어휘(Turtle 등)</td><td>☐ 병행형　☐ 명세형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
+<tr><td>기타 (　　　)</td><td>☐ 병행형　☐ 명세형　☐ 해당없음</td><td>☐ 공개　☐ 미공개</td></tr>
 </tbody></table></div>
 <div class="note why"><span class="note-t">부속서 형태는 산출물마다 다를 수 있다</span>
-@context는 분량이 작아 병행형으로, 검증용 JSON Schema·XSD는 분량이 많아 참조형으로 두는 조합이 일반적이다. <strong>표준 전체에 하나로 정하지 아니한다.</strong></div>
+@context는 분량이 작아 병행형으로, 검증용 JSON Schema·XSD는 분량이 많아 명세형으로 두는 조합이 일반적이다. <strong>표준 전체에 하나로 정하지 아니한다.</strong></div>
 
 <h3>1. AI-Ready 구성요소 달성 점검</h3>
 <div class="tablebox"><table>
@@ -166,7 +166,7 @@
 <tr><td class="num">1</td><td>선언한 외부 어휘가 요소 정의표 ⑭에 모두 반영되었는가</td><td class="num">제13조⑤</td><td class="num"><strong>7</strong></td><td>☐ 일치　☐ 불일치</td></tr>
 <tr><td class="num">2</td><td>요소 정의표 ⑭에 있으나 선언에 없는 어휘가 추가되었는가</td><td class="num">제13조⑤</td><td class="num">현황</td><td>☐ 없음　☐ 있음</td></tr>
 <tr><td class="num">3</td><td>선언한 산출물 형식을 모두 제출했는가</td><td class="num">제13조⑤</td><td class="num"><strong>8</strong></td><td>☐ 일치　☐ 불일치</td></tr>
-<tr><td class="num">4</td><td><strong>각 산출물마다</strong> 선언한 부속서 형태(병행형·참조형)대로 작성했는가</td><td class="num">제19조의3②</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
+<tr><td class="num">4</td><td><strong>각 산출물마다</strong> 선언한 부속서 형태(병행형·명세형)대로 작성했는가</td><td class="num">제19조의3②</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
 <tr><td class="num">5</td><td>선언한 이용조건과 산출물에 표시된 이용조건이 같은가</td><td class="num">제19조의3⑦</td><td class="num">—</td><td>☐ 일치　☐ 불일치</td></tr>
 <tr><td class="num">6</td><td>규범적으로 사용하는 외부 어휘를 <strong>인용 표준에 등재</strong>했는가</td><td class="num">제19조①9호</td><td class="num"><strong>9</strong></td><td>☐ 충족　☐ 미충족</td></tr>
 </tbody></table></div>
@@ -177,8 +177,8 @@
 <thead><tr><th>#</th><th>요건</th><th>근거</th><th>판정</th></tr></thead>
 <tbody>
 <tr><td class="num">1</td><td>기계가독 산출물을 표준초안과 함께 제출했는가</td><td class="num">제19조의3①</td><td>☐ 충족　☐ 미충족</td></tr>
-<tr><td class="num">3</td><td><strong>참조형인 산출물이 있는 경우</strong> 그 전부에 대하여 공개 위치·버전·무결성 값·이용조건을 부속서에 기재했는가</td><td class="num">제19조의3②</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
-<tr><td class="num">4</td><td>협회 보관본이 등록되었는가 (참조형 산출물 전부)</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족</td></tr>
+<tr><td class="num">3</td><td><strong>명세형인 산출물이 있는 경우</strong> 그 전부에 대하여 공개 위치·버전·무결성 값·이용조건을 부속서에 기재했는가</td><td class="num">제19조의3②</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
+<tr><td class="num">4</td><td>협회 보관본이 등록되었는가 (명세형 산출물 전부)</td><td class="num">제19조의3⑥</td><td>☐ 충족　☐ 미충족</td></tr>
 <tr><td class="num">5</td><td>산출물에 이용조건을 명시했는가</td><td class="num">제19조의3⑦</td><td>☐ 충족　☐ 미충족</td></tr>
 <tr><td class="num">6</td><td>이용조건을 <strong>파일 자체에서</strong> 확인할 수 있는가</td><td class="num">제19조의3⑦</td><td>☐ 충족　☐ 미충족</td></tr>
 <tr><td class="num">7</td><td>참조구현 위치를 부록에 기재했는가</td><td class="num">제19조의3⑧</td><td>☐ 충족　☐ 미충족　☐ N·A</td></tr>
@@ -186,17 +186,17 @@
 </tbody></table></div>
 
 <h4>2. 산출물별 부속서 형태</h4>
-<p>판정 항목이 아니라 <strong>분류</strong>다. 참조형이 하나라도 있으면 3번이 적용된다.</p>
+<p>판정 항목이 아니라 <strong>분류</strong>다. 명세형이 하나라도 있으면 3번이 적용된다.</p>
 <div class="tablebox"><table>
-<thead><tr><th>산출물</th><th>형태</th><th>수록 위치(병행형) / 명세 위치(참조형)</th></tr></thead>
+<thead><tr><th>산출물</th><th>형태</th><th>수록 위치(병행형) / 명세 위치(명세형)</th></tr></thead>
 <tbody>
-<tr><td></td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
-<tr><td></td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
-<tr><td></td><td>☐ 병행형　☐ 참조형</td><td></td></tr>
+<tr><td></td><td>☐ 병행형　☐ 명세형</td><td></td></tr>
+<tr><td></td><td>☐ 병행형　☐ 명세형</td><td></td></tr>
+<tr><td></td><td>☐ 병행형　☐ 명세형</td><td></td></tr>
 </tbody></table></div>
 
-<h4>참조형 산출물별 기재 내용</h4>
-<p>참조형이 여럿이면 행을 늘려 각각 적는다.</p>
+<h4>명세형 산출물별 기재 내용</h4>
+<p>명세형이 여럿이면 행을 늘려 각각 적는다.</p>
 <div class="tablebox"><table>
 <thead><tr><th>산출물</th><th>공개 위치(URL)</th><th>판·버전</th><th>무결성 확인 값</th><th>협회 보관본 위치</th><th>진입점 파일</th></tr></thead>
 <tbody>
@@ -211,7 +211,7 @@
 <thead><tr><th>구분</th><th>판정</th></tr></thead>
 <tbody>
 <tr><td><strong>AI-Ready 수준</strong></td><td>프로파일별 필수 구성요소가 모두 2등급 → ☐ 충족　☐ 미충족</td></tr>
-<tr><td><strong>산출물 요건</strong></td><td>4부의 1·4·5·6번, 3번(참조형 산출물이 있는 경우), 7·8번(참조구현 공개 시), <strong>3부의 1·3·6번</strong> 모두 충족 → ☐ 충족　☐ 미충족</td></tr>
+<tr><td><strong>산출물 요건</strong></td><td>4부의 1·4·5·6번, 3번(명세형 산출물이 있는 경우), 7·8번(참조구현 공개 시), <strong>3부의 1·3·6번</strong> 모두 충족 → ☐ 충족　☐ 미충족</td></tr>
 <tr><td>성숙도</td><td>____ %</td></tr>
 </tbody></table></div>
 <div class="note why">두 판정은 <strong>독립이다.</strong> 수준이 L1에 그쳐도 산출물 요건은 충족할 수 있고, 내용 등급이 높아도 라이선스 표시를 빠뜨리면 산출물 요건은 미충족이다.</div>
@@ -226,7 +226,7 @@
 <div class="note">방법2 서식과 달리 <strong>공동 에디터 행이 없다.</strong> 이 점검표는 상정 시점의 현황을 밝히는 서류이며, 표준안의 채택 여부는 기술위원회가 판단한다.</div>
 
 <h2 id="fa">부속서 양식(안) — 규범적 참조 명세</h2>
-<div class="note">작성지침 6.6 나)(참조형)에 따라 표준초안의 부속서로 작성한다. 산출물 분량이 많아 문서에 수록하기 곤란한 경우에만 사용하며, <strong>수록 가능하면 병행형이 원칙</strong>이다.</div>
+<div class="note">작성지침 6.6 나)(명세형)에 따라 표준초안의 부속서로 작성한다. 산출물 분량이 많아 문서에 수록하기 곤란한 경우에만 사용하며, <strong>수록 가능하면 병행형이 원칙</strong>이다.</div>
 
 <div class="flow">부속서 A  기계가독 산출물
 <b>(본 부속서는 표준 내용의 일부임)</b></div>
