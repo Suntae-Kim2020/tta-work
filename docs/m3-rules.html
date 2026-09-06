@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>운영요령 개정안 — AI-Ready 방법3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="brand" href="index.html">AI-Ready <span>규범 개정안</span></a>
+  <div class="mswitch">
+    <a href="m1-index.html" class="ms">방법1 제안자 선언형</a>
+    <a href="m2-index.html" class="ms">방법2 공동 에디터 보강형</a>
+    <a href="m3-index.html" class="ms on">방법3 정합본</a>
+  </div>
+  <button class="theme-btn" onclick="tt()">◐ 테마</button>
+</div></div>
+<div class="subbar"><div class="subbar-in">
+  <a href="m3-index.html">개요</a>
+  <a href="m3-rules.html" class="on">운영요령</a>
+  <a href="m3-drafting.html">작성지침</a>
+  <a href="m3-annex.html">별표 10</a>
+  <a href="m3-forms.html">서식</a>
+  <a href="m3-decide.html">결정기준</a><a href="m3-changes.html">변경대장</a>
+</div></div>
+
+<div class="wrap">
+
+<div class="hero">
+  <p class="eyebrow">안건 ① · 운영위원회 의결사항</p>
+  <h1>정보통신표준화 운영요령 AI-Ready 개정(안)</h1>
+  <p class="lede">표준 제안자가 어휘를 선언하고, 그 선언에 따라 에디터가 기계가독 산출물까지 작성하는 구조. 협회는 별도의 어휘 전문가를 배정하지 않는다.</p>
+  <div class="meta">
+    <span>기준 <code>SBG-0030/R13</code> (2025. 6. 13. 시행)</span><span class="dot">·</span>
+    <span>의결 권한 운영위원회 (운영규정 제57조)</span><span class="dot">·</span>
+    <span>신설 1개 조(10개항) · 보강 6개 조</span>
+  </div>
+</div>
+
+<div class="note why"><span class="note-t">현행 칸은 원문 대조를 마쳤다</span>
+이 페이지의 「현 행」 칸은 운영요령 PDF 원문과 조문 단위로 대조한 것이다. 방법1 대비 정정 내역은 <a href="m3-changes.html">변경대장</a>에 있다.
+<br><br><strong>이 페이지는 저장소의 마크다운 문서와 문언이 일치한다.</strong> 정본은 <code>AI-Ready_방법3_제안자선언형_정합본/1_규범개정안/02_운영요령_개정안_신구조문대비표.md</code>이며, 이 페이지는 그것을 옮긴 것이다.
+</div>
+
+<h2>1. 개정 이유</h2>
+<p>데이터를 기술하는 표준을 사람과 기계가 함께 읽을 수 있는 형태로 전환한다. 방법3은 <strong>표준 제안자가 어휘를 선언하고 기계가독 산출물(스키마)까지 제공하는 구조</strong>로, 협회가 별도의 어휘 전문가를 배정하지 않는다.</p>
+<p>변경은 운영요령에 담는다. 운영요령 개정은 운영규정 제57조에 따라 운영위원회 권한이며, 표준 제·개정과 달리 60일 의견수렴(제39조)이나 표준총회 상정을 요하지 않는다. 운영규정은 기존 조문을 근거로만 활용하고 개정하지 않는다.</p>
+
+<h2>2. 개정 조문 일람</h2>
+<div class="tablebox"><table>
+<thead><tr><th>조문</th><th>성격</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td class="num"><a href="#a2">제2조</a></td><td>용어 신설</td><td>제1항 6~9호 — AI-Ready 표준·적용 대상·기계가독 산출물·참조구현</td></tr>
+<tr><td class="num"><a href="#a13">제13조</a></td><td>항 신설</td><td>제5항 — 제안 시 기계가독 산출물 선언</td></tr>
+<tr><td class="num"><a href="#a15">제15조</a></td><td>항 보강</td><td>제2항 — 검토결과서에 적용 대상 여부·선언 타당성 기재</td></tr>
+<tr><td class="num"><a href="#a19">제19조</a></td><td>호 신설</td><td>제1항 제9호 — 정규 컬럼표·매핑·인용 표준 등재</td></tr>
+<tr><td class="num"><a href="#a193"><strong>제19조의3</strong></a></td><td><strong>조 신설</strong></td><td><strong>기계가독 산출물의 제출·제공·보관 및 점검 (10개항) — 이 개정안의 핵심</strong></td></tr>
+<tr><td class="num"><a href="#a21">제21조</a></td><td>항 신설</td><td>제5항 — 상정 시 자가점검표 제출</td></tr>
+<tr><td class="num"><a href="#a26">제26조</a></td><td>항 신설</td><td>제6항 — 유지보수 시 산출물·참조 링크 점검</td></tr>
+<tr><td class="num">별표 10</td><td>신설</td><td>AI-Ready 수준 요건</td></tr>
+<tr><td class="num">별지 제11-1호서식</td><td>신설</td><td>기계가독 산출물 선언서</td></tr>
+<tr><td class="num">별지 제21-1호서식</td><td>신설</td><td>AI-Ready 자가점검표</td></tr>
+<tr><td class="num">별지 제15·23·24호서식</td><td>개정</td><td>확인란 추가</td></tr>
+<tr><td class="num">별표 목록 · 별지 서식 목록</td><td>등재</td><td>신설 항목 반영</td></tr>
+<tr><td class="num"><strong>부칙</strong></td><td><strong>신설</strong></td><td><strong>시행일 · 적용례</strong></td></tr>
+</tbody></table></div>
+
+<h2>3. 신구조문대비표</h2>
+
+<div class="article" id="a2">
+  <div class="article-head"><span class="article-no">제2조</span><span class="article-title">용어의 정의</span><span class="tag">제1항 제6호~제9호 신설</span></div>
+  <div class="cmp">
+    <div class="cur"><span class="cmp-label">현 행</span>
+      제2조(용어의 정의) ① 이 운영요령에서 사용하는 용어의 정의는 다음과 같다.<br>
+      1. "표준화과제"란 … 채택한 표준화 대상을 말한다.<br>
+      2.~5. (표준초안·표준안·정보통신용어표준화·표준용어)<br>
+      ② … 운영규정과 IPR요령에서 정하는 바에 따른다.
+    </div>
+    <div class="rev"><span class="cmp-label">개정(안)</span>
+      ① … (현행 제1호부터 제5호까지 유지)
+      <span class="ins">6. "AI-Ready 표준"이란 데이터의 의미·구조·출처·품질·이용조건을 사람과 기계가 함께 읽을 수 있도록, 데이터 요소를 전역 어휘 식별자(IRI)에 매핑하고 기계가독 형식으로 기술한 표준을 말한다.</span>
+      <span class="ins">7. "AI-Ready 적용 대상"이란 데이터의 의미, 구조, 값, 품질 중 어느 하나 이상을 기술하는 표준을 말한다. 기능·통신 절차·인터페이스를 규정하는 표준은 이에 해당하지 아니한다. 다만, 기술규격(제19조제1항제2호에 따라 앞표지와 원문으로 구성)은 제외한다. 적용 대상 여부는 그 표준이 기술하는 내용으로 판정한다.</span>
+      <span class="ins">8. "기계가독 산출물"이란 표준이 정의하는 데이터 요소를 기계가 처리할 수 있는 형식(JSON Schema, XML Schema, RDF 어휘, JSON-LD @context 등)으로 기술한 것을 말한다. <strong>기계가독 산출물은 표준의 규범 내용이다.</strong></span>
+      <span class="ins">9. "참조구현"이란 기계가독 산출물을 이용하는 프로그램 코드로서, 표준의 이해와 구현을 돕기 위하여 선택적으로 공개하는 것을 말한다. <strong>참조구현은 표준의 일부가 아니다.</strong></span>
+      ② (현행 유지)
+    </div>
+  </div>
+  <div class="note why"><span class="note-t">제8호 마지막 문장이 이 개정안의 근간</span>
+    기계가독 산출물을 규범으로 규정함으로써, 부속서 수록 의무·지식재산권 확인·보관 의무가 모두 따라 나온다.
+  </div>
+  <div class="note warn"><span class="note-t">정의 규정에 작성·제출 주체를 두지 아니한다</span>
+    제8호·제9호는 산출물이 <strong>무엇인가</strong>만 정하고, <strong>누가 작성해 제출하는가</strong>는 제19조의3제1항(에디터)에 맡긴다. 정의 규정에 "제안자가 작성하여 제출하는 것"을 넣으면, 에디터를 주체로 정한 제19조의3제1항과 충돌한다. 제안자와 에디터는 다를 수 있으며(제19조의2제1항), 표준초안 작성 책임은 제19조의2제4항이 에디터에게 지운다.
+  </div>
+</div>
+
+<div class="article" id="a13">
+  <div class="article-head"><span class="article-no">제13조</span><span class="article-title">표준화과제의 제안 및 접수</span><span class="tag">제5항 신설</span></div>
+  <div class="cmp">
+    <div class="cur"><span class="cmp-label">현 행</span>
+      제13조(표준화과제의 제안 및 접수) ① 운영규정 제35조에 따라 표준의 제정등을 제안하는 자는 <strong>별지 제11호서식 또는 별지 제12호서식</strong>의 제안서를 사무국에 제출한다.<br>
+      ② … 첨부하는 표준초안의 종류는 다음 각 호와 같으며 … 1.~4.<br>
+      ③ 사무국은 … 보완을 요청 …<br>
+      ④ 개인 또는 중소기업이 … 사무국의 협력을 받을 수 있다.
+    </div>
+    <div class="rev"><span class="cmp-label">개정(안)</span>
+      ① ~ ④ (현행 유지)
+      <span class="ins">⑤ 제1항에 따라 <strong>별지 제11호서식</strong>의 제안서를 제출하는 경우로서 AI-Ready 적용 대상 표준의 제정 또는 개정을 제안하는 때에는, 제안자는 별지 제11-1호서식의 기계가독 산출물 선언서를 함께 첨부한다. 선언서에는 다음 각 호를 기재한다.
+        <ol class="ol-h"><li>규범적으로 사용하는 외부 어휘와 그 전역 어휘 식별자(IRI)</li><li>제공하려는 기계가독 산출물의 형식과 목표 수준</li><li>외부 저장소에 공개하려는 경우 그 위치</li><li>기계가독 산출물의 이용조건(라이선스)</li><li>참조구현을 공개하려는 경우 그 위치</li></ol>
+      </span>
+    </div>
+  </div>
+  <div class="note">이 개정안은 <strong>제안 단계에서 선언</strong>한다. 무엇을 만들지 미리 밝히게 하여, 채택 단계에서 산출물이 없는 사태를 막는다.</div>
+  <div class="note why"><span class="note-t">적용 범위를 별지 제11호서식으로 한정한 이유</span>
+    제13조제1항은 "별지 제11호서식 <strong>또는 별지 제12호서식</strong>의 제안서"라고 하는데, 제12호서식은 <strong>표준 폐지 제안서</strong>다. 폐지 제안에는 기계가독 산출물 선언이 필요하지 않으므로 제11호서식(제정·개정)으로 한정한다.
+  </div>
+</div>
+
+<div class="article" id="a15">
+  <div class="article-head"><span class="article-no">제15조</span><span class="article-title">제안된 표준화과제의 검토</span><span class="tag">제2항 보강</span></div>
+  <div class="cmp">
+    <div class="cur"><span class="cmp-label">현 행</span>
+      제15조(제안된 표준화과제의 검토) ① 사무국은 … 검토할 기술위원회등을 선정하여야 한다. …<br>
+      ② 제1항에 따라 선정된 기술위원회등의 의장은 제안된 표준화과제의 추진 타당성을 검토하고 산하 담당 프로젝트그룹등을 결정하여 <strong>별지 제15호서식 또는 별지 제16호서식</strong>의 검토결과서를 작성하여 운영위원회에 제안한다.<br>
+      ③ … 관련 프로젝트그룹등을 선정하고 …
+    </div>
+    <div class="rev"><span class="cmp-label">개정(안)</span>
+      ① (현행 유지)<br>
+      ② … 검토결과서를 작성하여 운영위원회에 제안한다. <span class="ins ins-i">이때 제안된 과제의 AI-Ready 적용 대상 여부와 제13조제5항에 따른 선언 내용의 타당성을 확인하여 검토결과서(별지 제15호서식)에 기재한다.</span><br>
+      ③ (현행 유지)
+    </div>
+  </div>
+  <div class="note why"><span class="note-t">별지 제15호서식으로 한정한 이유</span>
+    제16호서식은 <strong>표준 폐지</strong> 과제의 검토 결과서다. 폐지에는 AI-Ready 판정이 필요하지 않다.
+  </div>
+</div>
+
+<div class="article" id="a19">
+  <div class="article-head"><span class="article-no">제19조</span><span class="article-title">표준초안의 작성</span><span class="tag">제1항 제9호 신설</span></div>
+  <div class="cmp">
+    <div class="cur"><span class="cmp-label">현 행</span>
+      제19조(표준초안의 작성) ① 프로젝트그룹등에서의 표준초안 작성은 다음 각 호를 따른다.<br>
+      1. 프로젝트그룹등 의장은 표준초안 작성시 지식재산권 포함 유무를 확인하고, 지식재산권이 포함된 경우 IPR요령 제4조에 따른 확약서를 해당 지식권자가 제출하도록 고지하여야 한다.<br>
+      2. 표준초안에는 표지, 서문, 목차, 본문, 해설서(영문표준만 해당한다)와 <strong>필요시 부속서 또는 부록을 포함</strong>하며, 표준작성 공헌자를 명시하여야 한다. 다만, 기술규격은 앞표지와 원문으로 한다.<br>
+      3. 표준초안은 이용자가 알 수 있도록 명확히 작성한다.<br>
+      4. 〈삭 제〉<br>
+      5.~8. (준용 · 번역 · 차이점 · draft 처리)<br>
+      ② 표준의 명칭은 다음 각 호를 따른다. 1.~2.
+    </div>
+    <div class="rev"><span class="cmp-label">개정(안)</span>
+      ① 제1호부터 제8호까지 (현행 유지)
+      <span class="ins">9. AI-Ready 적용 대상 표준의 표준초안은 <strong>데이터 요소를 정규 컬럼표로 정의하고, 요소와 전역 어휘 식별자의 매핑을 포함하여</strong> 작성한다. 규범적으로 사용하는 외부 어휘·스키마는 <strong>인용 표준에 등재한다.</strong> 구체적인 작성 방법은 「정보통신단체표준 작성지침」에 따른다.</span>
+      ② (현행 유지)
+    </div>
+  </div>
+  <div class="note why"><span class="note-t">제1항 제2호가 이 개정안의 법적 토대</span>
+    "표준초안에는 … <strong>필요시 부속서 또는 부록을 포함</strong>"이 부속서를 표준초안의 구성요소로 인정하는 근거이며, 여기에 작성지침 6.6이 부속서 번호 밑에 "(본 부속서는 표준 내용의 일부임)"을 표기하게 하여 규범성을 확정한다. 제19조의3제2항(부속서 수록)과 제8항(부록에 참조구현 위치)이 모두 이 호에서 나온다.
+    <br><br>제1항 <strong>제1호</strong>는 초안 단계의 지식재산권 확인 조항으로, 제19조의3제10항이 이 호에 연결된다.
+  </div>
+  <div class="note warn"><span class="note-t">신설 제9호의 문장 순서를 바꾸었다</span>
+    방법1은 "「정보통신단체표준 작성지침」에 따라 작성한다"를 첫 문장에 두었으나, 이는 제19조의2제4항("에디터는 … 「정보통신단체표준 작성지침」에 따라 표준초안을 작성한다")이 <strong>모든 표준초안</strong>에 대하여 이미 정한 일반규정과 중복된다. 이 개정안은 제9호의 규범적 실익인 <strong>정규 컬럼표·매핑·인용 표준 등재</strong>를 앞에 두고, 작성지침 위임은 확인적으로 뒤에 둔다.
+  </div>
+  <div class="note">요소 정의표의 어휘 매핑까지 <strong>에디터가 작성한다.</strong> 어휘 전문가를 별도로 배정하지 않으므로, 매핑을 다른 주체가 보강한다는 문언을 두지 아니한다.</div>
+</div>
+
+<div class="article" id="a193">
+  <div class="article-head"><span class="article-no">제19조의3</span><span class="article-title">기계가독 산출물의 제출·제공·보관 및 점검</span><span class="tag core">조 신설 · 10개항</span></div>
+  <div class="cmp">
+    <div class="cur"><span class="cmp-label">현 행</span>
+      〈신설〉
+      <br><br>제19조의2(표준초안 에디터) 다음이 제20조이므로 <strong>제19조의3 자리는 비어 있다.</strong>
+    </div>
+    <div class="rev"><span class="cmp-label">개정(안)</span>
+      <span class="ins"><strong>제19조의3(기계가독 산출물의 제출·제공·보관 및 점검)</strong><br>
+      ① <strong>에디터는</strong> AI-Ready 적용 대상 표준의 기계가독 산출물을 표준초안과 함께 사무국에 제출한다. 이 경우 제13조제5항에 따른 선언 내용에 따른다.</span>
+      <span class="ins">② 기계가독 산출물은 표준초안의 <strong>부속서로 수록하고, 사무국은 이를 표준과 함께 별도의 파일로 제공한다.</strong> 부속서 수록본과 제공 파일의 내용이 다른 경우에는 <strong>부속서 수록본에 따른다.</strong></span>
+      <span class="ins">③ 다음 각 호의 어느 하나에 해당하는 경우에는 제2항의 수록을 부속서의 <strong>규범적 참조 명세</strong>로 갈음할 수 있다.
+        <ol class="ol-h"><li>산출물의 분량이 많아 문서에 수록하기 곤란한 경우</li><li>산출물이 표준 문서와 <strong>다른 주기로 개정</strong>되는 경우</li><li>산출물이 다른 파일을 인용·포함하여 <strong>단일 파일로 완결되지 아니하는</strong> 경우</li></ol>
+      </span>
+      <span class="ins">④ 제3항의 규범적 참조 명세에는 다음 각 호를 기재한다.
+        <ol class="ol-h"><li>공개 위치</li><li>판 또는 버전</li><li>무결성 확인 값</li><li>이용조건</li><li>협회 보관본의 위치</li></ol>
+      </span>
+      <span class="ins">⑤ 제안자 또는 에디터는 기계가독 산출물을 외부 저장소에 공개할 수 있다.</span>
+      <span class="ins">⑥ 사무국은 표준 채택 시점의 기계가독 산출물 사본을 보관하고, 표준과 함께 공개한다. <strong>보관본과 외부 공개본의 내용이 다른 경우에는 보관본에 따른다.</strong></span>
+      <span class="ins">⑦ 에디터는 기계가독 산출물에 이용조건을 명시하여야 한다. 이용조건은 그 산출물을 복제·배포·개작할 수 있는지를 <strong>이용자가 파일 자체에서 확인할 수 있도록</strong> 표시한다. <strong>부속서에 수록한 경우에도 같다.</strong></span>
+      <span class="ins">⑧ 참조구현을 공개하는 경우 그 위치를 표준초안의 부록에 기재할 수 있다. <strong>참조구현은 표준의 일부가 아니며, 협회는 그 내용에 대하여 보증하지 아니한다.</strong></span>
+      <span class="ins">⑨ 사무국은 제1항에 따라 제출된 기계가독 산출물에 대하여 형식 정합성<strong>(구문 유효성, 요소 정의표와의 일치, 인용 어휘 식별자의 해석 가능 여부)</strong>을 전자적 방법으로 점검할 수 있다.</span>
+      <span class="ins">⑩ 기계가독 산출물은 표준초안의 일부로 보아 <strong>제19조제1항제1호에 따른 지식재산권 확인 대상에 포함한다.</strong> 제5항에 따라 외부 저장소에 공개하는 경우에도 같다.</span>
+    </div>
+  </div>
+
+  <h3>조문 해설</h3>
+  <div class="tablebox"><table>
+  <thead><tr><th>항</th><th>취지</th></tr></thead>
+  <tbody>
+  <tr><td class="num">①</td><td>제출 의무. 선언(제13조제5항)에 대응하는 이행 단계다. <strong>주체는 에디터</strong>다 — 표준초안 작성은 제19조에 따라 프로젝트그룹등에서 하고, 제19조의2제4항이 에디터에게 작성 책임을 지운다</td></tr>
+  <tr><td class="num"><strong>②</strong></td><td><strong>병행형이 원칙이다.</strong> 부속서에 수록해 <strong>규범성</strong>을 얻고(작성지침 6.6의 "본 부속서는 표준 내용의 일부임"), 동시에 파일로 제공해 <strong>기계가 바로 가져갈 수 있게</strong> 한다. 둘이 다르면 수록본이 정본이다</td></tr>
+  <tr><td class="num"><strong>③</strong></td><td><strong>참조형 예외의 사유를 세 가지로 한정했다.</strong> 분량만이 아니라 <strong>개정 주기</strong>와 <strong>모듈 의존</strong>도 사유가 된다. 스키마가 문서보다 자주 바뀌는데 부속서에 넣으면 고칠 때마다 표준 개정 절차를 밟아야 한다</td></tr>
+  <tr><td class="num">④</td><td>참조 명세 기재사항. 제5호(보관본 위치)를 넣어 정본의 소재를 부속서에서 바로 알 수 있게 했다</td></tr>
+  <tr><td class="num">⑤</td><td>외부 공개 허용 근거. <strong>형태와 무관하다</strong> — 병행형이어도 부속서 수록·파일 제공과 별개로 외부 저장소에 올릴 수 있다</td></tr>
+  <tr><td class="num">⑥</td><td><strong>영속성 장치.</strong> 외부 저장소가 사라지거나 변경되어도 규범이 유지된다</td></tr>
+  <tr><td class="num">⑦</td><td><strong>이용조건 명시 의무.</strong> 마지막 문장이 요체다 — <strong>부속서에 수록했더라도</strong> 파일에 별도로 표시해야 한다. 표준 문서의 저작권 문구가 산출물에 자동으로 미친다고 볼 수 없기 때문이다</td></tr>
+  <tr><td class="num">⑧</td><td>참조구현의 지위를 표준 밖으로 명확히 배제. <strong>기계가독 산출물을 다루는 제5항과 대상이 다르다</strong></td></tr>
+  <tr><td class="num">⑨</td><td><strong>형식 점검.</strong> "할 수 있다"(재량)로 두어 필수 관문화를 피한다</td></tr>
+  <tr><td class="num">⑩</td><td><strong>지식재산권 확인의 확인 규정.</strong> 새 의무를 창설하지 않고 해석을 고정한다. 첫 문장은 산출물을 제19조제1항제1호(초안 단계 확인)에 연결하고, 둘째 문장은 <strong>파일이 협회 밖에 있어도 같음</strong>을 못 박는다</td></tr>
+  </tbody></table></div>
+
+  <div class="note why"><span class="note-t">왜 "부속서 수록만"으로 두지 않는가</span>
+    국제 사례 16건을 실물 조사한 결과 <strong>표준 문서 파일 안에 스키마를 담은 사례는 0건</strong>이었다. 모두 문서 밖에 파일로 제공한다. 부속서에만 넣으면 기계가 문서에서 추출해야 하므로, 기계가독을 목적으로 하는 산출물을 사람용 문서 안에 가두는 셈이 된다. 그렇다고 부속서를 빼면 규범성이 사라진다. <strong>둘 다 하는 것이 답이다</strong> — LoC(PREMIS·MODS·METS)·DDI·OGC·ISO가 실제로 쓰는 방식이다.
+  </div>
+  <div class="note"><span class="note-t">⑩이 미치는 범위 — 참조구현은 포함하지 않는다</span>
+    제10항의 주어는 <strong>기계가독 산출물</strong>이고, 인용하는 것은 <strong>제5항</strong>이다. 참조구현은 제8항이라는 별도 항에서 "표준의 일부가 아니"라고 정하므로 지식재산권 확인 대상이 아니다. 실행 가능한 코드까지 확인 범위에 넣으면 그 코드가 쓰는 라이브러리 연쇄까지 대상이 될 수 있다.
+    <br><br><strong>둘째 문장은 형태가 아니라 위치에 관한 규정이다.</strong> "참조형이라서"가 아니라 <strong>"파일이 협회 밖에 있어도"</strong> 적용된다는 뜻이다.
+  </div>
+  <div class="note why"><span class="note-t">⑦의 마지막 문장에 대한 근거</span>
+    IETF Trust Legal Provisions 5.0 제4조는 문서 <strong>안</strong>의 코드에 <code>&lt;CODE BEGINS&gt;</code> 표시를 붙여 구분하고 문서와 <strong>다른 라이선스</strong>를 적용하며, "제3조에 정한 추가 허락과 제한은 그 코드에 적용되지 아니한다"고 명시한다.
+  </div>
+  <div class="note warn"><span class="note-t">⑨를 제11조(회의 진행)에 두지 않는 이유</span>
+    제11조<strong>제3항</strong>이 "사무국은 위원회의 운영과 표준 제정등의 절차를 신속하고 효율적으로 수행하기 위하여 전자적 방법을 활용할 수 있다"고 하여 <strong>전자적 방법 활용의 일반 근거</strong>를 이미 두고 있다. 제19조의3제9항은 그 일반 근거를 기계가독 산출물의 형식 점검에 <strong>구체화</strong>한 것이므로, 새로운 권한을 창설하는 것이 아니다. 점검 대상인 산출물을 규정하는 제19조의3에 두는 것이 조문 체계에 맞다.
+    <br><br><em>방법1은 "제11조는 회의 진행 조항이어서 규율 대상이 다르다"고 적었으나, 제11조제3항은 회의 진행 조항이 아니다.</em>
+  </div>
+  <div class="note"><span class="note-t">⑩을 제14조(지식재산권 확인)에 두지 않는 이유</span>
+    제14조제1항의 확인은 "제13조에 따라 제안된 표준화과제"를 대상으로 하고 "표준화과제 채택 후 60일간" 공고하는 <strong>제안·채택 단계</strong> 절차다. 기계가독 산출물은 <strong>초안 작성 단계</strong>에 제출되므로 제14조의 절차가 이미 끝난 뒤에 등장한다. 초안 단계 조항인 제19조제1항제1호에 연결하는 것이 시점상 맞다.
+  </div>
+</div>
+
+<div class="article" id="a21">
+  <div class="article-head"><span class="article-no">제21조</span><span class="article-title">표준안의 채택</span><span class="tag">제5항 신설</span></div>
+  <div class="cmp">
+    <div class="cur"><span class="cmp-label">현 행</span>
+      제21조(표준안의 채택) ① 기술위원회등은 … 표준초안을 심의·채택한다.<br>
+      ② … 표준안을 표준총회에 상정한다.<br>
+      ③ … 제출된 의견서 및 검토결과서를 표준총회에 제출 …<br>
+      ④ … 부결되어 재논의된 이력이 있는 경우 … 활동경위서를 상정한다.
+    </div>
+    <div class="rev"><span class="cmp-label">개정(안)</span>
+      ① ~ ④ (현행 유지)
+      <span class="ins">⑤ AI-Ready 적용 대상 표준안을 상정하는 경우, 기술위원회등 의장은 별표 10의 기준에 따른 AI-Ready 자가점검표(<strong>별지 제21-1호서식</strong>)를 함께 제출한다. 자가점검표에는 제13조제5항의 선언 내용과 제19조의3에 따라 제출된 산출물의 <strong>일치 여부</strong>를 포함한다.</span>
+    </div>
+  </div>
+  <div class="note">이 개정안은 어휘 전문가의 사전 검증이 없으므로, <strong>선언과 산출물의 일치 확인</strong>이 품질 관문 역할을 한다.</div>
+</div>
+
+<div class="article" id="a26">
+  <div class="article-head"><span class="article-no">제26조</span><span class="article-title">표준의 관리</span><span class="tag">제6항 신설</span></div>
+  <div class="cmp">
+    <div class="cur"><span class="cmp-label">현 행</span>
+      제26조(표준의 관리) ① 프로젝트그룹 및 기술위원회등은 표준 공고 후 5년 이내의 표준 <strong>또는 1년 이내의 잠정표준</strong>에 대하여 유지·개정 또는 폐지 여부를 검토(이하 "유지보수"라 한다)한다. …<br>
+      ② 기술위원회등 의장은 제1항에 따른 관리 대상 표준에 대하여 <strong>별지 제23호서식 또는 별지 제24호서식</strong>의 검토결과서를 작성하여 운영위원회에 보고하여야 한다.<br>
+      ③ ~ ⑤ (재검토 기간 · 잠정표준 · 개정/폐지 상정)
+    </div>
+    <div class="rev"><span class="cmp-label">개정(안)</span>
+      ① ~ ⑤ (현행 유지)
+      <span class="ins">⑥ 제1항에 따른 유지보수 시, AI-Ready 적용 대상 표준은 다음 각 호를 함께 확인하여 검토결과서(<strong>별지 제23호서식 또는 별지 제24호서식</strong>)에 기재한다.
+        <ol class="ol-h"><li>별표 10의 기준에 따른 AI-Ready 자가점검 결과</li><li><strong>제19조의3제3항</strong>에 따른 규범적 참조가 있는 경우, 그 <strong>공개 위치의 접근 가능 여부 및 보관본과의 일치 여부</strong></li></ol>
+      </span>
+    </div>
+  </div>
+  <div class="note why"><span class="note-t">제2호가 인용하는 것은 제19조의3제3항이다</span>
+    외부 공개를 허용한 대가로 링크 유효성을 주기적으로 점검한다. <strong>제3항</strong>이 참조형(규범적 참조 명세)을 창설하는 항이며, 제2항(병행형 — 부속서 수록·파일 제공)에는 점검할 공개 위치가 없다. 제4항도 "제3항의 규범적 참조 명세에는…"이라고 스스로 확인해 준다.
+  </div>
+  <div class="note warn"><span class="note-t">두 서식을 모두 인용한 이유</span>
+    현행 제26조제1항의 유지보수 대상에는 <strong>1년 이내의 잠정표준</strong>이 포함되고, 제2항은 별지 제23호서식(표준유지보수 검토 결과서) <strong>또는 제24호서식</strong>(잠정표준유지보수 검토 결과서)을 쓰게 한다. 제23호만 인용하면 잠정표준에는 기재 근거가 없고, 제4장에서 개정하기로 한 제24호서식은 위임 근거가 비게 된다.
+  </div>
+</div>
+
+<h2>4. 별표·별지 신설·개정</h2>
+<div class="tablebox"><table>
+<thead><tr><th>구분</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td class="num"><strong>별표 10 신설</strong></td><td>AI-Ready 수준 요건표 — L1·L2·L3 구성요소별 등급 기준 및 성숙도 산식, 제4부 산출물 요건</td></tr>
+<tr><td class="num"><strong>별지 제11-1호서식 신설</strong></td><td>기계가독 산출물 선언서 (하이픈 서식 선례: 별지 제5-1호서식·제10-1호서식)</td></tr>
+<tr><td class="num"><strong>별지 제21-1호서식 신설</strong></td><td>AI-Ready 자가점검표</td></tr>
+<tr><td class="num">별지 제15호서식 개정</td><td>검토결과서에 "AI-Ready 적용 대상 여부·선언 타당성" 확인란 추가(제15조제2항 연계)</td></tr>
+<tr><td class="num">별지 제23호서식·제24호서식 개정</td><td>유지보수 검토결과서에 "AI-Ready 자가점검 결과·참조 링크 유효성"란 추가(제26조제6항 연계)</td></tr>
+</tbody></table></div>
+
+<div class="note why"><span class="note-t">별표·별지의 표기</span>
+현행 운영요령은 예외 없이 "<strong>별지 제○호서식</strong>"으로 붙여 쓴다. 별표는 "<strong>별표 ○</strong>"로 쓰며 "제○호"를 붙이지 아니한다 — "제○호서식"은 별지에만 쓰는 표기다.
+</div>
+
+<h3>4-1. 「별표 목록」 반영</h3>
+<div class="cmp">
+  <div class="cur"><span class="cmp-label">현 행 (발췌)</span>
+    7 〈별표 7〉 정보통신 표준용어의 <strong>제정‧개정</strong> 및 폐지 절차도 — 제29조<br>
+    8 〈별표 8〉 〈삭 제〉<br>
+    9 〈별표 9〉 〈삭 제〉
+  </div>
+  <div class="rev"><span class="cmp-label">개정(안)</span>
+    7 〈별표 7〉 정보통신 표준용어의 제정‧개정 및 폐지 절차도 — 제29조<br>
+    8 〈별표 8〉 〈삭 제〉<br>
+    9 〈별표 9〉 〈삭 제〉
+    <span class="ins">10 〈별표 10〉 AI-Ready 수준 요건 — <strong>제21조</strong></span>
+  </div>
+</div>
+<div class="note warn"><span class="note-t">「관련 운영요령」 열에 제21조만 적는 이유</span>
+현행 별표 목록은 별표마다 근거 조문을 <strong>하나만</strong> 적고(예: 〈별표 3〉 영문표준 대상 기준 — 제19조), 별표 실물의 머리글도 <code>&lt;별표 3 : 운영요령 제19조 관련&gt;</code>이라는 <strong>단수 형식</strong>이다. 별표 10을 인용하는 조문은 제21조제5항과 제26조제6항제1호 둘인데, 주된 근거인 제21조를 적고 별표 실물 본문에 제26조제6항 인용 사실을 함께 밝힌다.
+<br><br><em>방법1은 이 열에 "제2조·제19조의3·제21조·제26조" 넷을 적었으나, 제2조 개정안과 제19조의3 개정안에는 "별표 10"을 인용하는 문언이 없다.</em>
+<br><br>별표 8·9는 <strong>각각 독립된 행</strong>이며, 이 개정안이 손대지 않으므로 현행 그대로 둔다.
+</div>
+
+<h3>4-2. 「별지 서식 목록」 반영</h3>
+<div class="cmp">
+  <div class="cur"><span class="cmp-label">현 행 (발췌)</span>
+    11 〈별지 제11호서식〉 표준 (제정, 개정) 제안서 — 제35조 / 제13조<br>
+    12 〈별지 제12호서식〉 표준 폐지 제안서 — 제35조 / 제13조<br><br>
+    21 〈별지 제21호서식〉 표준화 활동 경위서 — / 제21조<br>
+    22 〈별지 제22호서식〉 국가표준(KS)와 <strong>단체표준의 동일성</strong> 검토 결과서 — 제43조 / 제24조의2
+  </div>
+  <div class="rev"><span class="cmp-label">개정(안)</span>
+    11 〈별지 제11호서식〉 표준 (제정, 개정) 제안서 — 제35조 / 제13조
+    <span class="ins">11-1 〈별지 제11-1호서식〉 기계가독 산출물 선언서 — 제35조 / 제13조</span>
+    12 〈별지 제12호서식〉 표준 폐지 제안서 — 제35조 / 제13조<br><br>
+    21 〈별지 제21호서식〉 표준화 활동 경위서 — / 제21조
+    <span class="ins">21-1 〈별지 제21-1호서식〉 AI-Ready 자가점검표 — / 제21조</span>
+    22 〈별지 제22호서식〉 국가표준(KS)와 단체표준의 동일성 검토 결과서 — 제43조 / 제24조의2
+  </div>
+</div>
+<div class="note"><strong>하이픈 서식 선례</strong> — 별지 제5-1호서식·제10-1호서식이 이미 하이픈 번호를 쓴다. 제11-1호서식은 제11호서식(제·개정 제안서)의 첨부이므로 11~12 사이에, 제21-1호서식은 제21조(상정) 관련이므로 21 다음에 둔다.
+<br><br>별지 제15·23·24호서식은 <strong>제목이 바뀌지 않고 확인란만 추가</strong>되므로 목록 변경이 없다.</div>
+
+<h3>4-3. 부칙 신설 (시행일·적용례)</h3>
+<div class="cmp">
+  <div class="cur"><span class="cmp-label">현 행 (맨 앞 — 최신 부칙)</span>
+    부칙<br>제1조 (시행일) 이 운영요령은 2025년 6월 13일부터 시행한다.
+  </div>
+  <div class="rev"><span class="cmp-label">개정(안) — 기존 부칙 <strong>맨 앞</strong>에 추가</span>
+    <span class="ins"><strong>부칙 〈AI-Ready 표준 지원 개정〉</strong><br>
+    제1조(시행일) 이 운영요령은 <strong>공포한 날부터</strong> 시행한다.<br>
+    제2조(적용례) ① 제2조·제13조·제15조·제19조·제19조의3·제21조와 별표 10·별지 제11-1호서식·<strong>제15호서식</strong>·제21-1호서식의 개정 규정은 이 운영요령 시행 후 <strong>최초로 제안하는 표준화과제부터</strong> 적용한다.<br>
+    ② 이 운영요령 시행 당시 이미 공고된 표준에 대해서는 제26조제6항과 <strong>별지 제23호서식·제24호서식</strong>의 개정 규정을 그 표준의 <strong>다음 유지보수 시부터</strong> 적용한다.</span>
+  </div>
+</div>
+<div class="note warn"><span class="note-t">부칙을 맨 앞에 추가하는 이유</span>
+현행 운영요령의 부칙은 <strong>최신이 맨 위, 최초 제정이 맨 아래</strong>인 역순으로 쌓여 있다(맨 위 2025. 6. 13. … 맨 아래 2005. 6. 16.). 운영규정도 같은 배열이다. "말미에 추가"하면 신설 부칙이 2005년 부칙 뒤에 놓여 문서 관행과 반대가 된다.
+</div>
+<div class="note"><span class="note-t">적용례를 두는 이유</span>
+신규 요건이 진행 중인 과제에 소급되면 이미 초안을 작성한 프로젝트그룹이 산출물을 새로 만들어야 한다. 제1항으로 <strong>시행 후 신규 제안부터</strong> 적용하고, 이미 공고된 표준은 제2항으로 <strong>다음 유지보수 주기에 흡수</strong>한다.
+<br><br><strong>별지 제15호서식을 제1항에 넣었다.</strong> 제15호서식은 제안된 과제의 검토 결과서이므로 신규 제안 과제와 함께 움직인다. 이를 열거하지 않으면 시행 시점에 진행 중인 과제의 검토결과서를 신·구 어느 서식으로 쓸지 정해지지 않는다.
+<br><br>시행일을 "공포한 날부터"로 둔 것은 의결 시점이 확정되지 않았기 때문이다.
+</div>
+
+<h2>5. 이 개정안이 두지 않는 것</h2>
+<div class="tablebox"><table>
+<thead><tr><th>항목</th><th>이 개정안</th></tr></thead>
+<tbody>
+<tr><td>어휘 전문가의 별도 배정</td><td><strong>두지 않는다.</strong> 어휘 매핑은 제19조의2에 따라 지정된 에디터가 작성한다</td></tr>
+<tr><td>특별위원 위촉을 통한 전문가 참여</td><td>필수 요소가 아니다. 운영규정 제29조제1항제2호의 특별위원 제도는 그대로 두되 이 개정안이 요구하지 아니한다</td></tr>
+<tr><td>정의 규정에서의 작성·제출 주체</td><td>두지 않는다. 주체는 제19조의3제1항(에디터)에서 정한다</td></tr>
+<tr><td>운영규정 개정</td><td><strong>불필요.</strong> 제57조 위임으로 운영요령에서 처리한다</td></tr>
+</tbody></table></div>
+<div class="note warn"><strong>감수하는 위험</strong> — 어휘 매핑의 <strong>의미적</strong> 정확성을 검증할 주체가 없다. 형식 정합성 자동 점검(제19조의3제9항)과 자가점검표(제21조제5항)로 보완하나, 두 장치 모두 형식만 확인하고 의미는 확인하지 못한다.
+<br><br><strong>얻는 것</strong> — 어휘 전문가 확보 여부와 무관하게 운영할 수 있어 적용 대상 표준 수에 제약이 없다.</div>
+
+<div class="foot">AI-Ready 표준화 방법3 (제안자 선언형 정합본) · 안건 ① 운영요령 개정안 · <a href="m3-drafting.html">안건 ② 작성지침 개정안 →</a></div>
+
+</div>
+<script>
+function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
+var n=c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
+r.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}}
+try{var s=localStorage.getItem('th');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+</script>
+</body></html>

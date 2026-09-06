@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>별지 서식(안) — AI-Ready 방법3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="brand" href="index.html">AI-Ready <span>규범 개정안</span></a>
+  <div class="mswitch">
+    <a href="m1-index.html" class="ms">방법1 제안자 선언형</a>
+    <a href="m2-index.html" class="ms">방법2 공동 에디터 보강형</a>
+    <a href="m3-index.html" class="ms on">방법3 정합본</a>
+  </div>
+  <button class="theme-btn" onclick="tt()">◐ 테마</button>
+</div></div>
+<div class="subbar"><div class="subbar-in">
+  <a href="m3-index.html">개요</a>
+  <a href="m3-rules.html">운영요령</a>
+  <a href="m3-drafting.html">작성지침</a>
+  <a href="m3-annex.html">별표 10</a>
+  <a href="m3-forms.html" class="on">서식</a>
+  <a href="m3-decide.html">결정기준</a><a href="m3-changes.html">변경대장</a>
+</div></div>
+
+<div class="wrap">
+
+<div class="hero">
+  <p class="eyebrow">별지 서식(안) · 부속서 양식(안)</p>
+  <h1>선언서 · 자가점검표 · 규범적 참조 명세</h1>
+  <p class="lede">제안 단계의 선언과 상정 단계의 점검이 짝을 이룬다. 선언서에서 밝힌 것을 자가점검표가 확인한다.</p>
+  <div class="meta">
+    <span>별지 제11-1호서식 · 제21-1호서식</span><span class="dot">·</span>
+    <span>부속서 양식</span><span class="dot">·</span>
+    <span>v1.0</span>
+  </div>
+</div>
+
+<div class="note why"><span class="note-t">서식 번호 표기</span>
+현행 운영요령은 예외 없이 "<strong>별지 제○호서식</strong>"으로 붙여 쓴다. 방법1은 "별지 제11호 서식"(띄움)과 "별지 제11호서식"(붙임)을 한 문서 안에서, 때로는 한 줄 안에서 섞어 썼다. 방법3은 <strong>붙여쓰기로 통일</strong>했다.
+<br><br><strong>하이픈 서식 선례</strong> — 별지 제5-1호서식·제10-1호서식이 이미 하이픈 번호를 쓴다. 제11-1호서식은 제11호서식(제·개정 제안서)의 첨부이므로 11~12 사이에, 제21-1호서식은 제21조(상정) 관련이므로 21 다음에 둔다.
+</div>
+
+<h2>세 서식의 관계</h2>
+<div class="flow">[제안 단계]  <b>별지 제11-1호서식</b> — 기계가독 산출물 선언서
+             제안자가 쓴다 (운영요령 제13조제5항)
+             ├─ 어휘 선언        무엇을 규범적으로 쓸 것인가
+             ├─ 산출물 형식      무엇을 만들 것인가 · 병행형인가 참조형인가
+             ├─ 외부 공개        어디에 올릴 것인가
+             ├─ 이용조건         어떤 라이선스로 낼 것인가
+             └─ 참조구현         코드를 공개할 것인가
+                        │
+                        ▼
+[초안 단계]  <b>부속서 양식</b> — 규범적 참조 명세  (참조형인 산출물만)
+             에디터가 쓴다 (작성지침 6.6 b)
+             공개 위치 · 판/버전 · 무결성 값 · 이용조건 · 협회 보관본 위치
+                        │
+                        ▼
+[상정 단계]  <b>별지 제21-1호서식</b> — AI-Ready 자가점검표
+             에디터가 채우고 기술위원회등 의장이 확인한다 (제21조제5항)
+             ├─ 1부  구성요소 달성 등급      (별표 10 제1부)
+             ├─ 2부  문서 정합성 자가검증
+             ├─ 3부  <b>선언과 산출물의 일치</b>  ← 품질 관문
+             ├─ 4부  <b>산출물 요건 이행</b>      (별표 10 제4부)
+             └─ 5·6부 판정 · 작성 및 확인</div>
+
+<div class="article">
+  <div class="article-head"><span class="article-no">별지 제11-1호서식</span><span class="article-title">기계가독 산출물 선언서</span><span class="tag">신설 · 제안 단계</span></div>
+  <p>「정보통신표준화 운영요령」 제13조제5항에 따라 제출한다. 표준화과제 제안서(<strong>별지 제11호서식</strong> — 제정·개정 제안서)에 첨부한다. <strong>표준 폐지 제안(별지 제12호서식)에는 첨부하지 아니한다.</strong></p>
+  <div class="tablebox"><table>
+  <thead><tr><th>절</th><th>기재 내용</th></tr></thead>
+  <tbody>
+  <tr><td class="num">1</td><td>제안 개요 — 표준화과제명 · 제안자 · AI-Ready 적용 대상 여부 · 목표 수준(L1·L2·L3)</td></tr>
+  <tr><td class="num">2</td><td><strong>어휘 선언</strong> — 규범적으로 사용하는 외부 어휘, 네임스페이스 IRI, 사용 범위, 이용조건 / 자체 정의 요소와 그 사유</td></tr>
+  <tr><td class="num">3</td><td><strong>제공하는 기계가독 산출물</strong> — 형식별로 제공 여부와 부속서 형태(병행형·참조형)를 고른다</td></tr>
+  <tr><td class="num">4</td><td>외부 공개(선택) — 저장소 종류·URL·버전·영속 식별자</td></tr>
+  <tr><td class="num">5</td><td>이용조건 — 적용 라이선스와 <strong>파일 내 표시 방법</strong></td></tr>
+  <tr><td class="num">6</td><td>참조구현(선택) — 위치·언어·런타임·라이선스</td></tr>
+  <tr><td class="num">7</td><td>제안자 확인 — 서명</td></tr>
+  </tbody></table></div>
+  <div class="note why"><span class="note-t">무엇이 산출물이고 무엇이 참조구현인가</span>
+    <strong>기계가독 산출물</strong>은 데이터의 구조·의미를 <strong>정의</strong>한다 → 표준의 규범 내용(제2조제1항제8호).
+    <strong>참조구현</strong>은 그 정의를 <strong>사용·처리</strong>한다 → 표준의 일부가 아님(제9호).
+    <br><br>변환기·검증기처럼 양쪽에 걸친 산출물은 <strong>어느 쪽으로 낼지 선언서에서 밝힌다.</strong> 규범으로 낼 것이면 3절에, 참고로 낼 것이면 6절에 적는다.
+  </div>
+  <div class="note"><span class="note-t">가리키기와 옮겨 적기를 구분한다</span>
+    외부 어휘를 IRI로 <strong>가리키기만</strong> 하는 경우에는 저작권 확인 대상이 아니며, ISO/IEC·KS 표준도 작성지침 6.5.3 단서에 따라 인용 표준에 등재한다. 정의문·요소 설명을 <strong>옮겨 적는</strong> 경우에만 해당 기구의 저작권 정책을 확인하며, ISO/IEC·KS 표준은 옮겨 적을 수 없다.
+  </div>
+  <div class="note warn"><strong>형태는 산출물마다 따로 고른다.</strong> @context처럼 분량이 작으면 병행형, 검증용 스키마처럼 분량이 많거나 개정 주기가 다르면 참조형이 된다. 한 표준에서 둘이 섞이는 것이 일반적이다.
+  <br><br><strong>부속서에 수록만 하고 파일을 제공하지 않는 방식은 인정하지 아니한다.</strong>
+  <br><br>선언한 산출물의 실제 작성·제출은 초안 단계에서 <strong>에디터</strong>가 수행한다(제19조의3제1항). 제안자가 에디터로 지정되면 같은 사람이다.</div>
+</div>
+
+<div class="article">
+  <div class="article-head"><span class="article-no">별지 제21-1호서식</span><span class="article-title">AI-Ready 자가점검표</span><span class="tag core">신설 · 상정 단계 · 품질 관문</span></div>
+  <p>표준안 상정 전 작성한다. 제안 단계의 선언서에서 정한 목표를, 완성된 표준초안이 실제로 충족했는지 점검한다. <strong>초안을 작성한 에디터가 스스로 점검해 채우고, 기술위원회등 의장이 확인하여 표준안과 함께 제출한다</strong>(제21조제5항).</p>
+  <div class="tablebox"><table>
+  <thead><tr><th>부</th><th>내용</th><th>근거</th></tr></thead>
+  <tbody>
+  <tr><td class="num">0</td><td>선언 요약 — 선언서에서 옮겨 적는다. 산출물별 선언 내역(형태·외부 공개) 포함</td><td>별지 제11-1호서식</td></tr>
+  <tr><td class="num">1</td><td>AI-Ready 구성요소 달성 점검 — 7개 구성요소의 목표·현재 등급·증빙 위치, 성숙도 계산</td><td>별표 10 제1~3부</td></tr>
+  <tr><td class="num">2</td><td>정합성 자가검증 — 데이터 타입·단위 결합·인용 표준 등재·코드 유효값·오탈자·절 번호 등 7개 항목</td><td>표준 20종 실측 결과</td></tr>
+  <tr><td class="num"><strong>3</strong></td><td><strong>선언 일치 확인 ★</strong> — 선언한 어휘가 요소 정의표의 전역 어휘 식별자(IRI) 컬럼에 반영되었는지, 선언한 형식을 모두 제출했는지, 인용 표준에 등재했는지</td><td>제13조제5항 · 제19조제1항제9호</td></tr>
+  <tr><td class="num"><strong>4</strong></td><td><strong>산출물 요건 이행 확인 ★</strong> — 제출·수록 / 이용조건 표시 / 참조구현 / 제출 산출물 목록</td><td>제19조의3 · 별표 10 제4부</td></tr>
+  <tr><td class="num">5</td><td>판정 — AI-Ready 수준 · 산출물 요건 · 성숙도</td><td>별표 10 제5부</td></tr>
+  <tr><td class="num">6</td><td>작성 및 확인 — 에디터 작성, 기술위원회등 의장 확인</td><td>제21조제5항</td></tr>
+  </tbody></table></div>
+  <div class="note why"><span class="note-t">3부와 4부가 이 서식의 핵심</span>
+    어휘 전문가의 사전 검증이 없으므로 이 두 부가 품질 관문 역할을 한다. 3부의 1·3·6번이 별표 10 제4부의 7·8·9번에 대응한다.
+  </div>
+  <div class="note"><span class="note-t">방법3에서 달라진 점</span>
+    · "요소 정의표 ⑭"라는 원문자 인용을 <strong>"요소 정의표의 전역 어휘 식별자(IRI) 컬럼"</strong>으로 바꿨다(작성지침 서식 규칙에 맞추어 원문자를 없앴기 때문이다).
+    <br>· 어휘별 확인표에 <strong>"전재 여부"</strong> 열을 더했다 — ISO/IEC·KS 표준은 IRI로 가리키기만 해야 인용 표준에 등재할 수 있다.
+    <br>· 4-1에 <strong>부속서 번호</strong> 열을 더했다(A, B, C 순 부여 원칙 확인용).
+    <br>· 참조구현은 <strong>자유 작성 부록</strong>에 기재함을 명시했다.
+    <br>· 유지보수 시에도 이 서식을 쓴다는 안내를 말미에 두었다(제26조제6항제1호).
+  </div>
+  <div class="note warn"><strong>두 판정은 독립이다.</strong> 수준이 L1에 그쳐도 산출물 요건은 충족할 수 있고, 내용 등급이 높아도 라이선스 표시를 빠뜨리면 산출물 요건은 미충족이다.</div>
+</div>
+
+<div class="article">
+  <div class="article-head"><span class="article-no">부속서 양식</span><span class="article-title">기계가독 산출물 — 규범적 참조 명세</span><span class="tag">참조형인 산출물만</span></div>
+  <p>작성지침 6.6 b)(참조형)에 따라 표준초안의 부속서로 작성한다. 산출물 분량이 많거나, 표준 문서와 다른 주기로 개정되거나, 다른 파일을 인용·포함하여 단일 파일로 완결되지 아니하는 경우에만 사용하며, <strong>병행형(6.6 a)이 원칙</strong>이다.</p>
+  <div class="tablebox"><table>
+  <thead><tr><th>절</th><th>내용</th></tr></thead>
+  <tbody>
+  <tr><td class="num">X.1</td><td>규범성 — "이 부속서가 지정하는 기계가독 산출물은 본 표준의 규범 내용이다"</td></tr>
+  <tr><td class="num">X.2</td><td>산출물 명세 — 이름 · 형식 · 판/버전 · 무결성 확인 값 · 이용조건</td></tr>
+  <tr><td class="num">X.3</td><td>소재 — <strong>협회 보관본(정본)</strong> · 외부 공개본</td></tr>
+  <tr><td class="num">X.4</td><td>구성 파일 — 여러 파일로 이루어진 경우 모두 적고 <strong>진입점 파일을 명시</strong></td></tr>
+  <tr><td class="num">X.5</td><td>일괄 내려받기 — 압축본 위치</td></tr>
+  <tr><td class="num">X.6</td><td>인용 어휘 — 네임스페이스 IRI · 이용조건 · <strong>사용 방식(가리킴 / 전재)</strong></td></tr>
+  </tbody></table></div>
+  <div class="note warn"><span class="note-t">부속서 번호는 고정하지 아니한다</span>
+    양식은 <strong>부속서 X</strong>로 적었다. 실제 번호는 작성지침 6.6의 <strong>A, B, C 순 부여 원칙</strong>에 따르며, 기계가독 산출물이라 하여 특정 알파벳을 지정하지 않는다. 이미 부속서를 가진 표준이라면 그다음 알파벳이 된다.
+    <br><br><em>방법1의 양식은 "부속서 A"로 고정해 적었고, 대비표는 "본문 인용 순서대로"라는 없는 규칙을 인용했다.</em>
+  </div>
+  <div class="note why"><span class="note-t">진입점 표시는 실무상 필수다</span>
+    국제 사례 조사에서 OGC <code>gml.xsd</code>와 ISO <code>mdb.xsd</code>가 다른 모듈을 include하는 진입점일 뿐이어서, 그 파일만 내려받으면 동작하지 않는 문제가 실제로 확인됐다.
+    <br><br><strong>파일명에 버전을 넣는 규칙을 권장한다</strong>(예: <code>mods-3-8.xsd</code>). HL7 FHIR의 <code>definitions.shex.zip</code>이 <code>fhir.schema.shex.zip</code>으로 바뀌어 기존 문서의 링크가 무효가 된 사례가 확인됐다.
+  </div>
+</div>
+
+<h2>아직 없는 것 — 개정 대상 서식 3종</h2>
+<div class="note warn">운영요령 개정안 제4장은 <strong>별지 제15호서식</strong>(과제 검토 결과서), <strong>제23호서식·제24호서식</strong>(유지보수 검토 결과서)에 확인란을 추가한다고 정하지만, <strong>그 실물 개정안은 아직 없다.</strong> 신설 3종(별표 10 · 별지 제11-1호서식 · 제21-1호서식)과 부속서 양식만 작성되어 있다.
+<br><br>의결 전에 세 서식의 확인란 문안을 만들어야 한다. <a href="m3-changes.html">변경대장</a> 3장에 미해결 항목으로 적어 두었다.</div>
+
+<div class="foot">AI-Ready 표준화 방법3 (제안자 선언형 정합본) · 별지 서식(안) · <a href="m3-changes.html">변경대장 보기 →</a></div>
+
+</div>
+<script>
+function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
+var n=c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
+r.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}}
+try{var s=localStorage.getItem('th');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+</script>
+</body></html>
