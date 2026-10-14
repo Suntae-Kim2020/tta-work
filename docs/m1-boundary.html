@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>표준의 경계 — AI-Ready 방법1</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="topbar"><div class="topbar-in">
+  <a class="brand" href="index.html">AI-Ready <span>규범 개정안</span></a>
+  <div class="mswitch">
+    <a href="m1-index.html" class="ms on">방법1 제안자 선언형</a>
+    <a href="m2-index.html" class="ms">방법2 공동 에디터 보강형</a>
+  </div>
+  <button class="theme-btn" onclick="tt()">◐ 테마</button>
+</div></div>
+<div class="subbar"><div class="subbar-in">
+  <a href="m1-index.html">개요</a>
+  <a href="m1-rules.html">운영요령</a>
+  <a href="m1-drafting.html">작성지침</a>
+  <a href="m1-annex.html">별표 10</a>
+  <a href="m1-forms.html">서식</a>
+  <a href="m1-decide.html">결정기준</a><a href="m1-precedent.html">국제선례</a><a href="m1-boundary.html" class="on">표준의 경계</a>
+  <a href="m1-review.html">검토·정정</a>
+</div></div><div class="wrap">
+
+<div class="hero">
+  <p class="eyebrow">근거 — 국제 선례 · 규정 원문 인용</p>
+  <h1>표준의 경계</h1>
+  <p class="lede">스키마는 규범이고, 코드는 표준 밖이며, 저장소는 GitHub이다. 국제 표준화기구 6곳의 규정 원문과 국제 표준 16종의 배포 실물로 확인한 세 가지 명제</p>
+  <div class="meta"><span>작성자: 김경태(hankkt@gmail.com) · 작성일: 2026년 8월 26일 · 근거: 「방법1 거버넌스 선례 — 표준화기구 사례」(3-2) 및 「표준 문서·소스코드 병행 배포 사례」(3-1) 보강판</span></div>
+</div>
+
+<div class="note why"><span class="note-t">이 페이지는</span>저장소 <code>3-2_거버넌스_절차/표준의_경계_스키마_참조구현_저장소.md</code>를 웹으로 옮긴 것이다. 국내 규정과 개정안 문안은 근거로 쓰지 않고, 국제 표준화기구 6곳의 규정 원문과 국제 표준 16종의 배포 실물만으로 세 명제를 세운다. 인용의 출처 파일명을 누르면 해당 기구의 공식 문서가 새 탭으로 열린다. 두 조사의 관계와 선례의 무게는 <a href="m1-precedent.html"><strong>조사 해설</strong></a> 참조.</div>
+
+<div class="toc"><div class="toc-t">차례</div><ol><li><a href="#이-문서의-성격-개정의-근거를-대는-문서다">이 문서의 성격 — 개정의 근거를 대는 문서다</a></li><li><a href="#인용-원칙">인용 원칙</a></li><li><a href="#명제-1-스키마는-표준의-규범-내용이다">명제 1. 스키마는 표준의 규범 내용이다</a></li><li><a href="#명제-2-참조구현과-코드는-표준의-일부가-아니다">명제 2. 참조구현과 코드는 표준의 일부가 아니다</a></li><li><a href="#명제-3-참조구현과-코드의-저장소는-github으로-한다">명제 3. 참조구현과 코드의 저장소는 GitHub으로 한다</a></li><li><a href="#세-명제를-한-장으로">세 명제를 한 장으로</a></li><li><a href="#국제-선례에서-도출되는-제도-설계-요구">국제 선례에서 도출되는 제도 설계 요구</a></li><li><a href="#그-밖의-거버넌스-선례">그 밖의 거버넌스 선례</a></li><li><a href="#부록-a-인용-원문-대조표">부록 A. 인용 원문 대조표</a></li><li><a href="#부록-b-조사-대상과-수집-내역">부록 B. 조사 대상과 수집 내역</a></li><li><a href="#부록-c-한계와-미수집-항목">부록 C. 한계와 미수집 항목</a></li><li><a href="#원문-출처">원문 출처 — 웹에서 직접 확인하기</a></li></ol></div>
+
+<h3 id="이-문서의-성격-개정의-근거를-대는-문서다">이 문서의 성격 — 개정의 근거를 대는 문서다</h3>
+<p>국내 표준화 절차를 고치려면 "왜 그렇게 바꿔야 하는가"에 대한 <strong>외부 근거</strong>가 있어야 한다. 이 문서는 그 근거만 담는다.</p>
+<p><strong>국내 규정이나 개정안 문안은 근거로 쓰지 않는다.</strong> 고치려는 규정을 근거로 들면 순환논증이 되기 때문이다. 아래 세 명제는 전부 <strong>국제 표준화기구의 규정 원문과 국제 표준의 배포 실물</strong>만으로 성립한다.</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th></th>
+<th>명제</th>
+<th>이 명제를 세우는 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>명제 1</strong></td>
+<td>스키마(기계가독 산출물)는 표준의 규범 내용이다</td>
+<td>ECMA-424 본문, NIST OSCAL, HL7 FHIR, SPDX, W3C DCAT·PROV-O, ISO 19115-3, OASIS TC 프로세스</td>
+</tr>
+<tr>
+<td><strong>명제 2</strong></td>
+<td>참조구현과 코드는 표준의 일부가 아니다</td>
+<td>IETF Trust Legal Provisions 5.0 제3조·제4조, W3C 문서/소프트웨어 라이선스, W3C 특허정책, Schema.org</td>
+</tr>
+<tr>
+<td><strong>명제 3</strong></td>
+<td>참조구현과 코드의 저장소는 GitHub으로 한다</td>
+<td>Ecma TC39 프로세스 문서, ECMA-424 발간 문안, IETF 저자 자원, W3C 프로세스 문서, 실물 16종</td>
+</tr>
+</tbody>
+</table></div>
+<p>세 명제는 한 줄로 이어진다. <strong>스키마는 규범이므로 표준화기구가 정본을 지정·보관해야 하고, 코드는 규범이 아니므로 기구가 보관·보증할 대상이 아니며, 그렇다면 코드는 판(版)과 이용조건을 스스로 증명하는 공개 저장소에 두어야 한다.</strong></p>
+<h3 id="인용-원칙">인용 원칙</h3>
+<p>이 문서의 영문 인용은 모두 조사 폴더에 <strong>수집한 원문 파일에서 직접 추출</strong>했다. 각 인용에는 출처 파일명을 붙였고, 부록 A에 그 파일의 원본 공식 웹 주소를 적었다. 사실과 해석을 구분해 적었으며, 인용 뒤의 평가는 필자의 판단이다.</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>조사</th>
+<th>대상</th>
+<th>성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3-1 산출물 배포방식</strong></td>
+<td>국제·국가 표준 16종의 배포 실물 273MB</td>
+<td>무엇을 어떻게 배포하는가</td>
+</tr>
+<tr>
+<td><strong>3-2 거버넌스 절차</strong></td>
+<td>IETF · W3C · Ecma · OASIS · OGC · ITU-T 규정 문서 27건</td>
+<td>어떤 규정으로 그렇게 하는가</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="명제-1-스키마는-표준의-규범-내용이다">명제 1. 스키마는 표준의 규범 내용이다</h2>
+<h3 id="1-1-기구가-스키마를-규범-실체로-지정한다">1-1. 기구가 스키마를 규범 실체로 지정한다</h3>
+<p>조사한 16종 가운데 스키마의 규범 지위를 명시한 사례다.</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>표준</th>
+<th>규범(normative)으로 지정된 것</th>
+<th>문서의 지위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ECMA-424</strong> (CycloneDX)</td>
+<td>JSON Schema · XML Schema · Protobuf <strong>3종 모두 규범</strong></td>
+<td>문서는 산문 설명</td>
+</tr>
+<tr>
+<td><strong>NIST OSCAL</strong></td>
+<td>Metaschema(XML)가 규범</td>
+<td>XSD·JSON Schema는 그로부터 생성</td>
+</tr>
+<tr>
+<td><strong>HL7 FHIR</strong></td>
+<td>StructureDefinition이 규범</td>
+<td>XSD 323개는 파생물</td>
+</tr>
+<tr>
+<td><strong>SPDX</strong></td>
+<td>SHACL 모델이 규범</td>
+<td>JSON Schema는 생성물</td>
+</tr>
+<tr>
+<td><strong>W3C PROV-O</strong></td>
+<td>온톨로지 파일이 규범</td>
+<td>권고안 문서와 함께 규범</td>
+</tr>
+<tr>
+<td><strong>ISO 19115-3</strong></td>
+<td>XSD가 유일 형식</td>
+<td>문서 본문은 유료 판매</td>
+</tr>
+</tbody>
+</table></div>
+<p>ECMA-424 제2판 본문은 스키마가 적합성 판정의 실체임을 다음과 같이 적는다.</p>
+<blockquote>
+<p>"CycloneDX relies exclusively on JSON Schema, XML Schema, and protobuf for validation. The entirety of the specification can be validated using officially supported CycloneDX tools or via hundreds of available validators that support JSON Schema, XML Schema, or protobuf."</p>
+<p><strong>번역</strong> — CycloneDX는 검증에 <strong>오로지 JSON Schema, XML Schema, protobuf만을 사용한다.</strong> 명세 전체는 공식 지원 도구 또는 이들 형식을 지원하는 수백 개의 검증기로 검증할 수 있다.</p>
+<p class="src"><em>출처: <a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a>, 12쪽</em></p>
+</blockquote>
+<p><strong>적합성을 판정하는 것이 스키마라면, 규범은 스키마다.</strong> 산문 문서는 그 스키마를 설명한다.</p>
+<h3 id="1-2-문서-파일-안에-없어도-규범이다">1-2. 문서 파일 안에 없어도 규범이다</h3>
+<p>가장 흔한 오해는 "파일이 문서 밖에 있으면 참고자료 아닌가"이다. 실물 조사가 이 오해를 정면으로 깬다.</p>
+<blockquote>
+<p><strong>표준 문서 파일 안에 스키마 전문을 담은 사례 — 16종 중 0건</strong></p>
+<p>PDF 3종(ECMA-424 제2판, NIST AI 100-1, PREMIS Data Dictionary)을 압축 스트림까지 풀어 검사했다. 스키마 본문도, PDF 첨부파일(EmbeddedFile)도 없었다.</p>
+</blockquote>
+<p>ECMA-424는 566쪽 정식 표준이면서 본문에 스키마 코드가 한 줄도 없다. 대신 본문 표에서 위치를 지정한다.</p>
+<blockquote>
+<p><strong>Table 1 — Serialization formats in CycloneDX</strong><br />
+JSON Schema — <code>https://cyclonedx.org/schema/bom-1.7.schema.json</code><br />
+XML Schema — <code>https://cyclonedx.org/schema/bom-1.7.xsd</code><br />
+Protobuf Schema — <code>https://cyclonedx.org/schema/bom-1.7.proto</code></p>
+<p class="src"><em>출처: <a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a>, 12쪽</em></p>
+</blockquote>
+<p><strong>국제 관행은 "문서에 담는다"가 아니라 "문서가 외부 스키마를 규범적으로 참조한다"이다.</strong> 밖에 있는 파일이 스스로 규범이 되는 것이 아니라, 표준 문서가 그 파일을 규범으로 끌어들인다.</p>
+<p>이는 새로운 개념이 아니다. <strong>인용 표준(normative reference)이 이미 같은 구조</strong>다. ECMA-424도 제3장 Normative references에서 ECMA-404, IETF RFC 3339·3986·3987·4122, W3C XML 1.1·XML Schema 1.0을 외부 문서로 인용하며 다음과 같이 규정한다.</p>
+<blockquote>
+<p>"The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies."</p>
+<p><strong>번역</strong> — 다음 문서들은 그 내용의 전부 또는 일부가 <strong>이 문서의 요구사항을 구성하는 방식으로</strong> 본문에서 인용된다. <strong>판을 특정한 인용의 경우에는 인용된 판만 적용한다.</strong></p>
+<p class="src"><em>출처: <a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a>, 2쪽</em></p>
+</blockquote>
+<p>밑줄 그을 곳은 뒷문장이다. <strong>외부 문서를 규범으로 끌어들이려면 "어느 판인지"가 특정되어야 한다.</strong> 이것이 규범적 참조가 성립하는 조건이며, 명제 3에서 저장소를 고를 때 다시 등장한다.</p>
+<h3 id="1-3-유료-표준-체계에서도-스키마는-무료-규범이다">1-3. 유료 표준 체계에서도 스키마는 무료 규범이다</h3>
+<p><strong>ISO 19115-3</strong>(지리정보 메타데이터)은 문서 본문을 iso.org에서 유료 판매하면서, 규범 XSD 117개를 standards.iso.org에서 무료 공개한다(일괄 배포본 10.4MB 확보·확인).</p>
+<p><strong>의의</strong> — 문서를 유료로 파는 체계 안에서도 규범 스키마의 개방은 성립한다. "스키마를 무료로 공개하면 표준의 가치가 훼손된다"는 반론에 대한 실증이다.</p>
+<h3 id="1-4-규범으로-두면-반드시-따라오는-것-정본과-영속성">1-4. 규범으로 두면 반드시 따라오는 것 — 정본과 영속성</h3>
+<p>스키마를 규범으로 삼으면 <strong>정본이 어디인가</strong>와 <strong>그 주소가 유지되는가</strong>를 함께 정해야 한다. 국제 기구들도 같은 문제를 풀어 두었다.</p>
+<h4 id="정본-지정-oasis">정본 지정 — OASIS</h4>
+<blockquote>
+<p>"All approved versions of OASIS Deliverables must be published in (1) editable source, (2) HTML or XHTML, and (3) PDF formats. <strong>The TC must explicitly designate one of those formats as the authoritative document.</strong>"</p>
+<p><strong>번역</strong> — 승인된 모든 OASIS 산출물은 (1) 편집 가능한 원본, (2) HTML 또는 XHTML, (3) PDF 형식으로 발간되어야 한다. <strong>기술위원회는 그중 하나를 정본(authoritative document)으로 명시적으로 지정하여야 한다.</strong></p>
+<p class="src"><em>출처: <a href="https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/" target="_blank" rel="noopener">OASIS_TC프로세스.html</a>, 2.2.2 File Formats</em></p>
+</blockquote>
+<p><strong>같은 내용을 여러 형식으로 내되 정본 하나를 명시적으로 지정한다</strong> — 규범 산출물을 문서와 파일로 이중 제공할 때 반드시 필요한 장치다.</p>
+<h4 id="영속성-w3c-uri-정책">영속성 — W3C URI 정책</h4>
+<blockquote>
+<p>"The intent is to set an example by reducing the failure of links due to clumsy management or inadequate commitment to information persistence, and to provide a stable reference base of information about W3C-related topics as a service to the community." — Tim Berners-Lee, 1999</p>
+<p><strong>번역</strong> — 그 취지는 서투른 관리나 정보 영속성에 대한 불충분한 의지 때문에 링크가 끊기는 일을 줄여 모범을 보이고, 안정적인 참조 기반을 공동체에 제공하는 데 있다.</p>
+<p class="src"><em>출처: <a href="https://www.w3.org/policies/uri-persistence/" target="_blank" rel="noopener">W3C_URI영속성_정책.html</a></em></p>
+</blockquote>
+<p>W3C는 같은 문서를 두 주소로 낸다. <code>/TR/2024/REC-vocab-dcat-3-20240822/</code>(날짜 고정)와 <code>/TR/vocab-dcat-3/</code>(최신)이다. <strong>버전 고정과 최신 추적을 URI 수준에서 분리</strong>한 것으로, 1-2에서 본 "판을 특정한 인용" 요건을 주소 체계로 구현한 사례다.</p>
+<h3 id="1-5-특허는-라이선스가-아니라-기구-정책이-다룬다">1-5. 특허는 라이선스가 아니라 기구 정책이 다룬다</h3>
+<p>규범 산출물에는 특허 문제가 따라붙는다. 국제 기구는 이것을 <strong>저작권 라이선스가 아니라 별도의 특허정책</strong>으로 처리한다.</p>
+<blockquote>
+<p>"The goal of this policy is to assure that Specifications produced under this policy can be implemented on a Royalty-Free (RF) basis."</p>
+<p>"For the purpose of this policy, <strong>"Specification" refers to a W3C technical report published on the Recommendation Track.</strong>"</p>
+<p>"As a condition of participating in a Working Group, each participant (W3C Members, W3C Team members, invited experts, and members of the public) <strong>shall agree to make Specification Licensing Commitments</strong> under W3C RF licensing requirements for any Essential Claims related to the work of that particular Working Group…"</p>
+<p><strong>번역</strong> — 이 정책의 목적은 이에 따라 만들어진 <strong>명세(Specification)</strong>가 <strong>무상(RF)으로 구현될 수 있도록</strong> 보장하는 데 있다. 이 정책에서 "명세"란 권고 트랙에 발간된 W3C 기술 보고서를 말한다. 워킹그룹에 참가하는 조건으로 각 참가자는 그 작업과 관련된 필수 청구항에 대하여 <strong>명세 실시 확약을 하여야 한다.</strong></p>
+<p class="src"><em>출처: <a href="https://www.w3.org/policies/patent-policy/" target="_blank" rel="noopener">W3C_특허정책.html</a>, 1~3절</em></p>
+</blockquote>
+<p><strong>두 가지를 확인할 수 있다.</strong></p>
+<ol>
+<li>특허 문제는 라이선스 문구가 아니라 <strong>참가 조건과 확약 의무</strong>라는 제도로 푼다. CC 계열 라이선스는 저작권만 다루고 특허를 허락하지 않으므로, 라이선스 선택만으로는 이 문제가 해결되지 않는다.</li>
+<li><strong>그 제도의 적용 대상은 "명세", 곧 규범 문서로 한정된다.</strong> 규범이 아닌 것은 이 확약의 대상이 아니다. 이 경계는 명제 2에서 다시 쓰인다.</li>
+</ol>
+<p>IETF도 같은 구조다. RFC 8179(BCP 79)는 기여자가 아는 지식재산권을 <strong>기여 시점에</strong> 공개하도록 의무화한다. 라이선스가 아니라 절차 의무다.</p>
+<h3 id="1-6-예상-반론과-답">1-6. 예상 반론과 답</h3>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>반론</th>
+<th>답</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"스키마는 기술 부속자료일 뿐 규범이 아니다"</td>
+<td>ECMA-424는 적합성 검증을 <strong>오로지 스키마로만</strong> 한다고 본문에 적었다. 적합성을 판정하는 것이 규범이다</td>
+</tr>
+<tr>
+<td>"파일이 문서 밖에 있으면 표준의 완결성이 깨진다"</td>
+<td>16종 중 문서 안에 스키마를 담은 사례가 0건이다. 국제 관행은 문서가 외부 파일을 <strong>규범적으로 참조</strong>하는 것이며, 이는 인용 표준과 같은 구조다. 완결성은 판을 특정하고 정본을 지정함으로써 확보된다(OASIS·W3C)</td>
+</tr>
+<tr>
+<td>"규범으로 삼으면 심의 부담이 커진다"</td>
+<td>부담은 규범 지정이 아니라 <strong>검증 방식</strong>에서 온다. OGC(CITE·TEAM Engine), IETF(저자 도구), W3C(마크업 검증기)처럼 기계 검증을 절차에 넣은 선례가 있다</td>
+</tr>
+<tr>
+<td>"스키마를 무료 공개하면 표준의 가치가 떨어진다"</td>
+<td>ISO는 문서를 유료 판매하면서 규범 XSD 117개를 무료 공개한다</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="명제-2-참조구현과-코드는-표준의-일부가-아니다">명제 2. 참조구현과 코드는 표준의 일부가 아니다</h2>
+<h3 id="2-1-ietf는-문서-안의-코드조차-문서와-분리한다">2-1. IETF는 문서 안의 코드조차 문서와 분리한다</h3>
+<p>가장 직접적인 선례다. IETF Trust Legal Provisions(TLP) 5.0 제4조는 문서 <strong>안에</strong> 있는 코드에도 문서와 다른 규율을 적용한다.</p>
+<p><strong>제4.a조 — 정의</strong></p>
+<blockquote>
+<p>"IETF Contributions and IETF Documents often include components intended to be directly processed by a computer ("Code Components")."</p>
+<p><strong>번역</strong> — IETF 기여물과 IETF 문서에는 <strong>컴퓨터가 직접 처리하도록 의도된 구성요소</strong>가 포함되는 경우가 많으며, 이를 <strong>"코드 컴포넌트"</strong>라 한다.</p>
+</blockquote>
+<p><strong>제4.b조 — 식별</strong></p>
+<blockquote>
+<p>"any text found between the markers <code>&lt;CODE BEGINS&gt;</code> and <code>&lt;CODE ENDS&gt;</code>, or otherwise clearly labeled as a Code Component, shall be considered a "Code Component"."</p>
+<p><strong>번역</strong> — <code>&lt;CODE BEGINS&gt;</code>와 <code>&lt;CODE ENDS&gt;</code> 표시 사이에 있는 텍스트, 또는 그 밖에 코드 컴포넌트임이 명확히 표시된 텍스트는 코드 컴포넌트로 본다.</p>
+</blockquote>
+<p><strong>제4.c조 — 라이선스 분리</strong></p>
+<blockquote>
+<p>"such Code Components are also licensed … on the terms of the "Revised BSD License" … If a licensee elects to apply the BSD License to a Code Component, then the additional licenses and restrictions set forth in Section 3 and elsewhere in these Legal Provisions <strong>shall not apply thereto.</strong>"</p>
+<p><strong>번역</strong> — 그러한 코드 컴포넌트는 <strong>"Revised BSD License"</strong> 조건으로도 이용이 허락된다. 이용자가 코드 컴포넌트에 BSD 라이선스를 적용하기로 택하면, 제3조와 이 규정의 다른 곳에 정한 추가 허락과 제한은 <strong>그 코드에 적용되지 아니한다.</strong></p>
+</blockquote>
+<p><strong>제3.d조 — 문서는 개작할 수 없으나 코드는 개작할 수 있다</strong></p>
+<blockquote>
+<p>"any license to modify IETF Contributions or IETF Documents, or portions thereof (<strong>other than to make translations or to extract, use and modify Code Components</strong> as permitted under the licenses granted under Section 4 of these Legal Provisions) in any context outside the IETF Standards Process"</p>
+<p><strong>번역</strong> — IETF 표준화 절차 밖의 맥락에서 IETF 기여물이나 IETF 문서를 개작할 라이선스는 부여되지 아니한다. <strong>다만 번역하거나, 제4조에 따라 허락된 범위에서 코드 컴포넌트를 추출·이용·개작하는 것은 예외로 한다.</strong></p>
+</blockquote>
+<p><strong>제4.d조 — 표시는 코드 자체에 붙인다</strong></p>
+<blockquote>
+<p>"Those who use Code Components … are requested to attribute each such Code Component to IETF and identify the RFC … from which it is taken. <strong>Such attribution may be placed in the code itself</strong>…"</p>
+<p><strong>번역</strong> — 코드 컴포넌트를 이용하는 자는 그 출처를 IETF로 표시하고 가져온 RFC를 밝히도록 요청된다. <strong>그 표시는 코드 자체에 넣을 수 있다.</strong></p>
+<p class="src"><em>출처: <a href="https://trustee.ietf.org/wp-content/uploads/Corrected-TLP-5.0-legal-provsions.pdf" target="_blank" rel="noopener">IETF_TLP_본문_Corrected-TLP-5.0-legal-provsions.pdf</a>, 3~5쪽</em></p>
+</blockquote>
+<p><strong>같은 문서 파일 안에 있어도 규범 문안은 개작 금지, 코드는 개작 허용이다.</strong> 물리적 위치가 아니라 성격이 규율을 정한다는 뜻이다. 그리고 그 표시는 <strong>문서가 아니라 코드 자체</strong>에 붙는다.</p>
+<blockquote>
+<p><strong>참고</strong> — TLP 원문 주석에 따르면 이전 판은 이 라이선스를 "Simplified BSD License"라 잘못 불렀고, IETF Trust가 2021년 9월 21일 "Revised BSD License"로 바로잡았다. 라이선스 본문은 처음부터 Revised BSD였다.</p>
+</blockquote>
+<h3 id="2-2-w3c는-문서-라이선스-안에-코드-배제-조항을-둔다">2-2. W3C는 문서 라이선스 안에 코드 배제 조항을 둔다</h3>
+<p>W3C 문서 라이선스(2023년판) 본문이다.</p>
+<blockquote>
+<p>"<strong>No right to create modifications or derivatives of W3C documents is granted</strong> pursuant to this license, except as follows: …"</p>
+<p>"In addition, <strong>"Code Components"</strong> —Web IDL in sections clearly marked as Web IDL; and W3C-defined markup (HTML, CSS, etc.) and computer programming language code clearly marked as code examples— <strong>are licensed under the W3C Software License.</strong>"</p>
+<p><strong>번역</strong> — 이 라이선스로는 <strong>W3C 문서의 개작물이나 2차적 저작물을 만들 권리가 부여되지 아니한다</strong>(아래 예외 제외). 또한 <strong>"코드 컴포넌트"</strong> — Web IDL로 명확히 표시된 절의 Web IDL, W3C가 정의한 마크업(HTML·CSS 등), 코드 예제로 명확히 표시된 프로그래밍 언어 코드 — 는 <strong>W3C 소프트웨어 라이선스에 따라 이용이 허락된다.</strong></p>
+<p class="src"><em>출처: <a href="https://www.w3.org/copyright/document-license-2023/" target="_blank" rel="noopener">W3C_문서_라이선스.html</a></em></p>
+</blockquote>
+<p>같은 기구의 소프트웨어 라이선스는 정반대로 개작을 허용한다.</p>
+<blockquote>
+<p>"Permission to <strong>copy, modify, and distribute</strong> this work, <strong>with or without modification</strong>, for any purpose and without fee or royalty is hereby granted…"</p>
+<p><strong>번역</strong> — 이 저작물을 목적을 불문하고 무상으로 <strong>복제·개작·배포</strong>할 수 있는 권한을 허락한다.</p>
+<p class="src"><em>출처: <a href="https://www.w3.org/copyright/software-license-2023/" target="_blank" rel="noopener">W3C_소프트웨어문서_라이선스.html</a></em></p>
+</blockquote>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th></th>
+<th>W3C 문서 라이선스</th>
+<th>W3C 소프트웨어 라이선스</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>적용 대상</td>
+<td>명세 문서(규범 문안)</td>
+<td>코드·테스트 스위트·코드 컴포넌트</td>
+</tr>
+<tr>
+<td>개작</td>
+<td><strong>금지</strong>(구현 목적 예외만)</td>
+<td><strong>허용</strong></td>
+</tr>
+<tr>
+<td>기술 명세로서의 2차 발간</td>
+<td><strong>명시적 금지</strong></td>
+<td>해당 없음</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>표준화기구 두 곳이 독립적으로 같은 결론에 도달했다</strong> — 규범 문안과 코드는 같은 규율을 받을 수 없다.</p>
+<h3 id="2-3-특허-확약의-대상도-규범-문서로-한정된다">2-3. 특허 확약의 대상도 규범 문서로 한정된다</h3>
+<p>1-5에서 본 W3C 특허정책 문안이 여기서 다시 쓰인다.</p>
+<blockquote>
+<p>"For the purpose of this policy, <strong>"Specification" refers to a W3C technical report published on the Recommendation Track.</strong>"</p>
+<p class="src"><em>출처: <a href="https://www.w3.org/policies/patent-policy/" target="_blank" rel="noopener">W3C_특허정책.html</a>, 2절</em></p>
+</blockquote>
+<p>무상 실시 확약의 대상은 <strong>권고 트랙에 발간된 명세</strong>다. 코드는 그 정의에 들어가지 않는다.</p>
+<p><strong>이것이 코드를 표준에서 배제해야 하는 실질적 이유이기도 하다.</strong> 실행 가능한 코드를 규범에 넣으면 그 코드가 의존하는 라이브러리, 그 라이브러리가 의존하는 또 다른 라이브러리까지 확약·확인의 사정거리에 들어온다. 국제 기구들이 확약 대상을 명세로 못 박은 것은 이 연쇄를 끊기 위해서다.</p>
+<h3 id="2-4-같은-프로젝트-안에서도-어휘와-도구는-갈린다">2-4. 같은 프로젝트 안에서도 어휘와 도구는 갈린다</h3>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>프로젝트</th>
+<th>어휘·스키마</th>
+<th>코드·도구</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Schema.org</strong></td>
+<td>어휘 CC BY-SA 3.0 (<strong>콘텐츠 라이선스</strong>)</td>
+<td>빌드 도구 Apache-2.0 (<strong>소프트웨어 라이선스</strong>)</td>
+</tr>
+<tr>
+<td><strong>W3C</strong></td>
+<td>문서 라이선스</td>
+<td>소프트웨어·문서 라이선스</td>
+</tr>
+<tr>
+<td><strong>IETF</strong></td>
+<td>TLP 제3조</td>
+<td>Revised BSD License (제4조)</td>
+</tr>
+<tr>
+<td><strong>CycloneDX</strong></td>
+<td>스키마 Apache-2.0, 파일 내부에 표시</td>
+<td>도구 저장소 별도</td>
+</tr>
+</tbody>
+</table></div>
+<p>CycloneDX는 JSON 형식에 주석을 쓸 수 없다는 제약을 <code>$comment</code> 키로 우회한다. 실물 파일에서 확인한 문안이다.</p>
+<pre><code>&quot;$comment&quot; : &quot;CycloneDX JSON schema is published under the terms of the Apache License 2.0.&quot;
+</code></pre>
+<p class="src"><em>출처: <a href="https://github.com/CycloneDX/specification/blob/master/schema/bom-1.6.schema.json" target="_blank" rel="noopener">코드_specification-repo/schema/bom-1.6.schema.json</a></em></p>
+<p><strong>반면교사도 확인했다.</strong> ISO 19115-3은 XSD 117개를 무료로 공개하면서 파일 어디에도 이용조건을 적지 않았고, 이용약관 페이지는 봇 차단으로 접근이 막혔다. 받아갈 수는 있으나 <strong>복제·개작·재배포가 가능한지 알 수 없다.</strong> 권리를 주장할 의사가 없더라도 적어 두지 않으면 이용자는 쓰지 못한다.</p>
+<h3 id="2-5-기구는-코드를-보증하지-않는다">2-5. 기구는 코드를 보증하지 않는다</h3>
+<blockquote>
+<p>"THIS WORK IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENT WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS."</p>
+<p><strong>번역</strong> — 이 저작물은 <strong>"있는 그대로"</strong> 제공되며, 저작권자는 상품성·특정 목적 적합성, 또는 그 이용이 제3자의 특허·저작권·상표 기타 권리를 침해하지 아니한다는 점에 대하여 <strong>어떠한 명시적·묵시적 보증도 하지 아니한다.</strong></p>
+<p class="src"><em>출처: <a href="https://www.w3.org/copyright/software-license-2023/" target="_blank" rel="noopener">W3C_소프트웨어문서_라이선스.html</a></em></p>
+</blockquote>
+<p>IETF의 Revised BSD License 본문에도 동일 취지의 전면 면책 조항이 있다.</p>
+<p><strong>보증하지 않는 자산을 표준의 일부로 삼을 수는 없다.</strong> 표준의 일부라면 기구가 그 내용을 책임져야 하기 때문이다.</p>
+<h3 id="2-6-코드는-표준보다-먼저-낡는다">2-6. 코드는 표준보다 먼저 낡는다</h3>
+<p>특정 언어·런타임·의존성에 묶인 프로그램을 표준에 고정하면 몇 년 뒤 실행되지 않는다. 표준은 개정 주기가 길지만 런타임은 그보다 훨씬 빨리 바뀐다. 반면 스키마는 선언적 형식이라 실행 환경에 묶이지 않는다.</p>
+<p>이 차이가 국제 기구들이 코드를 문서 밖에(또는 문서 안이라도 별도 규율로) 둔 실질적 이유다.</p>
+<h3 id="2-7-용어-주의-국제-문헌의-reference-implementation">2-7. 용어 주의 — 국제 문헌의 "reference implementation"</h3>
+<p>ECMA-424 본문에는 다음 주(NOTE)가 있다.</p>
+<blockquote>
+<p>"The CycloneDX JSON Schema is the reference implementation for the Ecma standard."</p>
+<p><strong>번역</strong> — CycloneDX JSON Schema는 이 Ecma 표준의 <strong>참조구현(reference implementation)</strong>이다.</p>
+<p class="src"><em>출처: <a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a>, 12쪽</em></p>
+</blockquote>
+<p><strong>이 문장은 명제 2의 반례가 아니다.</strong> ECMA-424는 "reference implementation"을 <strong>표준을 대표하는 정본 산출물</strong>이라는 뜻으로 썼다. 이 문서에서 말하는 참조구현은 <strong>스키마를 이용해 데이터를 처리하는 프로그램 코드</strong>로 범위가 더 좁다. 같은 영어 단어가 다른 것을 가리킨다.</p>
+<blockquote>
+<p><strong>경계선은 명칭이 아니라 성격이다.</strong> 데이터의 구조·의미를 <strong>정의</strong>하면 규범이고, 그 정의를 <strong>사용·처리</strong>하면 표준 밖이다. ECMA-424의 저 문장을 이 기준으로 옮기면 "JSON Schema는 이 표준의 규범 산출물이다"가 된다.</p>
+</blockquote>
+<p>변환기·검증기처럼 정의와 처리에 걸친 산출물은 경계가 애매하다. 이런 산출물은 제안 단계에서 <strong>어느 쪽으로 낼지 제안자가 밝히게</strong> 하는 것이 실무적이다.</p>
+<h3 id="2-8-예상-반론과-답">2-8. 예상 반론과 답</h3>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>반론</th>
+<th>답</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"IETF는 문서 안에 코드를 넣는데 왜 우리는 빼는가"</td>
+<td>IETF가 문서에 넣는 코드는 예제·의사코드·ABNF 수준이다. 여기서 말하는 참조구현은 언어·런타임·의존성에 묶인 실행 가능한 프로그램이다. <strong>성격이 다르다.</strong> 더구나 IETF는 그 코드조차 문서와 다른 라이선스로 분리했다</td>
+</tr>
+<tr>
+<td>"참조구현을 배제하면 이용자가 구현하기 어렵다"</td>
+<td>배제는 <strong>규범에서 빼는 것</strong>이지 제공을 막는 것이 아니다. 위치와 이용조건을 밝혀 두면 이용에는 지장이 없다</td>
+</tr>
+<tr>
+<td>"코드를 표준에 넣어야 품질이 담보된다"</td>
+<td>담보 수단은 코드 수록이 아니라 <strong>적합성 검증</strong>이다. OGC도 표준 본문이 아니라 CITE 프로그램과 TEAM Engine이라는 별도 체계로 구현체를 시험한다</td>
+</tr>
+<tr>
+<td>"코드를 빼면 기구가 책임을 회피하는 것 아닌가"</td>
+<td>W3C·IETF의 코드 라이선스는 모두 전면 면책 조항을 둔다. 코드를 표준에 넣은 기구도 그 내용을 보증하지는 않는다</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="명제-3-참조구현과-코드의-저장소는-github으로-한다">명제 3. 참조구현과 코드의 저장소는 GitHub으로 한다</h2>
+<h3 id="3-1-무엇을-정하는-문제인가">3-1. 무엇을 정하는 문제인가</h3>
+<p>명제 2에 따라 참조구현은 표준화기구가 보관·보증하지 않는다. 그렇다면 <strong>그것이 어디에 있어야 이용자가 신뢰할 수 있는가</strong>를 정해야 한다. 이 명제는 그 답을 국제 선례에서 찾는다.</p>
+<h3 id="3-2-근거-①-정식-표준화기구가-공개-저장소를-절차-요건으로-삼는다">3-2. 근거 ① — 정식 표준화기구가 공개 저장소를 절차 요건으로 삼는다</h3>
+<p>Ecma International의 정식 기술위원회 TC39는 ECMAScript(ECMA-262)를 만든다. 그 프로세스 문서에서 <strong>공개 저장소는 단계 진입 요건</strong>이다.</p>
+<p><strong>Stage 1 진입 요건</strong></p>
+<blockquote>
+<p>"Identified a champion or champion group who will advance the addition / Prose outlining the problem/need and the general shape of a solution / Discussion of key algorithms, abstractions, and semantics / Identification of potential cross-cutting concerns and implementation challenges/complexity / <strong>A publicly available repository for the proposal that captures the above requirements</strong>"</p>
+<p><strong>번역</strong> — 제안을 진전시킬 챔피언(또는 챔피언 그룹)의 지정 / 문제와 해결책의 개형을 서술한 산문 / 핵심 알고리즘·추상화·의미론에 대한 논의 / 교차 관심사와 구현 난도의 식별 / <strong>위 요건을 담은 공개 저장소</strong></p>
+</blockquote>
+<p><strong>저장소의 소유권은 위원회로 이전된다</strong></p>
+<blockquote>
+<p>"Proposals at Stage 1 and beyond must be owned by the committee. <strong>Upon proposal acceptance, any externally-owned repositories must be transferred</strong> by following the onboarding instructions."</p>
+<p><strong>번역</strong> — Stage 1 이상의 제안은 위원회가 소유하여야 한다. <strong>제안이 수용되면 외부가 소유한 저장소는 이전되어야 한다.</strong></p>
+</blockquote>
+<p><strong>저장소가 절차 기록의 장소다</strong></p>
+<blockquote>
+<p>"If a proposal has a conditional advancement, <strong>an issue must be opened on the proposal's repository.</strong> If the issue is resolved, the proposal automatically reaches the next stage without further discussion by the committee."</p>
+<p><strong>번역</strong> — 조건부 승급이 있는 경우 <strong>제안 저장소에 이슈를 개설하여야 한다.</strong> 그 이슈가 해소되면 제안은 위원회의 추가 논의 없이 자동으로 다음 단계에 이른다.</p>
+</blockquote>
+<p><strong>그 저장소가 GitHub이다</strong></p>
+<blockquote>
+<p>"TC39 will maintain a list of in-process additions, along with the current maturity stage of each, <strong>on its GitHub.</strong>"</p>
+<p><strong>번역</strong> — TC39는 진행 중인 추가 제안 목록과 각각의 성숙 단계를 <strong>자신의 GitHub에서</strong> 유지한다.</p>
+<p class="src"><em>출처: <a href="https://tc39.es/process-document/" target="_blank" rel="noopener">Ecma-TC39_프로세스문서.html</a></em></p>
+</blockquote>
+<p><strong>정리</strong> — 국제 표준화기구가 공개 저장소를 ① 단계 진입 요건, ② 소유권 이전 대상, ③ 절차 기록의 장소로 규정하고, 그 저장소로 GitHub을 쓴다.</p>
+<h3 id="3-3-근거-②-정식-표준-문서가-github을-개발-저장소로-명기한다">3-3. 근거 ② — 정식 표준 문서가 GitHub을 개발 저장소로 명기한다</h3>
+<p>ECMA-424 제2판 앞면(iv쪽)의 "Contributing to this specification" 절이다.</p>
+<blockquote>
+<p>"<strong>This specification is developed on GitHub</strong> with the help of the OWASP community. There are a number of ways to contribute to the development of this specification:<br />
+<strong>GitHub Repository: https://github.com/Ecma-TC54/ECMA-424</strong><br />
+Issues: All Issues, File a New Issue<br />
+Pull Requests: All Pull Requests, Create a New Pull Request"</p>
+<p><strong>번역</strong> — <strong>이 명세는 GitHub에서 개발된다.</strong> 기여 방법은 다음과 같다. GitHub 저장소 / 이슈 / 풀 리퀘스트.</p>
+<p class="src"><em>출처: <a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a>, iv쪽</em></p>
+</blockquote>
+<p><strong>Ecma International이라는 정식 국제 표준화기구가 발간한 표준 문서 본문에, 그 표준의 개발 저장소가 GitHub임이 적혀 있다.</strong> 저장소 계정도 개인이 아니라 기구 조직 계정(Ecma-TC54)이다.</p>
+<h3 id="3-4-근거-③-기구-자신의-서식스키마도구도-github에-있다">3-4. 근거 ③ — 기구 자신의 서식·스키마·도구도 GitHub에 있다</h3>
+<p>IETF 인터넷 초안 저자 자원 사이트의 문안이다.</p>
+<blockquote>
+<p>"The content for this site is available in GitHub and we welcome pull requests proposing changes from the community. The repository README provides guidance on how to submit pull requests. Likewise, <strong>the templates and schemas available on this site are published on GitHub</strong> and we welcome pull requests proposing changes."</p>
+<p><strong>번역</strong> — 이 사이트의 내용은 GitHub에 있으며 공동체의 변경 제안(풀 리퀘스트)을 환영한다. 마찬가지로 <strong>이 사이트가 제공하는 서식과 스키마도 GitHub에 게시되어 있다.</strong></p>
+<p class="src"><em>출처: <a href="https://authors.ietf.org/" target="_blank" rel="noopener">IETF_저자도구_안내.html</a></em></p>
+</blockquote>
+<p>W3C 프로세스 문서(2023년판)는 문서 자체의 의견 접수 채널로 GitHub을 <strong>우선 채널</strong>로 표시한다.</p>
+<blockquote>
+<p>"Feedback: <strong>Github (preferred)</strong> / Public mailing list / Member-only mailing list"</p>
+<p class="src"><em>출처: <a href="https://www.w3.org/policies/process/" target="_blank" rel="noopener">W3C_프로세스문서.html</a></em></p>
+</blockquote>
+<h3 id="3-5-근거-④-실물-조사에서도-github이-표준-산출물의-사실상-저장소다">3-5. 근거 ④ — 실물 조사에서도 GitHub이 표준 산출물의 사실상 저장소다</h3>
+<p>3-1 조사에서 확인한 배포 경로다.</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>표준</th>
+<th>GitHub 저장소의 역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Schema.org</strong></td>
+<td><code>data/schema.ttl</code>이 <strong>규범 소스</strong>, 릴리스마다 6종 덤프를 자동 생성</td>
+</tr>
+<tr>
+<td><strong>MLCommons Croissant</strong></td>
+<td>스펙 Markdown과 어휘 <code>croissant.ttl</code>이 <strong>한 저장소에 동거</strong></td>
+</tr>
+<tr>
+<td><strong>SPDX</strong></td>
+<td>스펙 저장소에 docs·ontology·schemas 동거. spdx.org의 일부 경로는 404이나 저장소에는 존재</td>
+</tr>
+<tr>
+<td><strong>NIST OSCAL</strong></td>
+<td>릴리스 자산 52종(XSD·JSON Schema·XSLT)을 GitHub 릴리스로 배포</td>
+</tr>
+<tr>
+<td><strong>CycloneDX / ECMA-424</strong></td>
+<td><code>schema/</code> 디렉터리에 bom-1.0~1.7 전 판을 보존, 파일 내부에 라이선스 표시</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>주목할 것은 옛 판의 보존이다.</strong> CycloneDX 저장소에는 <code>bom-1.0.xsd</code>부터 <code>bom-1.7.proto</code>까지 28개 파일이 모두 남아 있다. 표준이 개정되어도 <strong>이전 판을 인용한 문서가 여전히 그 판을 가리킬 수 있다.</strong> 1-2에서 본 "판을 특정한 인용" 요건이 저장소에서 실제로 지켜지고 있다.</p>
+<h3 id="3-6-표준-밖-산출물의-저장소가-갖춰야-할-것과-github의-충족-방식">3-6. 표준 밖 산출물의 저장소가 갖춰야 할 것과 GitHub의 충족 방식</h3>
+<p>앞의 근거들에서 요건 네 가지가 나온다. 각 요건이 어느 인용에서 도출되는지 함께 적는다.</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>요건</th>
+<th>어디서 나오는가</th>
+<th>GitHub이 제공하는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>판을 특정할 수 있을 것</strong></td>
+<td>ECMA-424 "판을 특정한 인용은 그 판만 적용한다" / W3C 날짜 고정판·최신판 URI 분리</td>
+<td>릴리스(Release)와 태그(Tag). 시점의 파일 묶음을 고정한다</td>
+</tr>
+<tr>
+<td><strong>내용의 동일성을 확인할 수 있을 것</strong></td>
+<td>위 요건의 실효성 — 같은 주소의 내용이 바뀌면 판 특정이 무의미해진다</td>
+<td>커밋 해시가 그 자체로 내용 해시다. 릴리스 자산의 체크섬도 함께 게시할 수 있다</td>
+</tr>
+<tr>
+<td><strong>이용조건을 파일·저장소에서 확인할 수 있을 것</strong></td>
+<td>IETF TLP 제4.d조 "표시는 코드 자체에 넣을 수 있다" / ISO 19115-3 무표기 반면교사</td>
+<td>저장소 최상위 <code>LICENSE</code> 파일. 저장소 화면에 라이선스명이 표시된다</td>
+</tr>
+<tr>
+<td><strong>옛 판이 남아 있을 것</strong></td>
+<td>W3C URI 영속성 정책 / CycloneDX 저장소의 전 판 보존</td>
+<td>태그·릴리스와 커밋 이력이 옛 판을 그대로 유지한다</td>
+</tr>
+</tbody>
+</table></div>
+<p>참조구현에 한정해 보면 저장소가 제공하는 것은 더 있다.</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>필요</th>
+<th>저장소 기능</th>
+<th>실제 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유지보수 창구</td>
+<td>이슈 트래커</td>
+<td>TC39가 절차 기록 장소로 규정</td>
+</tr>
+<tr>
+<td>변경 이력</td>
+<td>커밋 로그·풀 리퀘스트</td>
+<td>ECMA-424가 기여 경로로 명기</td>
+</tr>
+<tr>
+<td>검토 책임자 지정</td>
+<td><code>CODEOWNERS</code></td>
+<td>CycloneDX — "all Core Team members are default-reviewers of new pull requests"</td>
+</tr>
+<tr>
+<td>자동 검증</td>
+<td>CI 워크플로</td>
+<td>CycloneDX 저장소의 스키마 검증 워크플로</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>공개 저장소 무료</td>
+<td>표준화기구의 인프라 부담 없음</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="3-7-github으로-하되-세-가지-조건을-붙인다">3-7. GitHub으로 하되, 세 가지 조건을 붙인다</h3>
+<p>무조건 허용이 아니라 <strong>조건부 원칙</strong>으로 세우는 것이 타당하다. 세 조건 모두 위 선례에서 직접 나온다.</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>조건</th>
+<th>내용</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 조직 계정</strong></td>
+<td>개인 계정이 아니라 기관·프로젝트 조직 계정에 둔다</td>
+<td>TC39 — "Stage 1 이상의 제안은 위원회가 소유하여야 한다. 외부가 소유한 저장소는 이전되어야 한다" / ECMA-424 저장소는 Ecma-TC54 조직 계정</td>
+</tr>
+<tr>
+<td><strong>② 판 고정</strong></td>
+<td>릴리스 태그 또는 커밋 해시로 판을 특정해 인용한다</td>
+<td>ECMA-424 — "판을 특정한 인용의 경우에는 인용된 판만 적용한다" / CycloneDX의 전 판 보존</td>
+</tr>
+<tr>
+<td><strong>③ 이용조건 명시</strong></td>
+<td>저장소에 <code>LICENSE</code> 파일을 두고, 참조구현에는 특허 조항이 있는 소프트웨어 라이선스를 쓴다</td>
+<td>IETF TLP 제4.d조 / ISO 19115-3 무표기 반면교사 / W3C·IETF의 코드 전용 라이선스</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>③에 특허 조항을 요구하는 이유</strong> — 1-5와 2-3에서 보았듯 기구의 특허 확약 제도는 <strong>규범 명세에만 미친다.</strong> 참조구현은 그 밖에 있으므로 <strong>라이선스가 특허를 다루는 유일한 장치</strong>다. 특허 조항이 없는 MIT·BSD로만 내면 이용자가 특허 위험을 그대로 진다. Schema.org가 빌드 도구에 Apache-2.0을 쓴 것이 이 유형이다.</p>
+<h3 id="3-8-예상-반론과-답">3-8. 예상 반론과 답</h3>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>반론</th>
+<th>답</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"특정 상용 서비스에 표준을 의존시켜도 되는가"</strong></td>
+<td>의존시키는 것은 <strong>표준이 아니라 표준 밖 자산</strong>이다. 규범 산출물은 기구가 정본을 지정·보관한다(OASIS의 정본 지정, W3C의 URI 영속성). Ecma가 GitHub 개발과 정식 발간을 병행하는 이중 트랙이 그 형태다</td>
+</tr>
+<tr>
+<td>"저장소 주인이 저장소를 지우면 어떻게 하나"</td>
+<td>그래서 조건 ①(조직 계정)과 ②(판 고정)를 붙인다. TC39가 저장소 소유권을 위원회로 이전하도록 규정한 이유가 정확히 이것이다</td>
+</tr>
+<tr>
+<td>"표준화기구가 직접 저장소를 운영하면 되지 않는가"</td>
+<td>참조구현은 기구가 보증하지 않는 자산이다(W3C·IETF의 전면 면책). 보증하지 않는 것을 기구 인프라에 두면 이용자가 기구의 공식 산출물로 오인한다. <strong>보증 범위와 보관 위치를 일치시키는 것</strong>이 맞다</td>
+</tr>
+<tr>
+<td>"'GitHub'이라는 특정 상호를 규정 문안에 쓸 수 있는가"</td>
+<td>규정 본문은 "공개 저장소"라는 일반 용어를 쓰고, <strong>서식과 지침 수준에서 GitHub을 기본값으로 제시</strong>하는 것이 무난하다. 이 문서가 대는 것은 그 기본값의 근거다</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="세-명제를-한-장으로">세 명제를 한 장으로</h2>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>스키마</strong></th>
+<th><strong>참조구현·코드</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>표준의 일부인가</strong></td>
+<td>그렇다 — 표준의 규범 내용</td>
+<td>아니다</td>
+</tr>
+<tr>
+<td><strong>가르는 기준</strong></td>
+<td>데이터의 구조·의미를 <strong>정의</strong>한다</td>
+<td>그 정의를 <strong>사용·처리</strong>한다</td>
+</tr>
+<tr>
+<td><strong>문서에 수록하나</strong></td>
+<td>국제 관행은 문서 밖 파일 + 규범적 참조. 문서에 담은 사례 0건</td>
+<td>수록하지 않는다. 위치만 안내</td>
+</tr>
+<tr>
+<td><strong>정본은 어디인가</strong></td>
+<td>기구가 정본을 명시적으로 지정한다 (OASIS)</td>
+<td>정본 개념이 없다. 기구는 보증하지 않는다</td>
+</tr>
+<tr>
+<td><strong>저장소</strong></td>
+<td>기구가 지정·보관하는 정본이 기준이되 공개 저장소 병행 (Ecma의 이중 트랙)</td>
+<td><strong>GitHub</strong> — 조직 계정·판 고정·라이선스 명시</td>
+</tr>
+<tr>
+<td><strong>라이선스</strong></td>
+<td>콘텐츠 라이선스 계열. 파일 자체에 표시 (CycloneDX <code>$comment</code>, W3C DCAT <code>dcterms:license</code>)</td>
+<td>소프트웨어 라이선스 계열, 특허 조항 필요</td>
+</tr>
+<tr>
+<td><strong>특허 처리</strong></td>
+<td>기구의 특허정책·확약 제도가 담당 (W3C 특허정책)</td>
+<td>확약 제도 밖. 라이선스가 유일한 장치</td>
+</tr>
+<tr>
+<td><strong>대표 근거</strong></td>
+<td>ECMA-424, OSCAL, FHIR, SPDX, DCAT, ISO 19115-3, OASIS</td>
+<td>IETF TLP 제3·4조, W3C 라이선스 이원화, W3C 특허정책, Schema.org</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>경계선은 하나다.</strong> 데이터의 구조·의미를 <strong>정의</strong>하는가, 그 정의를 <strong>사용·처리</strong>하는가.</p>
+
+<h2 id="국제-선례에서-도출되는-제도-설계-요구">국제 선례에서 도출되는 제도 설계 요구</h2>
+<p>이 문서는 근거만 제시한다. 그 근거가 국내 규정 개정에 요구하는 것을 항목으로 정리하면 다음과 같다. <strong>조문 번호는 적지 않는다</strong> — 어느 조문에 어떻게 담을지는 규정 설계의 몫이다.</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>제도 설계 요구</th>
+<th>이 요구를 뒷받침하는 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>기계가독 산출물이 <strong>표준의 규범 내용</strong>임을 정의 수준에서 명시할 것</td>
+<td>ECMA-424(검증을 오로지 스키마로), OSCAL·FHIR·SPDX의 규범 지정</td>
+</tr>
+<tr>
+<td>2</td>
+<td>산출물을 문서 밖 파일로 제공하는 것을 허용하되, <strong>문서가 그것을 규범적으로 참조</strong>하는 형식을 갖출 것</td>
+<td>문서 내 수록 사례 0건, ECMA-424의 인용 표준 구조</td>
+</tr>
+<tr>
+<td>3</td>
+<td>규범적 참조에는 <strong>판(버전)을 반드시 특정</strong>할 것</td>
+<td>ECMA-424 "판을 특정한 인용은 그 판만 적용한다", W3C 날짜 고정판 URI</td>
+</tr>
+<tr>
+<td>4</td>
+<td>여러 형태로 제공할 때 <strong>정본을 명시적으로 하나 지정</strong>할 것</td>
+<td>OASIS "정본을 명시적으로 지정하여야 한다"</td>
+</tr>
+<tr>
+<td>5</td>
+<td>참조 대상 주소의 <strong>영속성과 옛 판 보존</strong>을 요구할 것</td>
+<td>W3C URI 영속성 정책, CycloneDX의 전 판 보존</td>
+</tr>
+<tr>
+<td>6</td>
+<td>이용조건을 <strong>파일 자체에서</strong> 확인할 수 있게 표시할 것</td>
+<td>IETF TLP 제4.d조, CycloneDX <code>$comment</code>, W3C DCAT <code>dcterms:license</code>, ISO 19115-3 무표기 반면교사</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>참조구현이 표준의 일부가 아님</strong>과 기구가 보증하지 않음을 명시할 것</td>
+<td>IETF TLP 제3·4조, W3C 라이선스 이원화, W3C·IETF의 전면 면책 조항</td>
+</tr>
+<tr>
+<td>8</td>
+<td>특허는 라이선스가 아니라 <strong>기구의 확약 제도</strong>로 다루되, 그 대상을 <strong>규범 산출물로 한정</strong>할 것</td>
+<td>W3C 특허정책(대상은 권고 트랙 명세), IETF RFC 8179</td>
+</tr>
+<tr>
+<td>9</td>
+<td>참조구현·코드는 <strong>공개 저장소(GitHub)</strong>에 두게 하고, 조직 계정·판 고정·라이선스 파일을 조건으로 붙일 것</td>
+<td>TC39 절차 요건, ECMA-424 "developed on GitHub", IETF 서식·스키마의 GitHub 게시, 실물 5종</td>
+</tr>
+<tr>
+<td>10</td>
+<td>제출 산출물의 <strong>형식 정합성을 기계적으로 점검</strong>하는 절차를 둘 것</td>
+<td>OGC CITE·TEAM Engine, IETF 저자 도구, W3C 마크업 검증기</td>
+</tr>
+<tr>
+<td>11</td>
+<td>제안·기여 <strong>시점에 선언</strong>하게 하고, 그 시점을 놓치면 이후 다투지 못하게 할 것</td>
+<td>W3C 특허 배제(exclusion) 절차, IETF RFC 8179 기여 시점 공개 의무</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="그-밖의-거버넌스-선례">그 밖의 거버넌스 선례</h2>
+<p>세 명제에 직접 걸리지는 않으나 원 조사(3-2)에서 확인한 나머지 축을 요약해 남긴다.</p>
+<h3 id="에디터와-제안자의-역할-전문가-배정은-표준화의-전제가-아니다">에디터와 제안자의 역할 — 전문가 배정은 표준화의 전제가 아니다</h3>
+<p>Ecma TC39의 Stage 0 진입 요건은 다음과 같다.</p>
+<blockquote>
+<p>"None. New proposals are assigned this stage by their authors outside of the usual advancement process."</p>
+<p><strong>번역</strong> — 진입 요건: 없음. 새 제안은 <strong>통상의 승급 절차 밖에서 제안자(author) 본인이</strong> 이 단계로 올린다.</p>
+<p class="src"><em>출처: <a href="https://tc39.es/process-document/" target="_blank" rel="noopener">Ecma-TC39_프로세스문서.html</a></em></p>
+</blockquote>
+<p>이후 챔피언이 명세 문안과 구현·테스트를 책임진다. IETF는 저자(내용)와 RFC 편집자(형식·문체)를 분리하고 내용 전문가를 따로 배정하지 않는다. W3C·OASIS·OGC·ITU-T 모두 워킹그룹이 에디터를 지정해 문안을 작성하며, <strong>어휘 전문가라는 별도 직위를 둔 기구는 확인되지 않았다.</strong></p>
+<p><strong>다만 정직하게 말할 것</strong> — TC39 챔피언은 단계마다 위원회 합의를 거친다. 자가점검과 형식 자동 점검만으로 대체하면 검증 강도가 같지 않다.</p>
+<h3 id="제출-검증-자동화-드문-일이-아니다">제출 검증 자동화 — 드문 일이 아니다</h3>
+<p>OGC는 CITE(Compliance Interoperability Test and Evaluation) 적합성 시험 체계를 운영하고 TEAM Engine 시험 엔진을 공개한다. IETF는 초안 제출 전 형식 자동 점검 도구를, W3C는 공개 마크업 검증기를 제공한다.</p>
+<p><strong>범위 차이를 밝힐 것</strong> — OGC CITE는 <strong>구현체</strong>를 시험한다. 제출 산출물의 <strong>형식</strong>을 점검하는 것은 그보다 범위가 좁다.</p>
+<h3 id="제안-단계-선언-제도-시점을-놓치면-주장할-수-없게-한다">제안 단계 선언 제도 — 시점을 놓치면 주장할 수 없게 한다</h3>
+<p>W3C 특허정책은 특정 판을 "특허 검토 및 배제를 위해 발간된"(published for patent review and exclusion) 것으로 규정하고, 참가자가 그 기간에 배제 통지를 내지 않으면 무상 실시 의무를 진다. IETF RFC 8179(BCP 79)는 기여자가 아는 지식재산권을 <strong>기여 시점에</strong> 공개하도록 의무화한다.</p>
+<p><strong>핵심은 시점이다.</strong> 제안 단계에 산출물·이용조건을 선언하게 하는 제도도 같은 구조다 — 나중에 다투지 않도록 미리 밝히게 한다.</p>
+
+<h2 id="부록-a-인용-원문-대조표">부록 A. 인용 원문 대조표</h2>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>인용 요지</th>
+<th>출처 파일</th>
+<th>위치</th>
+<th>원본 주소</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>검증에 오로지 스키마만 사용</td>
+<td><a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a></td>
+<td>12쪽</td>
+<td>https://ecma-international.org/publications-and-standards/standards/ecma-424/</td>
+</tr>
+<tr>
+<td>2</td>
+<td>직렬화 형식별 스키마 URL(Table 1)</td>
+<td><a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a></td>
+<td>12쪽</td>
+<td>https://ecma-international.org/publications-and-standards/standards/ecma-424/</td>
+</tr>
+<tr>
+<td>3</td>
+<td>판을 특정한 인용은 그 판만 적용</td>
+<td><a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a></td>
+<td>2쪽(3 Normative references)</td>
+<td>https://ecma-international.org/publications-and-standards/standards/ecma-424/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>JSON Schema는 이 Ecma 표준의 reference implementation</td>
+<td><a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a></td>
+<td>12쪽 NOTE</td>
+<td>https://ecma-international.org/publications-and-standards/standards/ecma-424/</td>
+</tr>
+<tr>
+<td>5</td>
+<td>이 명세는 GitHub에서 개발된다 + 저장소 URL</td>
+<td><a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">문서_ECMA-424_2nd_edition.pdf</a></td>
+<td>iv쪽</td>
+<td>https://ecma-international.org/publications-and-standards/standards/ecma-424/</td>
+</tr>
+<tr>
+<td>6</td>
+<td>코드 컴포넌트의 정의·식별·라이선스·귀속</td>
+<td><a href="https://trustee.ietf.org/wp-content/uploads/Corrected-TLP-5.0-legal-provsions.pdf" target="_blank" rel="noopener">IETF_TLP_본문_Corrected-TLP-5.0-legal-provsions.pdf</a></td>
+<td>4~5쪽(제4조)</td>
+<td>https://trustee.ietf.org/wp-content/uploads/Corrected-TLP-5.0-legal-provsions.pdf</td>
+</tr>
+<tr>
+<td>7</td>
+<td>문서 개작 금지, 코드 컴포넌트는 예외</td>
+<td><a href="https://trustee.ietf.org/wp-content/uploads/Corrected-TLP-5.0-legal-provsions.pdf" target="_blank" rel="noopener">IETF_TLP_본문_Corrected-TLP-5.0-legal-provsions.pdf</a></td>
+<td>4쪽(제3.d.i조)</td>
+<td>https://trustee.ietf.org/wp-content/uploads/Corrected-TLP-5.0-legal-provsions.pdf</td>
+</tr>
+<tr>
+<td>8</td>
+<td>문서 개작 불허 + 코드 컴포넌트는 소프트웨어 라이선스 적용</td>
+<td><a href="https://www.w3.org/copyright/document-license-2023/" target="_blank" rel="noopener">W3C_문서_라이선스.html</a></td>
+<td>License 절</td>
+<td>https://www.w3.org/copyright/document-license-2023/</td>
+</tr>
+<tr>
+<td>9</td>
+<td>복제·개작·배포 허용 + "AS IS" 면책</td>
+<td><a href="https://www.w3.org/copyright/software-license-2023/" target="_blank" rel="noopener">W3C_소프트웨어문서_라이선스.html</a></td>
+<td>License·Disclaimers 절</td>
+<td>https://www.w3.org/copyright/software-license-2023/</td>
+</tr>
+<tr>
+<td>10</td>
+<td>특허정책의 목적은 무상 구현 보장</td>
+<td><a href="https://www.w3.org/policies/patent-policy/" target="_blank" rel="noopener">W3C_특허정책.html</a></td>
+<td>2절</td>
+<td>https://www.w3.org/policies/patent-policy/</td>
+</tr>
+<tr>
+<td>11</td>
+<td>"명세"는 권고 트랙 기술보고서로 한정</td>
+<td><a href="https://www.w3.org/policies/patent-policy/" target="_blank" rel="noopener">W3C_특허정책.html</a></td>
+<td>2절</td>
+<td>https://www.w3.org/policies/patent-policy/</td>
+</tr>
+<tr>
+<td>12</td>
+<td>참가 조건으로 실시 확약 의무</td>
+<td><a href="https://www.w3.org/policies/patent-policy/" target="_blank" rel="noopener">W3C_특허정책.html</a></td>
+<td>3.1절</td>
+<td>https://www.w3.org/policies/patent-policy/</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Stage 0은 제안자 본인이 올린다</td>
+<td><a href="https://tc39.es/process-document/" target="_blank" rel="noopener">Ecma-TC39_프로세스문서.html</a></td>
+<td>Stage 표</td>
+<td>https://tc39.es/process-document/</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Stage 1 진입 요건 — 공개 저장소</td>
+<td><a href="https://tc39.es/process-document/" target="_blank" rel="noopener">Ecma-TC39_프로세스문서.html</a></td>
+<td>Stage 표</td>
+<td>https://tc39.es/process-document/</td>
+</tr>
+<tr>
+<td>15</td>
+<td>외부 소유 저장소는 이전되어야 한다</td>
+<td><a href="https://tc39.es/process-document/" target="_blank" rel="noopener">Ecma-TC39_프로세스문서.html</a></td>
+<td>서두</td>
+<td>https://tc39.es/process-document/</td>
+</tr>
+<tr>
+<td>16</td>
+<td>조건부 승급 시 저장소에 이슈 개설 의무</td>
+<td><a href="https://tc39.es/process-document/" target="_blank" rel="noopener">Ecma-TC39_프로세스문서.html</a></td>
+<td>승급 절차</td>
+<td>https://tc39.es/process-document/</td>
+</tr>
+<tr>
+<td>17</td>
+<td>진행 목록을 GitHub에서 유지</td>
+<td><a href="https://tc39.es/process-document/" target="_blank" rel="noopener">Ecma-TC39_프로세스문서.html</a></td>
+<td>Status of in-process additions</td>
+<td>https://tc39.es/process-document/</td>
+</tr>
+<tr>
+<td>18</td>
+<td>정본 형식을 명시적으로 지정하여야 한다</td>
+<td><a href="https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/" target="_blank" rel="noopener">OASIS_TC프로세스.html</a></td>
+<td>2.2.2 File Formats</td>
+<td>https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/</td>
+</tr>
+<tr>
+<td>19</td>
+<td>URI 영속성 선언</td>
+<td><a href="https://www.w3.org/policies/uri-persistence/" target="_blank" rel="noopener">W3C_URI영속성_정책.html</a></td>
+<td>본문 인용</td>
+<td>https://www.w3.org/policies/uri-persistence/</td>
+</tr>
+<tr>
+<td>20</td>
+<td>서식과 스키마를 GitHub에 게시</td>
+<td><a href="https://authors.ietf.org/" target="_blank" rel="noopener">IETF_저자도구_안내.html</a></td>
+<td>Contributing to this site</td>
+<td>https://authors.ietf.org/</td>
+</tr>
+<tr>
+<td>21</td>
+<td>의견 접수 채널 — GitHub 우선</td>
+<td><a href="https://www.w3.org/policies/process/" target="_blank" rel="noopener">W3C_프로세스문서.html</a></td>
+<td>문서 머리</td>
+<td>https://www.w3.org/policies/process/</td>
+</tr>
+<tr>
+<td>22</td>
+<td>JSON Schema 내부 라이선스 표시</td>
+<td><a href="https://github.com/CycloneDX/specification/blob/master/schema/bom-1.6.schema.json" target="_blank" rel="noopener">코드_specification-repo/schema/bom-1.6.schema.json</a></td>
+<td><code>$comment</code> 키</td>
+<td>https://github.com/CycloneDX/specification/blob/master/schema/bom-1.6.schema.json</td>
+</tr>
+<tr>
+<td>23</td>
+<td>풀 리퀘스트 기본 검토자 지정</td>
+<td><a href="https://github.com/CycloneDX/specification/blob/master/CODEOWNERS" target="_blank" rel="noopener">코드_specification-repo/CODEOWNERS</a></td>
+<td>전문</td>
+<td>https://github.com/CycloneDX/specification/blob/master/CODEOWNERS</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="부록-b-조사-대상과-수집-내역">부록 B. 조사 대상과 수집 내역</h2>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>조사</th>
+<th>대상</th>
+<th>수집량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3-1 산출물 배포방식</td>
+<td>6개 유형 16개 사례의 배포 실물</td>
+<td>약 273MB</td>
+</tr>
+<tr>
+<td>3-2 거버넌스 절차</td>
+<td>IETF·W3C·Ecma·OASIS·OGC·ITU-T 규정 문서</td>
+<td>27건 약 5.5MB</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>3-2 축</th>
+<th>파일 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. 에디터와 제안자 역할</td>
+<td>8</td>
+</tr>
+<tr>
+<td>B. 참조구현과 코드의 지위</td>
+<td>6</td>
+</tr>
+<tr>
+<td>C. 영속 보관과 이중 배포</td>
+<td>5</td>
+</tr>
+<tr>
+<td>D. 제출 검증 자동화</td>
+<td>4</td>
+</tr>
+<tr>
+<td>E. 제안 단계 선언 제도</td>
+<td>4</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="부록-c-한계와-미수집-항목">부록 C. 한계와 미수집 항목</h2>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>대상</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ISO/IEC Directives Part 1·2</strong></td>
+<td>iso.org 봇 차단(HTTP 403)</td>
+</tr>
+<tr>
+<td><strong>ITU-T 권고 A.1 본문</strong></td>
+<td>세션 인증이 필요한 다운로드 경로. 안내 페이지만 수집</td>
+</tr>
+<tr>
+<td><strong>ISO 19115-3 이용약관</strong></td>
+<td>봇 차단으로 접근 불가 — 본문에서 무표기 사례로 다룸</td>
+</tr>
+</tbody>
+</table></div>
+<p>세 건 모두 필요하면 브라우저로 직접 내려받아 해당 폴더에 넣으면 된다.</p>
+<p><strong>이 조사가 확인하지 못한 것</strong> — 조사한 6개 기구 중 <strong>어휘·의미의 정확성을 자동 점검으로 갈음한 사례는 확인되지 않았다.</strong> 기계 검증 선례(OGC CITE, IETF 저자 도구, W3C 검증기)는 모두 형식·적합성 검증이며, 의미의 정확성은 사람의 검토에 맡겨져 있다. 자동 점검을 전문가 검증의 대체재로 제시할 근거는 이 조사에서 나오지 않는다.</p>
+
+
+<h2 id="원문-출처">원문 출처 — 웹에서 직접 확인하기</h2>
+<p>이 페이지의 인용은 모두 2026년 8월 17일에 각 기구의 공식 사이트에서 내려받아 저장소에 보관한 원문 파일에서 추출했다. 제3자 원문은 이 사이트에 다시 게시하지 않으며, 아래 공식 주소에서 확인한다. 수집 당시의 사본은 <a href="https://github.com/Suntae-Kim2020/tta-work/tree/main/AI-Ready_%EB%B0%A9%EB%B2%951_%EC%A0%9C%EC%95%88%EC%9E%90%EC%84%A0%EC%96%B8%ED%98%95/3_%EA%B7%BC%EA%B1%B0_%EA%B5%AD%EC%A0%9C%EC%84%A0%EB%A1%80" target="_blank" rel="noopener">저장소의 3_근거_국제선례 폴더</a>에 있다.</p>
+<h3>3-2 거버넌스 규정 원문</h3>
+<div class="tablebox"><table>
+<thead><tr><th>기구</th><th>문서</th><th>수집 파일</th><th>공식 주소</th></tr></thead>
+<tbody><tr><td>Ecma International</td><td>ECMA-424 2nd edition (CycloneDX) 발간 페이지</td><td class="num">문서_ECMA-424_2nd_edition.pdf</td><td><a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener">https://ecma-international.org/publications-and-standards/standards/ecma-424/</a></td></tr><tr><td>IETF Trust</td><td>Trust Legal Provisions 5.0 (정정판 PDF)</td><td class="num">IETF_TLP_본문_Corrected-TLP-5.0-legal-provsions.pdf</td><td><a href="https://trustee.ietf.org/wp-content/uploads/Corrected-TLP-5.0-legal-provsions.pdf" target="_blank" rel="noopener">https://trustee.ietf.org/wp-content/uploads/Corrected-TLP-5.0-legal-provsions.pdf</a></td></tr><tr><td>W3C</td><td>Document License 2023</td><td class="num">W3C_문서_라이선스.html</td><td><a href="https://www.w3.org/copyright/document-license-2023/" target="_blank" rel="noopener">https://www.w3.org/copyright/document-license-2023/</a></td></tr><tr><td>W3C</td><td>Software and Document License 2023</td><td class="num">W3C_소프트웨어문서_라이선스.html</td><td><a href="https://www.w3.org/copyright/software-license-2023/" target="_blank" rel="noopener">https://www.w3.org/copyright/software-license-2023/</a></td></tr><tr><td>W3C</td><td>Patent Policy</td><td class="num">W3C_특허정책.html</td><td><a href="https://www.w3.org/policies/patent-policy/" target="_blank" rel="noopener">https://www.w3.org/policies/patent-policy/</a></td></tr><tr><td>W3C</td><td>URI Persistence Policy</td><td class="num">W3C_URI영속성_정책.html</td><td><a href="https://www.w3.org/policies/uri-persistence/" target="_blank" rel="noopener">https://www.w3.org/policies/uri-persistence/</a></td></tr><tr><td>W3C</td><td>Process Document</td><td class="num">W3C_프로세스문서.html</td><td><a href="https://www.w3.org/policies/process/" target="_blank" rel="noopener">https://www.w3.org/policies/process/</a></td></tr><tr><td>Ecma TC39</td><td>The TC39 Process</td><td class="num">Ecma-TC39_프로세스문서.html</td><td><a href="https://tc39.es/process-document/" target="_blank" rel="noopener">https://tc39.es/process-document/</a></td></tr><tr><td>OASIS</td><td>TC Process (2017-05-26)</td><td class="num">OASIS_TC프로세스.html</td><td><a href="https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/" target="_blank" rel="noopener">https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/</a></td></tr><tr><td>IETF</td><td>Internet-Draft Author Resources</td><td class="num">IETF_저자도구_안내.html</td><td><a href="https://authors.ietf.org/" target="_blank" rel="noopener">https://authors.ietf.org/</a></td></tr><tr><td>CycloneDX</td><td>specification 저장소 — bom-1.6.schema.json</td><td class="num">코드_specification-repo/schema/bom-1.6.schema.json</td><td><a href="https://github.com/CycloneDX/specification/blob/master/schema/bom-1.6.schema.json" target="_blank" rel="noopener">https://github.com/CycloneDX/specification/blob/master/schema/bom-1.6.schema.json</a></td></tr><tr><td>CycloneDX</td><td>specification 저장소 — CODEOWNERS</td><td class="num">코드_specification-repo/CODEOWNERS</td><td><a href="https://github.com/CycloneDX/specification/blob/master/CODEOWNERS" target="_blank" rel="noopener">https://github.com/CycloneDX/specification/blob/master/CODEOWNERS</a></td></tr></tbody></table></div>
+<h3>3-1 배포 실물 16종</h3>
+<div class="tablebox"><table>
+<thead><tr><th>표준</th><th>문서 페이지</th><th>스키마·저장소</th></tr></thead>
+<tbody><tr><td>NIST OSCAL</td><td><a href="https://pages.nist.gov/OSCAL/" target="_blank" rel="noopener">https://pages.nist.gov/OSCAL/</a></td><td><a href="https://github.com/usnistgov/OSCAL/releases" target="_blank" rel="noopener">https://github.com/usnistgov/OSCAL/releases</a></td></tr><tr><td>HL7 FHIR</td><td><a href="https://hl7.org/fhir/" target="_blank" rel="noopener">https://hl7.org/fhir/</a></td><td><a href="https://hl7.org/fhir/downloads.html" target="_blank" rel="noopener">https://hl7.org/fhir/downloads.html</a></td></tr><tr><td>SPDX</td><td><a href="https://spdx.github.io/spdx-spec/v3.0.1/" target="_blank" rel="noopener">https://spdx.github.io/spdx-spec/v3.0.1/</a></td><td><a href="https://spdx.org/schema/3.0.1/spdx-json-schema.json" target="_blank" rel="noopener">https://spdx.org/schema/3.0.1/spdx-json-schema.json</a></td></tr><tr><td>CycloneDX / ECMA-424</td><td><a href="https://cyclonedx.org/specification/overview/" target="_blank" rel="noopener">https://cyclonedx.org/specification/overview/</a></td><td><a href="https://github.com/CycloneDX/specification" target="_blank" rel="noopener">https://github.com/CycloneDX/specification</a></td></tr><tr><td>NIST AI RMF (CPRT)</td><td><a href="https://airc.nist.gov/airmf-resources/airmf/" target="_blank" rel="noopener">https://airc.nist.gov/airmf-resources/airmf/</a></td><td><a href="https://csrc.nist.gov/projects/cprt/catalog" target="_blank" rel="noopener">https://csrc.nist.gov/projects/cprt/catalog</a></td></tr><tr><td>W3C DCAT 3</td><td><a href="https://www.w3.org/TR/vocab-dcat-3/" target="_blank" rel="noopener">https://www.w3.org/TR/vocab-dcat-3/</a></td><td><a href="https://www.w3.org/ns/dcat.ttl" target="_blank" rel="noopener">https://www.w3.org/ns/dcat.ttl</a></td></tr><tr><td>W3C PROV-O</td><td><a href="https://www.w3.org/TR/prov-o/" target="_blank" rel="noopener">https://www.w3.org/TR/prov-o/</a></td><td><a href="https://www.w3.org/ns/prov.owl" target="_blank" rel="noopener">https://www.w3.org/ns/prov.owl</a></td></tr><tr><td>Dublin Core (DCMI Terms)</td><td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" rel="noopener">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a></td><td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl" target="_blank" rel="noopener">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl</a></td></tr><tr><td>Schema.org</td><td><a href="https://schema.org/docs/developers.html" target="_blank" rel="noopener">https://schema.org/docs/developers.html</a></td><td><a href="https://github.com/schemaorg/schemaorg" target="_blank" rel="noopener">https://github.com/schemaorg/schemaorg</a></td></tr><tr><td>MLCommons Croissant</td><td><a href="https://docs.mlcommons.org/croissant/docs/croissant-spec.html" target="_blank" rel="noopener">https://docs.mlcommons.org/croissant/docs/croissant-spec.html</a></td><td><a href="https://github.com/mlcommons/croissant" target="_blank" rel="noopener">https://github.com/mlcommons/croissant</a></td></tr><tr><td>ISO 19115-3</td><td><a href="https://www.iso.org/standard/80874.html" target="_blank" rel="noopener">https://www.iso.org/standard/80874.html</a></td><td><a href="https://standards.iso.org/iso/19115/-3/" target="_blank" rel="noopener">https://standards.iso.org/iso/19115/-3/</a></td></tr><tr><td>LoC PREMIS</td><td><a href="https://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf" target="_blank" rel="noopener">https://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf</a></td><td><a href="https://www.loc.gov/standards/premis/v3/premis.xsd" target="_blank" rel="noopener">https://www.loc.gov/standards/premis/v3/premis.xsd</a></td></tr><tr><td>LoC MODS</td><td><a href="https://www.loc.gov/standards/mods/" target="_blank" rel="noopener">https://www.loc.gov/standards/mods/</a></td><td><a href="https://www.loc.gov/standards/mods/v3/mods-3-8.xsd" target="_blank" rel="noopener">https://www.loc.gov/standards/mods/v3/mods-3-8.xsd</a></td></tr><tr><td>LoC METS</td><td><a href="https://www.loc.gov/standards/mets/" target="_blank" rel="noopener">https://www.loc.gov/standards/mets/</a></td><td><a href="https://www.loc.gov/standards/mets/mets.xsd" target="_blank" rel="noopener">https://www.loc.gov/standards/mets/mets.xsd</a></td></tr><tr><td>OGC GML</td><td><a href="https://www.ogc.org/standards/" target="_blank" rel="noopener">https://www.ogc.org/standards/</a></td><td><a href="https://schemas.opengis.net/" target="_blank" rel="noopener">https://schemas.opengis.net/</a></td></tr><tr><td>DDI-Lifecycle 3.3</td><td><a href="https://ddialliance.org/Specification/DDI-Lifecycle/3.3/" target="_blank" rel="noopener">https://ddialliance.org/Specification/DDI-Lifecycle/3.3/</a></td><td><a href="https://ddialliance.org/Specification/DDI-Lifecycle/3.3/XMLSchema/instance.xsd" target="_blank" rel="noopener">https://ddialliance.org/Specification/DDI-Lifecycle/3.3/XMLSchema/instance.xsd</a></td></tr></tbody></table></div>
+<div class="note"><span class="note-t">수집하지 못한 것</span>ISO/IEC Directives Part 1·2(iso.org 봇 차단), ITU-T 권고 A.1 본문(세션 인증 필요), ISO 19115-3 이용약관(봇 차단)은 수집하지 못했다. 본문 부록 C 참조.</div>
+
+
+<div class="foot">
+  AI-Ready 표준화 방법1 · 근거 — 국제 선례 ·
+  <a href="m1-precedent.html">← 조사 해설</a> · <a href="m1-review.html">검토·정정 →</a>
+</div>
+</div>
+<script>
+function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
+var n=c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
+r.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}}
+try{var s=localStorage.getItem('th');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+</script>
+</body></html>
