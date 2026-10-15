@@ -14,6 +14,7 @@
     <a href="m2-index.html" class="ms">AI Ready Data V.1 <span class="ms-sub">공동 에디터 보강형</span></a>
     <a href="m1-index.html" class="ms on">AI Ready Data V.2 <span class="ms-sub">제안자 선언형</span></a>
     <a href="m3-index.html" class="ms">AI Ready Data V.2.1 <span class="ms-sub">제안자 선언형 · 원문 대조 반영</span></a>
+    <a href="downloads.html" class="ms dl">최종산출물</a>
   </div>
   <button class="theme-btn" onclick="tt()">◐ 테마</button>
 </div></div>
@@ -228,6 +229,7 @@ function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
 var n=c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
 r.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}}
 try{var s=localStorage.getItem('th');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+(function(){var P=window.name==='ttaPop';document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.pop');if(!a)return;if(P){return;}e.preventDefault();var w=window.open(a.href,'ttaPop','width=1120,height=860,scrollbars=yes,resizable=yes');if(w)w.focus();});if(P){var dl=document.body.getAttribute('data-dl');var b=document.createElement('div');b.className='popbar';b.innerHTML='<button type="button" onclick="history.back()"'+(history.length>1?'':' disabled')+'>← 뒤로</button>'+(dl?'<a href="'+dl+'" download>⬇ 이 문서 한글(HWPX) 내려받기</a>':'')+'<a href="downloads.html">최종산출물 전체</a><span class="sp"></span><button type="button" onclick="window.close()">닫기 ✕</button>';document.body.prepend(b);document.body.classList.add('inpop');document.querySelectorAll('a.pop').forEach(function(a){a.removeAttribute('target');});}})();
 </script>
 </body>
 </html>

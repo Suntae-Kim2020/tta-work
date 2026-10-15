@@ -7,6 +7,7 @@
     <a href="m2-index.html" class="ms">AI Ready Data V.1 <span class="ms-sub">공동 에디터 보강형</span></a>
     <a href="m1-index.html" class="ms">AI Ready Data V.2 <span class="ms-sub">제안자 선언형</span></a>
     <a href="m3-index.html" class="ms">AI Ready Data V.2.1 <span class="ms-sub">제안자 선언형 · 원문 대조 반영</span></a>
+    <a href="downloads.html" class="ms dl">최종산출물</a>
   </div>
   <button class="theme-btn" onclick="tt()">◐ 테마</button>
 </div></div>
@@ -100,6 +101,13 @@
 <tr><td class="num">별표 10</td><td>수준 요건</td><td><a href="m3-annex.html">수준 요건 + <strong>제4부 산출물 요건</strong></a></td></tr>
 </tbody></table></div>
 
+<h2>최종산출물 — TTA 제출 문서(안)</h2>
+<div class="cards">
+  <a class="card" href="downloads.html"><div class="card-k">한글 문서(HWPX) 11종 + 참고 3종</div><div class="card-t">최종산출물 내려받기</div><p class="card-d">운영요령·작성지침 개정안 신구조문대비표, 별표 10, 별지 제11-1호·제21-1호서식, 제15·23·24호서식 개정안, 부속서 양식, 운영규정 검토, 개정 전문 통합본(붉은 글씨 = 개정)</p></a>
+  <a class="card" href="downloads/01_%EC%A0%95%EB%B3%B4%ED%86%B5%EC%8B%A0%ED%91%9C%EC%A4%80%ED%99%94_%EC%9A%B4%EC%98%81%EC%9A%94%EB%A0%B9_%EA%B0%9C%EC%A0%95%EC%95%88_%EC%8B%A0%EA%B5%AC%EC%A1%B0%EB%AC%B8%EB%8C%80%EB%B9%84%ED%91%9C.hwpx" download><div class="card-k">바로 받기</div><div class="card-t">01 운영요령 개정안 신구조문대비표</div><p class="card-d">안건 ① 본체 문서</p></a>
+  <a class="card" href="downloads/09_%EC%A0%95%EB%B3%B4%ED%86%B5%EC%8B%A0%ED%91%9C%EC%A4%80%ED%99%94_%EC%9A%B4%EC%98%81%EC%9A%94%EB%A0%B9_%EA%B0%9C%EC%A0%95%EC%A0%84%EB%AC%B8_%ED%86%B5%ED%95%A9%EB%B3%B8%28%EB%B6%89%EC%9D%80%EA%B8%80%EC%94%A8%3D%EA%B0%9C%EC%A0%95%29.hwpx" download><div class="card-k">바로 받기</div><div class="card-t">09 운영요령 개정 전문 통합본</div><p class="card-d">원문 전체에 개정 문안을 붉은 글씨로 표시</p></a>
+</div>
+
 <h2>공통 사항</h2>
 <div class="cards">
   <div class="card"><div class="card-t">운영규정은 개정하지 않는다</div><p class="card-d">두 안 모두 제57조 위임으로 운영요령에서 처리한다. 운영규정 개정은 표준총회(연 2회) 권한이라 절차가 길기 때문이다.</p></div>
@@ -117,5 +125,6 @@ function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
 var n=c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
 r.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}}
 try{var s=localStorage.getItem('th');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+(function(){var P=window.name==='ttaPop';document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.pop');if(!a)return;if(P){return;}e.preventDefault();var w=window.open(a.href,'ttaPop','width=1120,height=860,scrollbars=yes,resizable=yes');if(w)w.focus();});if(P){var dl=document.body.getAttribute('data-dl');var b=document.createElement('div');b.className='popbar';b.innerHTML='<button type="button" onclick="history.back()"'+(history.length>1?'':' disabled')+'>← 뒤로</button>'+(dl?'<a href="'+dl+'" download>⬇ 이 문서 한글(HWPX) 내려받기</a>':'')+'<a href="downloads.html">최종산출물 전체</a><span class="sp"></span><button type="button" onclick="window.close()">닫기 ✕</button>';document.body.prepend(b);document.body.classList.add('inpop');document.querySelectorAll('a.pop').forEach(function(a){a.removeAttribute('target');});}})();
 </script>
 </body></html>

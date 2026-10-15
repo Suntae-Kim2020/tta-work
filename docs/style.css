@@ -319,3 +319,13 @@ h3 { scroll-margin-top: 68px; }
 /* ── 팝업 링크(별표·별지·조문) ── */
 a.pop { text-decoration: none; border-bottom: 1px dotted var(--accent); }
 a.pop::after { content: "↗"; font-size: .72em; margin-left: 1px; opacity: .7; }
+
+/* ── 팝업 도구막대 · 최종산출물 메뉴 ── */
+.ms.dl { border-style: dashed; }
+.popbar { position: sticky; top: 0; z-index: 50; display: flex; gap: 8px; align-items: center; padding: 8px 16px;
+  background: var(--accent-soft); border-bottom: 1px solid var(--line); font-size: 13px; }
+.popbar button, .popbar a { font: inherit; font-weight: 600; color: var(--accent); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 6px; padding: 5px 11px; text-decoration: none; cursor: pointer; }
+.popbar button:disabled { opacity: .45; cursor: default; }
+.popbar .sp { flex: 1; }
+body.inpop .topbar { display: none; }
