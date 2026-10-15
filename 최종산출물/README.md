@@ -40,6 +40,10 @@
 - 운영요령 문서번호 표기(`SBG-0030/R13`)는 원본 표지 확인 후 확정한다.
 - 별지 제15·23·24호서식은 추가 문안을 정한 것이며, 한글 양식 파일에 칸을 그려 넣는 편집은 사무국 선례에 따른다.
 
+## 웹에서 내려받기
+
+같은 파일을 GitHub Pages에서도 내려받을 수 있다 — https://suntae-kim2020.github.io/tta-work/downloads.html (상단 메뉴 「최종산출물」). 웹용 사본은 `docs/downloads/`에 있으므로, 이 폴더의 HWPX를 다시 생성하면 `docs/downloads/`에도 복사해야 한다(도구: scratchpad `build_downloads.py`, 또는 수동 복사).
+
 ## 생성 방법
 
 ```
