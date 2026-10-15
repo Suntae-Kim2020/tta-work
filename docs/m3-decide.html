@@ -124,7 +124,7 @@
 <div class="note why"><span class="note-t">IETF의 선례</span>
 IETF는 표준 문서 <strong>안</strong>에 코드를 넣는데, 그 코드를 <code>&lt;CODE BEGINS&gt;</code> 표시로 구분하고 <strong>문서와 다른 라이선스</strong>를 적용한다. 그리고 이렇게 못 박았다.
 <br><br>"문서에 정한 추가 허락과 제한은 <strong>그 코드에 적용되지 아니한다</strong>"
-<br><br>문서에 담겼다고 문서의 조건이 자동으로 따라가지 않는다는 뜻이다. 그래서 운영요령 제19조의3제7항에 <strong>"부속서에 수록한 경우에도 같다"</strong>를 넣었다.
+<br><br>문서에 담겼다고 문서의 조건이 자동으로 따라가지 않는다는 뜻이다. 그래서 운영요령 <a href="m3-rules.html#a193" class="pop" target="_blank" rel="noopener">제19조의3제7항</a>에 <strong>"부속서에 수록한 경우에도 같다"</strong>를 넣었다.
 </div>
 
 <div class="tablebox"><table>
@@ -144,7 +144,7 @@ IETF는 표준 문서 <strong>안</strong>에 코드를 넣는데, 그 코드를
         운영요령 제23조③ ───────────┘ 확약 거부·실시 허락 거절 시 <b>표준 폐지</b></div>
 <div class="note why"><strong>라이선스보다 강한 장치다.</strong> Apache 2.0의 방어적 종료는 "소송을 걸면 당신의 특허 실시권이 소멸한다"에 그치지만, TTA는 확약을 거부하면 <strong>표준 자체를 폐지한다.</strong></div>
 <div class="note warn"><span class="note-t">이 제도는 참조구현에 미치지 않는다</span>
-제19조의3제10항의 대상은 <strong>기계가독 산출물뿐</strong>이다. 참조구현은 표준의 일부가 아니므로(제8항) 확인 대상에서 벗어난다. 실행 가능한 코드까지 넣으면 그 코드가 의존하는 라이브러리 연쇄까지 대상이 되어 통제할 수 없기 때문이다.
+<a href="m3-rules.html#a193" class="pop" target="_blank" rel="noopener">제19조의3제10항</a>의 대상은 <strong>기계가독 산출물뿐</strong>이다. 참조구현은 표준의 일부가 아니므로(제8항) 확인 대상에서 벗어난다. 실행 가능한 코드까지 넣으면 그 코드가 의존하는 라이브러리 연쇄까지 대상이 되어 통제할 수 없기 때문이다.
 <br><br><strong>그래서 참조구현은 라이선스 선택이 스키마보다 중요하다.</strong> 스키마는 TTA의 확약 제도가 특허를 받쳐 주지만, 참조구현은 그 제도 밖이라 라이선스가 유일한 장치다. 특허 조항이 없는 MIT·BSD로 내면 이용자가 특허 위험을 그대로 진다.
 </div>
 
@@ -178,5 +178,6 @@ function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
 var n=c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
 r.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}}
 try{var s=localStorage.getItem('th');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.pop');if(!a)return;e.preventDefault();var w=window.open(a.href,'ttaPop','width=1120,height=860,scrollbars=yes,resizable=yes');if(w)w.focus();});
 </script>
 </body></html>

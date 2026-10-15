@@ -315,3 +315,7 @@ h3 { scroll-margin-top: 68px; }
 /* ── 판 스위처 부제 ── */
 .ms-sub { font-weight: 500; opacity: .75; font-size: 12px; margin-left: 4px; }
 @media (max-width: 760px) { .ms-sub { display: none; } }
+
+/* ── 팝업 링크(별표·별지·조문) ── */
+a.pop { text-decoration: none; border-bottom: 1px dotted var(--accent); }
+a.pop::after { content: "↗"; font-size: .72em; margin-left: 1px; opacity: .7; }

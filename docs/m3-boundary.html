@@ -1017,5 +1017,6 @@ function tt(){var r=document.documentElement,c=r.getAttribute('data-theme');
 var n=c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
 r.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}}
 try{var s=localStorage.getItem('th');if(s)document.documentElement.setAttribute('data-theme',s)}catch(e){}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.pop');if(!a)return;e.preventDefault();var w=window.open(a.href,'ttaPop','width=1120,height=860,scrollbars=yes,resizable=yes');if(w)w.focus();});
 </script>
 </body></html>
