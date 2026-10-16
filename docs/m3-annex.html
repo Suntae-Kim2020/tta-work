@@ -59,10 +59,10 @@
 <tr><td class="num">③</td><td><strong>데이터 모델</strong></td><td>값 형식·제약을 기계가 검증할 수 있나</td><td>값 유형·제약이 미정의이거나 산문</td><td>표로 정리(검증 스키마 미제공)</td><td>기계검증 스키마로 형식화</td><td>L2</td></tr>
 <tr><td class="num">④</td><td><strong>출처/계보</strong></td><td>데이터가 어디서 어떻게 왔는지 추적되나</td><td>출처 정보가 흩어져 있거나 부재</td><td>일부 출처 필드 존재</td><td>PROV-O로 계보 형식화</td><td>L2</td></tr>
 <tr><td class="num">⑤</td><td><strong>운영 시맨틱</strong></td><td>(ML만) 학습·검증 분할과 역할을 선언했나</td><td>ML 대상인데 split·feature/label 미선언</td><td>일부를 산문으로 기술</td><td>Croissant로 형식 선언</td><td>L3</td></tr>
-<tr><td class="num">⑥</td><td><strong>품질 프로파일</strong></td><td>품질을 형식 어휘로 붙였나</td><td>품질 신호가 enum 코드뿐</td><td>일부 품질 표기</td><td>ISO/IEC 5259-2·25012 기준을 DQV·SHACL로 표현</td><td>L3</td></tr>
+<tr><td class="num">⑥</td><td><strong>품질 측도</strong></td><td>품질을 형식 어휘로 붙였나</td><td>품질 신호가 enum 코드뿐</td><td>일부 품질 표기</td><td>ISO/IEC 5259-2·25012 기준을 DQV·SHACL로 표현</td><td>L3</td></tr>
 <tr><td class="num">⑦</td><td><strong>접근/사용 제약</strong></td><td>누가 어떻게 써도 되는지 기계가 판단하나</td><td>라이선스·접근권 메타데이터 부재</td><td>문서 수준 저작권만</td><td><strong>데이터 수준</strong>에서 명시</td><td>L3</td></tr>
 </tbody></table></div>
-<div class="note why"><span class="note-t">등급을 어떻게 판정하나</span>일곱 구성요소마다 0·1·2등급의 실제 모습, 파일럿 표준의 예시, 요구 프로파일, 흔한 함정을 정리한 <a href="m3-annex-guide.html" class="pop" target="_blank" rel="noopener"><strong>구성요소 해설 보기</strong></a>.</div>
+<div class="note why"><span class="note-t">등급을 어떻게 판정하나</span>일곱 구성요소마다 0·1·2등급의 실제 모습, 파일럿 표준의 예시, 요구 기술 대상 프로파일, 흔한 함정을 정리한 <a href="m3-annex-guide.html" class="pop" target="_blank" rel="noopener"><strong>구성요소 해설 보기</strong></a>.</div>
 
 
 <p><strong>구현 어휘</strong> — ① SKOS·DCMI Terms·DCAT·schema.org / ② JSON-LD 1.1·RDF/Turtle·(ML)Croissant 1.0 / ③ XSD·SHACL·JSON Schema, 단위는 QUDT·UCUM / ④ PROV-O·DCMI Terms / ⑤ Croissant 1.0 / ⑥ ISO/IEC 5259-2·25012·DQV·SHACL / ⑦ dct:license·DCAT v3(accessRights)·ODRL 2.2·DUO</p>
@@ -87,7 +87,7 @@
 <h2>제2부 기술 대상 프로파일별 요구 수준</h2>
 <p>요구 수준은 그 표준이 <strong>기술하는 대상</strong>으로 정한다. 표준 문서의 종류와 어긋날 수 있으므로, 언제나 기술 대상을 기준으로 판정한다.</p>
 <div class="tablebox"><table>
-<thead><tr><th>프로파일</th><th>기술 대상</th><th>필수</th><th>권장</th><th>근거</th></tr></thead>
+<thead><tr><th>기술 대상 프로파일</th><th>기술 대상</th><th>필수</th><th>권장</th><th>근거</th></tr></thead>
 <tbody>
 <tr><td><strong>① 지식정보</strong></td><td>논문·보고서·데이터세트 등</td><td>①② (= L1)</td><td>+ ③④⑦</td><td>카탈로그이므로 의미·표현이 출발점. "누가 어떤 조건으로 쓸 수 있나"가 핵심 기능이라 ⑦을 권장에 둔다</td></tr>
 <tr><td><strong>② 자기기술형 레코드</strong></td><td>센서 관측·공간객체의 값</td><td>①②③</td><td>+ ④ (= L2)</td><td>값과 단위가 내용 자체다</td></tr>
@@ -155,7 +155,7 @@
 <h2>제5부 판정</h2>
 
 <h3>5-1. AI-Ready 수준 판정</h3>
-<p>제2부의 프로파일별 <strong>필수</strong> 구성요소가 모두 2등급이면 그 수준을 충족한 것으로 본다.</p>
+<p>제2부의 기술 대상 프로파일별 <strong>필수</strong> 구성요소가 모두 2등급이면 그 수준을 충족한 것으로 본다.</p>
 
 <h3>5-2. 산출물 요건 판정</h3>
 <p>제4부의 요건 중 <strong>충족·미충족으로 판정하는 항목이 모두 충족</strong>이어야 산출물 요건을 충족한 것으로 본다.</p>
@@ -172,6 +172,8 @@
 <h3>5-3. 두 판정의 관계</h3>
 <div class="note warn"><strong>산출물 요건은 AI-Ready 수준과 독립이다.</strong> 수준이 L1에 그치더라도 산출물 요건은 충족할 수 있고, 반대로 내용 등급이 높아도 라이선스 표시를 빠뜨리면 산출물 요건은 미충족이다.
 <br><br>두 판정을 별도로 기재하는 이유는 <strong>내용의 성숙도</strong>와 <strong>배포의 완결성</strong>이 다른 문제이기 때문이다. 전자는 표준을 어떻게 설계했는가의 문제이고, 후자는 이용자가 그 산출물을 실제로 쓸 수 있는가의 문제다.</div>
+
+<div class="note"><span class="note-t">명칭 변경</span>구성요소 ⑥은 v0.3의 "품질 프로파일"을, 제2부의 <strong>기술 대상 프로파일</strong>과 구분하기 위해 <strong>"품질 측도"</strong>로 바꿔 부른다. 내용은 같다.</div>
 
 <div class="foot">AI Ready Data V.2.1 (제안자 선언형) · 별표 10 AI-Ready 수준 요건 · <a href="m3-forms.html">서식 보기 →</a></div>
 
