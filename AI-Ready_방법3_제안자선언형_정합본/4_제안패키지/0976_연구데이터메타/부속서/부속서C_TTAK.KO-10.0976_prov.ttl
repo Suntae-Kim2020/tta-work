@@ -1,0 +1,47 @@
+# ============================================================================
+# TTAK.KO-10.0976 부속서 C — PROV-O 출처 그래프  (본 부속서는 표준 내용의 일부임)
+# 이용조건(라이선스): CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+# 정본은 표준 부속서 수록본이며 이 파일은 기계 처리용 제공본이다. 둘이 다를 경우 수록본에 따른다(운영요령 제19조의3제2항).
+# 이용조건 표시 근거: 운영요령 제19조의3제7항 · 작성지침 6.6
+# ============================================================================
+# PROV-O 계보 예시 — TTAK.KO-10.0976 (연구데이터 생성 계보, 출처/계보 L2)
+# Date·Publisher·PublicationYear·Contributor를 PROV-O 생성/귀속/영향으로 형식화.
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:   <https://example.org/rdm/> .
+
+# 이 파일(문서) 자체의 이용조건 — 기계가 읽을 수 있도록 트리플로도 둔다.
+<> dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+ex:dataset-1436 a prov:Entity, dcat:Dataset ;
+  dct:title "Nucleosome positioning on genomic DNA" ;
+  dct:identifier <http://dx.doi.org/10.7488/ds/1436> ;
+  dct:issued "2016"^^xsd:gYear ;
+  prov:wasGeneratedBy ex:observation-study ;
+  prov:wasAttributedTo ex:researcher ;
+  prov:wasInfluencedBy ex:funder .
+
+ex:observation-study a prov:Activity ;
+  dct:description "관찰·측정 연구 활동" ;
+  prov:startedAtTime "2015-03-01T00:00:00"^^xsd:dateTime ;
+  prov:endedAtTime   "2016-07-19T00:00:00"^^xsd:dateTime ;
+  prov:wasAssociatedWith ex:researcher ;
+  prov:wasAssociatedWith ex:publisher .
+
+ex:researcher a prov:Agent, prov:Person ;
+  foaf:name "김선태" .
+
+ex:publisher a prov:Agent, prov:Organization ;
+  foaf:name "한국과학기술정보연구원(KISTI)" .
+
+ex:funder a prov:Agent, prov:Organization ;
+  foaf:name "EPSRC" ;
+  dct:description "연구비 지원 기관(Contributor=Funder)" .
+
+# 파일↔데이터셋 구성(계층)
+ex:file-1311 a prov:Entity, dcat:Distribution ;
+  dct:isPartOf ex:dataset-1436 ;
+  prov:wasDerivedFrom ex:dataset-1436 .

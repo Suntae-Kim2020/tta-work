@@ -64,7 +64,7 @@
 </tbody>
 </table></div>
 <p><strong>공통 판정 원리는 하나다.</strong> 산문으로만 적혀 있으면 0, 칸이나 표는 있지만 국제 어휘에 연결되지 않으면 1, 국제 어휘의 IRI로 적어 기계가 다른 표준의 데이터와 같은 뜻으로 읽을 수 있으면 2다.</p>
-<p><strong>예시의 출처.</strong> 예시는 AI Ready Data V.1 제안패키지에 들어 있는 파일럿 표준 다섯 종의 부속서 파일에서 발췌했다. 원본 경로는 각 예시 아래에 적었다. 파일럿 표준이 바뀌면 예시도 따라 고친다.</p>
+<p><strong>예시의 출처.</strong> 예시는 AI Ready Data V.2.1 제안패키지(4_제안패키지)에 들어 있는 파일럿 표준 다섯 종의 부속서 파일에서 발췌했다. 파일 머리말에는 이용조건이 표시되어 있으나 발췌에서는 생략했다. 원본 경로는 각 예시 아래에 적었다. 파일럿 표준이 바뀌면 예시도 따라 고친다.</p>
 <div class="tablebox"><table>
 <thead>
 <tr>
@@ -79,41 +79,41 @@
 <td>① 시맨틱 · ② 신태틱</td>
 <td>L1</td>
 <td>TTAK.KO-10.0976 연구데이터 메타데이터</td>
-<td><code>부속서_context/TTAK.KO-10.0976_context.jsonld</code></td>
+<td><code>0976_연구데이터메타/부속서/부속서A_TTAK.KO-10.0976_context.jsonld</code></td>
 </tr>
 <tr>
 <td>③ 데이터 모델</td>
 <td>L2</td>
 <td>TTAK.KO-10.1530 수산양식 센서 데이터 구조</td>
-<td><code>부속서_shacl/TTAK.KO-10.1530_shapes.ttl</code> · <code>부속서_units/TTAK.KO-10.1530_units.ttl</code></td>
+<td><code>1530_수산센서구조/부속서/부속서B_TTAK.KO-10.1530_shapes.ttl</code> · <code>1530_수산센서구조/부속서/부속서C_TTAK.KO-10.1530_units.ttl</code></td>
 </tr>
 <tr>
 <td>④ 출처/계보</td>
 <td>L2</td>
 <td>TTAK.KO-10.0976</td>
-<td><code>부속서_provo/TTAK.KO-10.0976_prov.ttl</code></td>
+<td><code>0976_연구데이터메타/부속서/부속서C_TTAK.KO-10.0976_prov.ttl</code></td>
 </tr>
 <tr>
 <td>⑤ 운영 시맨틱</td>
 <td>L3</td>
 <td>TTAK.KO-10.1594 AI 모델 메타데이터</td>
-<td><code>부속서_croissant/TTAK.KO-10.1594_croissant.json</code></td>
+<td><code>1594_AI모델메타/부속서/부속서E_TTAK.KO-10.1594_croissant.json</code></td>
 </tr>
 <tr>
 <td>⑥ 품질 측도</td>
 <td>L3</td>
 <td>TTAK.KO-11.0310 자율주행 데이터 품질</td>
-<td><code>부속서_quality/TTAK.KO-11.0310_quality.ttl</code></td>
+<td><code>0310_자율주행품질/부속서/부속서C_TTAK.KO-11.0310_quality.ttl</code></td>
 </tr>
 <tr>
 <td>⑦ 접근/사용 제약</td>
 <td>L3</td>
 <td>TTAK.KO-10.1594</td>
-<td><code>부속서_odrl/TTAK.KO-10.1594_policy.jsonld</code></td>
+<td><code>1594_AI모델메타/부속서/부속서G_TTAK.KO-10.1594_policy.jsonld</code></td>
 </tr>
 </tbody>
 </table></div>
-<p>원본 파일은 모두 저장소의 <code>AI-Ready_방법2_공동에디터보강형/5종_표준제안문서/</code> 아래에 있다.</p>
+<p>원본 파일은 모두 저장소의 AI Ready Data V.2.1 폴더 안 <code>4_제안패키지/</code> 아래에 있다. 각 표준 폴더에는 부속서 파일과 함께 선언서(별지 제11-1호서식)·표준초안·자가점검표(별지 제21-1호서식)가 들어 있다.</p>
 
 <h2 id="①-시맨틱-요소의-뜻을-전역-어휘iri에-연결했나">① 시맨틱 — 요소의 뜻을 전역 어휘(IRI)에 연결했나</h2>
 <h3 id="무엇을-묻는가">무엇을 묻는가</h3>
@@ -220,7 +220,7 @@
   }
 }
 </code></pre>
-<p><em>원본: <code>부속서_context/TTAK.KO-10.0976_context.jsonld</code></em></p>
+<p><em>원본: <code>0976_연구데이터메타/부속서/부속서A_TTAK.KO-10.0976_context.jsonld</code></em></p>
 <p>이 @context 하나만 붙이면, 기존에 <code>{"Title": "…", "PublicationYear": "2016"}</code>처럼 쓰던 JSON 데이터가 그대로 RDF 그래프가 된다. 데이터 쪽을 고칠 필요가 없다는 것이 @context 방식의 장점이다. <code>"@type": "xsd:gYear"</code>는 값의 형식까지 실어 보내므로 ③과도 이어진다.</p>
 <h3 id="어느-프로파일이-요구하나_1">어느 기술 대상 프로파일이 요구하나</h3>
 <p><strong>모든 기술 대상 프로파일의 필수</strong>다(L1). 자가점검표 4-4의 제출 산출물 목록에서 "JSON-LD @context"가 별표(★) — 모든 표준의 필수 — 로 표시된 것이 이 때문이다.</p>
@@ -259,13 +259,13 @@ koai:DeviceShape a sh:NodeShape ;
                 sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
                 sh:in ( unit:PH unit:DEG_C unit:L-PER-MIN unit:MilliGM-PER-L unit:NTU ) ] .
 </code></pre>
-<p><em>원본: <code>부속서_shacl/TTAK.KO-10.1530_shapes.ttl</code></em></p>
+<p><em>원본: <code>1530_수산센서구조/부속서/부속서B_TTAK.KO-10.1530_shapes.ttl</code></em></p>
 <p>단위는 같은 표준의 단위 매핑 부속서가 QUDT IRI와 UCUM 코드를 함께 준다.</p>
 <pre><code class="language-turtle">koai:unit-pH a skos:Concept ;
   skos:prefLabel &quot;pH&quot;@ko ; rdfs:comment &quot;표 6-1 표기: pH · 측정범위 0~14&quot;@ko ;
   qudt:unit unit:PH ; qudt:ucumCode &quot;[pH]&quot;^^qudt:UCUMcs .
 </code></pre>
-<p><em>원본: <code>부속서_units/TTAK.KO-10.1530_units.ttl</code></em></p>
+<p><em>원본: <code>1530_수산센서구조/부속서/부속서C_TTAK.KO-10.1530_units.ttl</code></em></p>
 <p>이 사례는 2등급이 왜 필요한지도 보여 준다. 원 표준의 단위 코드표에는 본문 단위 목록에 없는 "m/L"이 들어 있었고, 측정값 7.2가 pH인지 용존산소(mg/L)인지 기계가 판단할 근거가 없었다. 단위를 IRI로 결합하고 SHACL로 허용 목록을 정하면 이런 오류가 검증 단계에서 드러난다.</p>
 <h3 id="어느-프로파일이-요구하나_2">어느 기술 대상 프로파일이 요구하나</h3>
 <div class="tablebox"><table>
@@ -326,7 +326,7 @@ ex:observation-study a prov:Activity ;
 ex:file-1311 a prov:Entity, dcat:Distribution ;
   prov:wasDerivedFrom ex:dataset-1436 .         # 파일 ↔ 데이터세트 파생 관계
 </code></pre>
-<p><em>원본: <code>부속서_provo/TTAK.KO-10.0976_prov.ttl</code></em></p>
+<p><em>원본: <code>0976_연구데이터메타/부속서/부속서C_TTAK.KO-10.0976_prov.ttl</code></em></p>
 <p>기존 메타데이터 칸이 그대로 PROV 관계로 옮겨진 것을 볼 수 있다. Publisher는 Activity에 참여한 Organization, Contributor(Funder)는 wasInfluencedBy, PublicationYear는 dct:issued다. 요소 정의표에 PROV-O IRI를 매핑해 두면(①) 이 그래프는 자동으로 나온다.</p>
 <h3 id="어느-프로파일이-요구하나_3">어느 기술 대상 프로파일이 요구하나</h3>
 <div class="tablebox"><table>
@@ -385,7 +385,7 @@ ex:file-1311 a prov:Entity, dcat:Distribution ;
   }]
 }
 </code></pre>
-<p><em>원본: <code>부속서_croissant/TTAK.KO-10.1594_croissant.json</code></em></p>
+<p><em>원본: <code>1594_AI모델메타/부속서/부속서E_TTAK.KO-10.1594_croissant.json</code></em></p>
 <p>TTAK.KO-10.1594가 정의한 TrainingSet·ValidationSet·TestSet 요소가 Croissant의 splits RecordSet으로 옮겨진 구조다. 이렇게 선언해 두면 Hugging Face나 TFDS 같은 도구가 이 파일만 읽고 데이터를 불러온다.</p>
 <h3 id="어느-프로파일이-요구하나_4">어느 기술 대상 프로파일이 요구하나</h3>
 <p><strong>③ AI 데이터세트 프로파일에서만</strong> 의미가 있고, 그 안에서도 권장(L3)이다. 다른 기술 대상 프로파일에서는 "해당 없음(N·A)"으로 적는다. 자가점검표 4-4의 "Croissant ML 계층"이 "③ AI 데이터세트(학습 분할)만"으로 한정된 이유다.</p>
@@ -420,7 +420,7 @@ ex:m-balance a dqv:QualityMeasurement ;
   dqv:value &quot;0.86&quot;^^xsd:double ;
   dct:description &quot;위반유형 7종 분포 10~17.5% → 균형 지수 0.86&quot; .
 </code></pre>
-<p><em>원본: <code>부속서_quality/TTAK.KO-11.0310_quality.ttl</code></em></p>
+<p><em>원본: <code>0310_자율주행품질/부속서/부속서C_TTAK.KO-11.0310_quality.ttl</code></em></p>
 <p>0310 표준 본문의 "구문 정확성 99% 이상", "분류체계별 수량 균일성" 같은 요구가 각각 syntacticAccuracyRate, classBalanceIndex라는 국제 측도에 정렬됐다. "이 데이터세트는 품질 목표를 충족하는가"를 SHACL 한 줄(값 ≥ 0.99)로 자동 판정할 수 있다.</p>
 <h3 id="어느-프로파일이-요구하나_5">어느 기술 대상 프로파일이 요구하나</h3>
 <div class="tablebox"><table>
@@ -482,7 +482,7 @@ ex:m-balance a dqv:QualityMeasurement ;
   }]
 }
 </code></pre>
-<p><em>원본: <code>부속서_odrl/TTAK.KO-10.1594_policy.jsonld</code> — <code>DUO_0000046</code>은 "비상업적 이용만"</em></p>
+<p><em>원본: <code>1594_AI모델메타/부속서/부속서G_TTAK.KO-10.1594_policy.jsonld</code> — <code>DUO_0000046</code>은 "비상업적 이용만"</em></p>
 <p>허용 행위(permission), 그에 따르는 의무(출처 표시 duty), 비상업적 이용으로 한정하는 금지(prohibition)가 기계가 읽는 규칙으로 적혀 있다. 데이터 카탈로그나 접근 통제 시스템이 이 정책을 읽어 "이 요청자가 이 목적으로 받아가도 되는가"를 자동 판단한다.</p>
 <h3 id="어느-프로파일이-요구하나_6">어느 기술 대상 프로파일이 요구하나</h3>
 <div class="tablebox"><table>
