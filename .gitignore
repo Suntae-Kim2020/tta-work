@@ -11,6 +11,7 @@
 RG/*.pdf
 TG/*.pdf
 *.zip
+!docs/downloads/**/*.zip
 *.lnk
 
 # 규범 3종 원문(작성지침·운영규정·운영요령 PDF)은 개정안의 기준선이라 커밋한다.

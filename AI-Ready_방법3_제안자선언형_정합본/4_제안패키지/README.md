@@ -56,6 +56,9 @@
 
 ```
 python 도구/build_hwpx.py          # 각 표준 폴더의 md 3종 → hwpx
+python 도구/build_downloads.py     # hwpx 사본·부속서 ZIP → docs/downloads/제안패키지/, downloads.html 표 갱신
 ```
+
+웹(GitHub Pages)에서는 https://suntae-kim2020.github.io/tta-work/downloads.html#pkg 에서 같은 파일을 내려받을 수 있다. hwpx나 부속서를 고치면 `build_downloads.py`를 다시 돌려 웹 사본을 맞춘다.
 
 md가 정본이다. 부속서 파일(`부속서/`)은 표준초안 2의 수록본과 같은 내용이어야 하며, 파일을 고치면 표준초안의 수록본과 sha256도 함께 고친다.

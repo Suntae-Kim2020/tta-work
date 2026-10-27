@@ -43,7 +43,7 @@
 
 ## 웹에서 내려받기
 
-같은 파일을 GitHub Pages에서도 내려받을 수 있다 — https://suntae-kim2020.github.io/tta-work/downloads.html (상단 메뉴 「최종산출물」). 웹용 사본은 `docs/downloads/`에 있으므로, 이 폴더의 HWPX를 다시 생성하면 `docs/downloads/`에도 복사해야 한다(도구: scratchpad `build_downloads.py`, 또는 수동 복사).
+같은 파일을 GitHub Pages에서도 내려받을 수 있다 — https://suntae-kim2020.github.io/tta-work/downloads.html (상단 메뉴 「최종산출물」). 웹용 사본은 `docs/downloads/`에 있으므로, 이 폴더의 HWPX를 다시 생성하면 `docs/downloads/`에도 복사해야 한다(도구: scratchpad `build_downloads.py`, 또는 수동 복사). 같은 페이지 아래쪽의 「파일럿 실증 5종 — 제안패키지」 표는 `AI-Ready_방법3_제안자선언형_정합본/4_제안패키지/`의 HWPX와 부속서 ZIP(`docs/downloads/제안패키지/`)을 내려받게 한다. 패키지를 다시 만들면 `4_제안패키지/도구/build_downloads.py`로 웹 사본도 다시 만든다.
 
 ## 생성 방법
 
